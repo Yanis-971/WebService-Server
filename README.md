@@ -14,6 +14,8 @@ Pour Importer:
 
 4- Cliquer sur "Clone or download", faire copier
 
-5- Coller sur la fenêtre d'Eclipse et entrer son identifiant et son mot de passe
+5- Coller sur la fenêtre d'Eclipse et entrer son identifiant et son mot de passe.
 
+6- Si c'est bon,cliquer sur la branche à prendre (de base c'est master)
 
+7- Et après pour la suite c'est comme pour un projet normal, on choisit où on place le projet
