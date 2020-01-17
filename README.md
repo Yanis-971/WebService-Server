@@ -14,14 +14,22 @@ Pour Importer:
 
 4- Cliquer sur "Clone or download", faire copier
 
-5- Coller sur la fenêtre d'Eclipse et entrer son identifiant et son mot de passe.
+5- Coller sur la fenêtre d'Eclipse et entrer son identifiant et son mot de passe
 
-6- Si c'est bon,cliquer sur la branche à prendre (de base c'est master)
+6- Si c'est bon, cliquer sur la branche à prendre (de base c'est master)
 
 7- Et après pour la suite c'est comme pour un projet normal, on choisit où on place le projet
 
 
-Pour Commit et même Push:
+Pour Pull (Ou mettre à jour le projet en gros):
+
+1- Clique droit sur le projet -> "Team" -> "Pull" -> 
+
+2- Une petie fenêtre avec tout les intitulés de commits apparaît et c'est bon 
+
+
+
+Pour Commit et même Push (envoyer sur GitHub) *Après si vous êtes pas sûr je conseille de le faire non pas du master mais d'une autre branche*:
 
 1- Clique droit sur le projet -> "Team" -> "Commit..." -> Une petie fenêtre apparaît en bas 
 
@@ -37,4 +45,13 @@ Pour Commit et même Push:
 
 7- Entrez les trucs utilisateurs la
 
-8-Regarder si c'est bon et fermer 
+8- Regarder si c'est bon et fermer 
+ 
+
+Bin du coup pour créer une nouvelle branche:
+
+1- Clique droit sur le projet -> "Team" -> "Switch to" -> "New Branch..."
+
+2- Entrez le nom et valider c'est bon
+
+3- Après pour mettre tout en commun (le merge) onle fera directsur GitHub ensemble, c'est mieux je pense. Ou pas
