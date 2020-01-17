@@ -4,7 +4,7 @@
 Un mini-tuto pour ceux qui aurait du mal avec Eclipse:
 
 
-Pour Importer:
+# Pour Importer:
 
 1- Onglet "File" -> "Import" -> Une fenêtre s'ouvre
 
@@ -21,7 +21,7 @@ Pour Importer:
 7- Et après pour la suite c'est comme pour un projet normal, on choisit où on place le projet
 
 
-Pour Pull (Ou mettre à jour le projet en gros):
+# Pour Pull (Ou mettre à jour le projet en gros):
 
 1- Clique droit sur le projet -> "Team" -> "Pull" -> 
 
@@ -29,7 +29,7 @@ Pour Pull (Ou mettre à jour le projet en gros):
 
 
 
-Pour Commit et même Push (envoyer sur GitHub) *Après si vous êtes pas sûr je conseille de le faire non pas du master mais d'une autre branche*:
+# Pour Commit et même Push (envoyer sur GitHub) *Après si vous êtes pas sûr je conseille de le faire non pas du master mais d'une autre branche*:
 
 1- Clique droit sur le projet -> "Team" -> "Commit..." -> Une petie fenêtre apparaît en bas 
 
@@ -48,7 +48,7 @@ Pour Commit et même Push (envoyer sur GitHub) *Après si vous êtes pas sûr je
 8- Regarder si c'est bon et fermer 
  
 
-Bin du coup pour créer une nouvelle branche:
+# Bin du coup pour créer une nouvelle branche:
 
 1- Clique droit sur le projet -> "Team" -> "Switch to" -> "New Branch..."
 
