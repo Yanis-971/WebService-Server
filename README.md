@@ -54,4 +54,4 @@ Un mini-tuto pour ceux qui aurait du mal avec Eclipse:
 
 2- Entrez le nom et valider c'est bon
 
-3- Après pour mettre tout en commun (le merge) onle fera directsur GitHub ensemble, c'est mieux je pense. Ou pas
+3- Après pour mettre tout en commun (le merge) onle fera direct sur GitHub ensemble, c'est mieux je pense. Ou pas
