@@ -23,13 +23,13 @@ Un mini-tuto pour ceux qui aurait du mal avec Eclipse:
 
 # Pour Pull (Ou mettre à jour le projet en gros):
 
-1- Clique droit sur le projet -> "Team" -> "Pull" -> 
+1- Clique droit sur le projet -> "Team" -> "Pull"  
 
 2- Une petie fenêtre avec tout les intitulés de commits apparaît et c'est bon 
 
 
 
-# Pour Commit et même Push (envoyer sur GitHub) *Après si vous êtes pas sûr je conseille de le faire non pas du master mais d'une autre branche*:
+# Pour Commit et même Push (envoyer sur GitHub) *Après si vous êtes pas sûr je conseille de le faire non pas depuis master mais depuis une autre branche*:
 
 1- Clique droit sur le projet -> "Team" -> "Commit..." -> Une petie fenêtre apparaît en bas 
 
