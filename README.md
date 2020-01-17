@@ -19,3 +19,22 @@ Pour Importer:
 6- Si c'est bon,cliquer sur la branche à prendre (de base c'est master)
 
 7- Et après pour la suite c'est comme pour un projet normal, on choisit où on place le projet
+
+
+Pour Commit et même Push:
+
+1- Clique droit sur le projet -> "Team" -> "Commit..." -> Une petie fenêtre apparaît en bas 
+
+2- Selectionner les fichiers dans "Unstaged Changes"  et les mettre dans  "Staged Changes"
+
+3- Mettre un message dans "Commit Message"
+
+4- Si y'a rien mettre un nom "Author" au format: John Doe <john@example.com>
+
+5- Si y'a rien dans "Committer", faire comme pour "Author"
+
+6- Cliquer sur "Commit and Push" 
+
+7- Entrez les trucs utilisateurs la
+
+8-Regarder si c'est bon et fermer 
