@@ -1,11 +1,14 @@
 package model;
 
+import java.util.List;
+
 public class Utilisateur {
 	
 	private int id;
 	private String Nom;
 	private String Prenom;
 	private String Mail;
+	private List<Integer> Relations;
 	
 	
 	public int getId() {
@@ -31,6 +34,12 @@ public class Utilisateur {
 	}
 	public void setMail(String mail) {
 		Mail = mail;
+	}
+	public List<Integer> getRelations() {
+		return Relations;
+	}
+	public void setRelations(List<Integer> relations) {
+		Relations = relations;
 	}
 	
 	
