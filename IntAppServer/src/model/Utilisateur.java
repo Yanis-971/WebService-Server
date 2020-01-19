@@ -1,6 +1,10 @@
 package model;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
+
+import controleur.Connec;
 
 public class Utilisateur {
 	
@@ -59,6 +63,21 @@ public class Utilisateur {
 	}
 	
 	
+	
+	public void VoirUser() throws ClassNotFoundException, SQLException {
+		Connec con = new Connec ();
+		String req = "select * from Users";
+		ResultSet rslt =con.conE(req) ;
+		if (rslt.next()) {
+			System.out.println("ok id doit etre la ");
+			id=rslt.getInt("id");
+			Nom=rslt.getString("nom");
+			System.out.println(rslt.getInt("id"));
+			System.out.println(Nom);
+			
+		}
+			
+	}
 	
 
 }
