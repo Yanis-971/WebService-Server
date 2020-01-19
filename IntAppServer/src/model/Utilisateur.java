@@ -11,6 +11,22 @@ public class Utilisateur {
 	private List<Integer> Relations;
 	
 	
+	public List<Friend> getfriendList() {
+		// fonction qui retourne la liste des amis de l'utilisateur 
+		
+		return null;
+	}
+	
+	public boolean addFriends(int idfriend) {
+		
+		return false;
+	}
+	
+	
+	
+	
+	
+	// getters and setters 
 	public int getId() {
 		return id;
 	}
