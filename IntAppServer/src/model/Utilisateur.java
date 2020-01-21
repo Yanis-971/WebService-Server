@@ -12,19 +12,19 @@ public class Utilisateur {
 	private String Nom;
 	private String Prenom;
 	private String Mail;
-	private List<Integer> Relations;
+	//private List<Integer> Relations;
 	
 	
-	public List<Friend> getfriendList() {
-		// fonction qui retourne la liste des amis de l'utilisateur 
-		
-		return null;
-	}
-	
-	public boolean addFriends(int idfriend) {
-		
-		return false;
-	}
+	/*
+	 * public List<Friend> getfriendList() { // fonction qui retourne la liste des
+	 * amis de l'utilisateur
+	 * 
+	 * return null; }
+	 * 
+	 * public boolean addFriends(int idfriend) {
+	 * 
+	 * return false; }
+	 */
 	
 	
 	
@@ -55,29 +55,29 @@ public class Utilisateur {
 	public void setMail(String mail) {
 		Mail = mail;
 	}
-	public List<Integer> getRelations() {
-		return Relations;
-	}
-	public void setRelations(List<Integer> relations) {
-		Relations = relations;
-	}
+//	public List<Integer> getRelations() {
+//		return Relations;
+//	}
+//	public void setRelations(List<Integer> relations) {
+//		Relations = relations;
+//	}
 	
 	
 	
-	public void VoirUser() throws ClassNotFoundException, SQLException {
-		Connec con = new Connec ();
-		String req = "select * from Users";
-		ResultSet rslt =con.conE(req) ;
-		if (rslt.next()) {
-			System.out.println("ok id doit etre la ");
-			id=rslt.getInt("id");
-			Nom=rslt.getString("nom");
-			System.out.println(rslt.getInt("id"));
-			System.out.println(Nom);
+//	public void voirUser() throws ClassNotFoundException, SQLException {
+//		Connec con = new Connec ();
+//		String req = "select * from Users";
+//		ResultSet rslt =con.conE(req) ;
+//		if (rslt.next()) {
+//			System.out.println("ok id doit etre la ");
+//			id=rslt.getInt("id");
+//			Nom=rslt.getString("nom");
+//			System.out.println(rslt.getInt("id"));
+//			System.out.println(Nom);
+//			
+//		}
 			
-		}
-			
-	}
+//	}
 	
 
 }
