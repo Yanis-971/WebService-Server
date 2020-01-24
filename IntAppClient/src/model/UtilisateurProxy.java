@@ -98,5 +98,17 @@ public class UtilisateurProxy implements model.Utilisateur {
     utilisateur.voirUser();
   }
   
+  public boolean addUsers(java.lang.String nom, java.lang.String prenom, java.lang.String pseudo) throws java.rmi.RemoteException{
+    if (utilisateur == null)
+      _initUtilisateurProxy();
+    return utilisateur.addUsers(nom, prenom, pseudo);
+  }
+  
+  public boolean addUtilisateurs(java.lang.String mdp, java.lang.String nom, java.lang.String prenom, java.lang.String pseudo) throws java.rmi.RemoteException{
+    if (utilisateur == null)
+      _initUtilisateurProxy();
+    return utilisateur.addUtilisateurs(mdp, nom, prenom, pseudo);
+  }
+  
   
 }

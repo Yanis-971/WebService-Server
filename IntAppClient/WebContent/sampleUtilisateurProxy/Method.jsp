@@ -17,6 +17,8 @@
 <LI><A HREF="Input.jsp?method=45" TARGET="inputs"> setMail(java.lang.String)</A></LI>
 <LI><A HREF="Input.jsp?method=50" TARGET="inputs"> getMail()</A></LI>
 <LI><A HREF="Input.jsp?method=53" TARGET="inputs"> voirUser()</A></LI>
+<LI><A HREF="Input.jsp?method=56" TARGET="inputs"> addUsers(java.lang.String,java.lang.String,java.lang.String)</A></LI>
+<LI><A HREF="Input.jsp?method=65" TARGET="inputs"> addUtilisateurs(java.lang.String,java.lang.String,java.lang.String,java.lang.String)</A></LI>
 </UL>
 </BODY>
 </HTML>

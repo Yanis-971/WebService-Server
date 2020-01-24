@@ -24,6 +24,22 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
    <element name="setIdResponse">
     <complexType/>
    </element>
+   <element name="addUsers">
+    <complexType>
+     <sequence>
+      <element name="nom" type="xsd:string"/>
+      <element name="prenom" type="xsd:string"/>
+      <element name="pseudo" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addUsersResponse">
+    <complexType>
+     <sequence>
+      <element name="addUsersReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
    <element name="getNom">
     <complexType/>
    </element>
@@ -90,6 +106,23 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
    <element name="voirUserResponse">
     <complexType/>
    </element>
+   <element name="addUtilisateurs">
+    <complexType>
+     <sequence>
+      <element name="mdp" type="xsd:string"/>
+      <element name="nom" type="xsd:string"/>
+      <element name="prenom" type="xsd:string"/>
+      <element name="pseudo" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addUtilisateursResponse">
+    <complexType>
+     <sequence>
+      <element name="addUtilisateursReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
   </schema>
  </wsdl:types>
 
@@ -109,9 +142,25 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
+   <wsdl:message name="addUtilisateursRequest">
+
+      <wsdl:part element="impl:addUtilisateurs" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
    <wsdl:message name="getIdRequest">
 
       <wsdl:part element="impl:getId" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addUsersResponse">
+
+      <wsdl:part element="impl:addUsersResponse" name="parameters">
 
       </wsdl:part>
 
@@ -144,6 +193,14 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
    <wsdl:message name="getMailRequest">
 
       <wsdl:part element="impl:getMail" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addUsersRequest">
+
+      <wsdl:part element="impl:addUsers" name="parameters">
 
       </wsdl:part>
 
@@ -192,6 +249,14 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
    <wsdl:message name="getNomResponse">
 
       <wsdl:part element="impl:getNomResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addUtilisateursResponse">
+
+      <wsdl:part element="impl:addUtilisateursResponse" name="parameters">
 
       </wsdl:part>
 
@@ -258,6 +323,18 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
        </wsdl:input>
 
          <wsdl:output message="impl:setIdResponse" name="setIdResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addUsers">
+
+         <wsdl:input message="impl:addUsersRequest" name="addUsersRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addUsersResponse" name="addUsersResponse">
 
        </wsdl:output>
 
@@ -347,6 +424,18 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
+      <wsdl:operation name="addUtilisateurs">
+
+         <wsdl:input message="impl:addUtilisateursRequest" name="addUtilisateursRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addUtilisateursResponse" name="addUtilisateursResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
    </wsdl:portType>
 
    <wsdl:binding name="UtilisateurSoapBinding" type="impl:Utilisateur">
@@ -382,6 +471,24 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
          </wsdl:input>
 
          <wsdl:output name="setIdResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addUsers">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addUsersRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addUsersResponse">
 
             <wsdlsoap:body use="literal"/>
 
@@ -508,6 +615,24 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
          </wsdl:input>
 
          <wsdl:output name="voirUserResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addUtilisateurs">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addUtilisateursRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addUtilisateursResponse">
 
             <wsdlsoap:body use="literal"/>
 
