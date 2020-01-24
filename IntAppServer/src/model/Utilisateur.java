@@ -13,7 +13,7 @@ public class Utilisateur {
 	private String Nom;
 	private String Prenom;
 	private String Mail;
-	private ArrayList<Integer> Relations;
+//	private ArrayList<Integer> Relations;
 	
 	
 	/*
@@ -60,12 +60,14 @@ public class Utilisateur {
 
 	
 	
-	public ArrayList<Integer> getRelations() {
+/*	public ArrayList<Integer> getRelations() {
 		return Relations;
 	}
 	public void setRelations(ArrayList<Integer> relations) {
 		Relations = relations;
-	}
+	} */
+	
+	
 	public void voirUser() throws ClassNotFoundException, SQLException {
 		Connec con = new Connec ();
 		String req = "select * from Users";
@@ -80,6 +82,49 @@ public class Utilisateur {
 		}
 			
 	}
+	
+	public boolean addUtilisateurs (String mdp , String nom , String prenom , String pseudo  ) {
+		
+		Connec con = new Connec();
+		String req1 = "INSERT INTO Users ( mdp, nom , prenom , pseudo ) values ('"+mdp+"','"+nom+"','"+prenom+"','"+pseudo+"')";
+		System.out.println(req1);
+		
+		
+			try {
+				con.conU(req1);
+				System.out.println("Utilisateur ajouté");
+				return true;
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+        return false;
+		
+		
+	}
+	
+public boolean addUsers (String nom , String prenom , String pseudo  ) {
+		
+		Connec con = new Connec();
+		String req1 = "INSERT INTO Users (  nom , prenom , pseudo ) values ('"+nom+"','"+prenom+"','"+pseudo+"')";
+		System.out.println(req1);
+		
+		
+			try {
+				con.conU(req1);
+				System.out.println("Utilisateur ajouté");
+				return true;
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+        return false;
+		
+		
+	}
+	
 	
 
 }

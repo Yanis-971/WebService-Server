@@ -177,6 +177,70 @@ valid = false;
 </FORM>
 <%
 break;
+case 56:
+valid = false;
+%>
+<FORM METHOD="POST" ACTION="Result.jsp" TARGET="result">
+<INPUT TYPE="HIDDEN" NAME="method" VALUE="<%=org.eclipse.jst.ws.util.JspUtils.markup(method)%>">
+<TABLE>
+<TR>
+<TD COLSPAN="1" ALIGN="LEFT">nom:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="nom59" SIZE=20></TD>
+</TR>
+</TABLE>
+<TABLE>
+<TR>
+<TD COLSPAN="1" ALIGN="LEFT">prenom:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="prenom61" SIZE=20></TD>
+</TR>
+</TABLE>
+<TABLE>
+<TR>
+<TD COLSPAN="1" ALIGN="LEFT">pseudo:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="pseudo63" SIZE=20></TD>
+</TR>
+</TABLE>
+<BR>
+<INPUT TYPE="SUBMIT" VALUE="Invoke">
+<INPUT TYPE="RESET" VALUE="Clear">
+</FORM>
+<%
+break;
+case 65:
+valid = false;
+%>
+<FORM METHOD="POST" ACTION="Result.jsp" TARGET="result">
+<INPUT TYPE="HIDDEN" NAME="method" VALUE="<%=org.eclipse.jst.ws.util.JspUtils.markup(method)%>">
+<TABLE>
+<TR>
+<TD COLSPAN="1" ALIGN="LEFT">mdp:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="mdp68" SIZE=20></TD>
+</TR>
+</TABLE>
+<TABLE>
+<TR>
+<TD COLSPAN="1" ALIGN="LEFT">nom:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="nom70" SIZE=20></TD>
+</TR>
+</TABLE>
+<TABLE>
+<TR>
+<TD COLSPAN="1" ALIGN="LEFT">prenom:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="prenom72" SIZE=20></TD>
+</TR>
+</TABLE>
+<TABLE>
+<TR>
+<TD COLSPAN="1" ALIGN="LEFT">pseudo:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="pseudo74" SIZE=20></TD>
+</TR>
+</TABLE>
+<BR>
+<INPUT TYPE="SUBMIT" VALUE="Invoke">
+<INPUT TYPE="RESET" VALUE="Clear">
+</FORM>
+<%
+break;
 case 1111111111:
 valid = false;
 %>

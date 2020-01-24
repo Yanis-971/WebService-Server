@@ -50,20 +50,31 @@
   <ns1:operation name="setId" qname="ns3:setId" soapAction="" xmlns:ns3="http://model">
    <ns1:parameter qname="ns3:id" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
   </ns1:operation>
-  <ns1:operation name="getNom" qname="ns4:getNom" returnQName="ns4:getNomReturn" returnType="xsd:string" soapAction="" xmlns:ns4="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
-  <ns1:operation name="setNom" qname="ns5:setNom" soapAction="" xmlns:ns5="http://model">
-   <ns1:parameter qname="ns5:nom" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="addUsers" qname="ns4:addUsers" returnQName="ns4:addUsersReturn" returnType="xsd:boolean" soapAction="" xmlns:ns4="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns4:nom" type="xsd:string"/>
+   <ns1:parameter qname="ns4:prenom" type="xsd:string"/>
+   <ns1:parameter qname="ns4:pseudo" type="xsd:string"/>
   </ns1:operation>
-  <ns1:operation name="getPrenom" qname="ns6:getPrenom" returnQName="ns6:getPrenomReturn" returnType="xsd:string" soapAction="" xmlns:ns6="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
-  <ns1:operation name="setPrenom" qname="ns7:setPrenom" soapAction="" xmlns:ns7="http://model">
-   <ns1:parameter qname="ns7:prenom" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="getNom" qname="ns5:getNom" returnQName="ns5:getNomReturn" returnType="xsd:string" soapAction="" xmlns:ns5="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="setNom" qname="ns6:setNom" soapAction="" xmlns:ns6="http://model">
+   <ns1:parameter qname="ns6:nom" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
   </ns1:operation>
-  <ns1:operation name="setMail" qname="ns8:setMail" soapAction="" xmlns:ns8="http://model">
-   <ns1:parameter qname="ns8:mail" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="getPrenom" qname="ns7:getPrenom" returnQName="ns7:getPrenomReturn" returnType="xsd:string" soapAction="" xmlns:ns7="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="setPrenom" qname="ns8:setPrenom" soapAction="" xmlns:ns8="http://model">
+   <ns1:parameter qname="ns8:prenom" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
   </ns1:operation>
-  <ns1:operation name="getMail" qname="ns9:getMail" returnQName="ns9:getMailReturn" returnType="xsd:string" soapAction="" xmlns:ns9="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
-  <ns1:operation name="voirUser" qname="ns10:voirUser" soapAction="" xmlns:ns10="http://model"/>
-  <ns1:parameter name="allowedMethods" value="getPrenom setMail voirUser setNom setId getId setPrenom getNom getMail"/>
+  <ns1:operation name="setMail" qname="ns9:setMail" soapAction="" xmlns:ns9="http://model">
+   <ns1:parameter qname="ns9:mail" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="getMail" qname="ns10:getMail" returnQName="ns10:getMailReturn" returnType="xsd:string" soapAction="" xmlns:ns10="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="voirUser" qname="ns11:voirUser" soapAction="" xmlns:ns11="http://model"/>
+  <ns1:operation name="addUtilisateurs" qname="ns12:addUtilisateurs" returnQName="ns12:addUtilisateursReturn" returnType="xsd:boolean" soapAction="" xmlns:ns12="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns12:mdp" type="xsd:string"/>
+   <ns1:parameter qname="ns12:nom" type="xsd:string"/>
+   <ns1:parameter qname="ns12:prenom" type="xsd:string"/>
+   <ns1:parameter qname="ns12:pseudo" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="addUtilisateurs getPrenom setMail voirUser setNom setId getId setPrenom addUsers getNom getMail"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="Utilisateur"/>
   <ns1:parameter name="className" value="model.Utilisateur"/>

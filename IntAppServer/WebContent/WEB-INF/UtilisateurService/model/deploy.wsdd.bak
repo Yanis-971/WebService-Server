@@ -25,6 +25,11 @@
       <operation name="setId" qname="operNS:setId" xmlns:operNS="http://model" soapAction="" >
         <parameter qname="pns:id" xmlns:pns="http://model" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
+      <operation name="addUsers" qname="operNS:addUsers" xmlns:operNS="http://model" returnQName="retNS:addUsersReturn" xmlns:retNS="http://model" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:nom" xmlns:pns="http://model" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:prenom" xmlns:pns="http://model" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pseudo" xmlns:pns="http://model" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
       <operation name="getNom" qname="operNS:getNom" xmlns:operNS="http://model" returnQName="retNS:getNomReturn" xmlns:retNS="http://model" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
       </operation>
       <operation name="setNom" qname="operNS:setNom" xmlns:operNS="http://model" soapAction="" >
@@ -42,7 +47,13 @@
       </operation>
       <operation name="voirUser" qname="operNS:voirUser" xmlns:operNS="http://model" soapAction="" >
       </operation>
-      <parameter name="allowedMethods" value="getPrenom setMail voirUser setNom setId getId setPrenom getNom getMail"/>
+      <operation name="addUtilisateurs" qname="operNS:addUtilisateurs" xmlns:operNS="http://model" returnQName="retNS:addUtilisateursReturn" xmlns:retNS="http://model" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:mdp" xmlns:pns="http://model" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:nom" xmlns:pns="http://model" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:prenom" xmlns:pns="http://model" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pseudo" xmlns:pns="http://model" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="addUtilisateurs getPrenom setMail voirUser setNom setId getId setPrenom addUsers getNom getMail"/>
 
   </service>
 </deployment>

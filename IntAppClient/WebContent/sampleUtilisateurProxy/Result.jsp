@@ -198,6 +198,57 @@ case 53:
         gotMethod = true;
         sampleUtilisateurProxyid.voirUser();
 break;
+case 56:
+        gotMethod = true;
+        String nom_5id=  request.getParameter("nom59");
+            java.lang.String nom_5idTemp = null;
+        if(!nom_5id.equals("")){
+         nom_5idTemp  = nom_5id;
+        }
+        String prenom_6id=  request.getParameter("prenom61");
+            java.lang.String prenom_6idTemp = null;
+        if(!prenom_6id.equals("")){
+         prenom_6idTemp  = prenom_6id;
+        }
+        String pseudo_7id=  request.getParameter("pseudo63");
+            java.lang.String pseudo_7idTemp = null;
+        if(!pseudo_7id.equals("")){
+         pseudo_7idTemp  = pseudo_7id;
+        }
+        boolean addUsers56mtemp = sampleUtilisateurProxyid.addUsers(nom_5idTemp,prenom_6idTemp,pseudo_7idTemp);
+        String tempResultreturnp57 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(addUsers56mtemp));
+        %>
+        <%= tempResultreturnp57 %>
+        <%
+break;
+case 65:
+        gotMethod = true;
+        String mdp_8id=  request.getParameter("mdp68");
+            java.lang.String mdp_8idTemp = null;
+        if(!mdp_8id.equals("")){
+         mdp_8idTemp  = mdp_8id;
+        }
+        String nom_9id=  request.getParameter("nom70");
+            java.lang.String nom_9idTemp = null;
+        if(!nom_9id.equals("")){
+         nom_9idTemp  = nom_9id;
+        }
+        String prenom_10id=  request.getParameter("prenom72");
+            java.lang.String prenom_10idTemp = null;
+        if(!prenom_10id.equals("")){
+         prenom_10idTemp  = prenom_10id;
+        }
+        String pseudo_11id=  request.getParameter("pseudo74");
+            java.lang.String pseudo_11idTemp = null;
+        if(!pseudo_11id.equals("")){
+         pseudo_11idTemp  = pseudo_11id;
+        }
+        boolean addUtilisateurs65mtemp = sampleUtilisateurProxyid.addUtilisateurs(mdp_8idTemp,nom_9idTemp,prenom_10idTemp,pseudo_11idTemp);
+        String tempResultreturnp66 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(addUtilisateurs65mtemp));
+        %>
+        <%= tempResultreturnp66 %>
+        <%
+break;
 }
 } catch (Exception e) { 
 %>
