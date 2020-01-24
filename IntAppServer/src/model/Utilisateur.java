@@ -2,6 +2,7 @@ package model;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import controleur.Connec;
@@ -12,7 +13,7 @@ public class Utilisateur {
 	private String Nom;
 	private String Prenom;
 	private String Mail;
-	//private List<Integer> Relations;
+	private ArrayList<Integer> Relations;
 	
 	
 	/*
@@ -55,15 +56,16 @@ public class Utilisateur {
 	public void setMail(String mail) {
 		Mail = mail;
 	}
-//	public List<Integer> getRelations() {
-//		return Relations;
-//	}
-//	public void setRelations(List<Integer> relations) {
-//		Relations = relations;
-//	}
+
+
 	
 	
-	
+	public ArrayList<Integer> getRelations() {
+		return Relations;
+	}
+	public void setRelations(ArrayList<Integer> relations) {
+		Relations = relations;
+	}
 	public void voirUser() throws ClassNotFoundException, SQLException {
 		Connec con = new Connec ();
 		String req = "select * from Users";
