@@ -56,6 +56,30 @@ public class UtilisateurProxy implements model.Utilisateur {
     utilisateur.setId(id);
   }
   
+  public java.lang.String getNom() throws java.rmi.RemoteException{
+    if (utilisateur == null)
+      _initUtilisateurProxy();
+    return utilisateur.getNom();
+  }
+  
+  public void setNom(java.lang.String nom) throws java.rmi.RemoteException{
+    if (utilisateur == null)
+      _initUtilisateurProxy();
+    utilisateur.setNom(nom);
+  }
+  
+  public java.lang.String getPrenom() throws java.rmi.RemoteException{
+    if (utilisateur == null)
+      _initUtilisateurProxy();
+    return utilisateur.getPrenom();
+  }
+  
+  public void setPrenom(java.lang.String prenom) throws java.rmi.RemoteException{
+    if (utilisateur == null)
+      _initUtilisateurProxy();
+    utilisateur.setPrenom(prenom);
+  }
+  
   public void setMail(java.lang.String mail) throws java.rmi.RemoteException{
     if (utilisateur == null)
       _initUtilisateurProxy();
@@ -68,28 +92,10 @@ public class UtilisateurProxy implements model.Utilisateur {
     return utilisateur.getMail();
   }
   
-  public void setPrenom(java.lang.String prenom) throws java.rmi.RemoteException{
+  public void voirUser() throws java.rmi.RemoteException{
     if (utilisateur == null)
       _initUtilisateurProxy();
-    utilisateur.setPrenom(prenom);
-  }
-  
-  public java.lang.String getPrenom() throws java.rmi.RemoteException{
-    if (utilisateur == null)
-      _initUtilisateurProxy();
-    return utilisateur.getPrenom();
-  }
-  
-  public void setNom(java.lang.String nom) throws java.rmi.RemoteException{
-    if (utilisateur == null)
-      _initUtilisateurProxy();
-    utilisateur.setNom(nom);
-  }
-  
-  public java.lang.String getNom() throws java.rmi.RemoteException{
-    if (utilisateur == null)
-      _initUtilisateurProxy();
-    return utilisateur.getNom();
+    utilisateur.voirUser();
   }
   
   

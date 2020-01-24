@@ -64,20 +64,20 @@ public class Utilisateur {
 	
 	
 	
-//	public void voirUser() throws ClassNotFoundException, SQLException {
-//		Connec con = new Connec ();
-//		String req = "select * from Users";
-//		ResultSet rslt =con.conE(req) ;
-//		if (rslt.next()) {
-//			System.out.println("ok id doit etre la ");
-//			id=rslt.getInt("id");
-//			Nom=rslt.getString("nom");
-//			System.out.println(rslt.getInt("id"));
-//			System.out.println(Nom);
-//			
-//		}
+	public void voirUser() throws ClassNotFoundException, SQLException {
+		Connec con = new Connec ();
+		String req = "select * from Users";
+		ResultSet rslt =con.conE(req) ;
+		if (rslt.next()) {
+			System.out.println("ok id doit etre la ");
+			id=rslt.getInt("id");
+			Nom=rslt.getString("nom");
+			System.out.println(rslt.getInt("id"));
+		System.out.println(Nom);
+		
+		}
 			
-//	}
+	}
 	
 
 }

@@ -24,6 +24,46 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
    <element name="setIdResponse">
     <complexType/>
    </element>
+   <element name="getNom">
+    <complexType/>
+   </element>
+   <element name="getNomResponse">
+    <complexType>
+     <sequence>
+      <element name="getNomReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setNom">
+    <complexType>
+     <sequence>
+      <element name="nom" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setNomResponse">
+    <complexType/>
+   </element>
+   <element name="getPrenom">
+    <complexType/>
+   </element>
+   <element name="getPrenomResponse">
+    <complexType>
+     <sequence>
+      <element name="getPrenomReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setPrenom">
+    <complexType>
+     <sequence>
+      <element name="prenom" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setPrenomResponse">
+    <complexType/>
+   </element>
    <element name="setMail">
     <complexType>
      <sequence>
@@ -44,45 +84,11 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      </sequence>
     </complexType>
    </element>
-   <element name="setPrenom">
-    <complexType>
-     <sequence>
-      <element name="prenom" type="xsd:string"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="setPrenomResponse">
+   <element name="voirUser">
     <complexType/>
    </element>
-   <element name="getPrenom">
+   <element name="voirUserResponse">
     <complexType/>
-   </element>
-   <element name="getPrenomResponse">
-    <complexType>
-     <sequence>
-      <element name="getPrenomReturn" type="xsd:string"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="setNom">
-    <complexType>
-     <sequence>
-      <element name="nom" type="xsd:string"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="setNomResponse">
-    <complexType/>
-   </element>
-   <element name="getNom">
-    <complexType/>
-   </element>
-   <element name="getNomResponse">
-    <complexType>
-     <sequence>
-      <element name="getNomReturn" type="xsd:string"/>
-     </sequence>
-    </complexType>
    </element>
   </schema>
  </wsdl:types>
@@ -90,6 +96,14 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
    <wsdl:message name="getMailResponse">
 
       <wsdl:part element="impl:getMailResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="voirUserRequest">
+
+      <wsdl:part element="impl:voirUser" name="parameters">
 
       </wsdl:part>
 
@@ -111,9 +125,9 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
-   <wsdl:message name="getMailRequest">
+   <wsdl:message name="voirUserResponse">
 
-      <wsdl:part element="impl:getMail" name="parameters">
+      <wsdl:part element="impl:voirUserResponse" name="parameters">
 
       </wsdl:part>
 
@@ -122,6 +136,14 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
    <wsdl:message name="getPrenomResponse">
 
       <wsdl:part element="impl:getPrenomResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getMailRequest">
+
+      <wsdl:part element="impl:getMail" name="parameters">
 
       </wsdl:part>
 
@@ -175,17 +197,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
-   <wsdl:message name="setPrenomResponse">
+   <wsdl:message name="getPrenomRequest">
 
-      <wsdl:part element="impl:setPrenomResponse" name="parameters">
+      <wsdl:part element="impl:getPrenom" name="parameters">
 
       </wsdl:part>
 
    </wsdl:message>
 
-   <wsdl:message name="getPrenomRequest">
+   <wsdl:message name="setPrenomResponse">
 
-      <wsdl:part element="impl:getPrenom" name="parameters">
+      <wsdl:part element="impl:setPrenomResponse" name="parameters">
 
       </wsdl:part>
 
@@ -241,6 +263,54 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
+      <wsdl:operation name="getNom">
+
+         <wsdl:input message="impl:getNomRequest" name="getNomRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getNomResponse" name="getNomResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setNom">
+
+         <wsdl:input message="impl:setNomRequest" name="setNomRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setNomResponse" name="setNomResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPrenom">
+
+         <wsdl:input message="impl:getPrenomRequest" name="getPrenomRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getPrenomResponse" name="getPrenomResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setPrenom">
+
+         <wsdl:input message="impl:setPrenomRequest" name="setPrenomRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setPrenomResponse" name="setPrenomResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
       <wsdl:operation name="setMail">
 
          <wsdl:input message="impl:setMailRequest" name="setMailRequest">
@@ -265,49 +335,13 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="setPrenom">
+      <wsdl:operation name="voirUser">
 
-         <wsdl:input message="impl:setPrenomRequest" name="setPrenomRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:setPrenomResponse" name="setPrenomResponse">
-
-       </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="getPrenom">
-
-         <wsdl:input message="impl:getPrenomRequest" name="getPrenomRequest">
+         <wsdl:input message="impl:voirUserRequest" name="voirUserRequest">
 
        </wsdl:input>
 
-         <wsdl:output message="impl:getPrenomResponse" name="getPrenomResponse">
-
-       </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="setNom">
-
-         <wsdl:input message="impl:setNomRequest" name="setNomRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:setNomResponse" name="setNomResponse">
-
-       </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="getNom">
-
-         <wsdl:input message="impl:getNomRequest" name="getNomRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:getNomResponse" name="getNomResponse">
+         <wsdl:output message="impl:voirUserResponse" name="voirUserResponse">
 
        </wsdl:output>
 
@@ -355,6 +389,78 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
+      <wsdl:operation name="getNom">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getNomRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getNomResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setNom">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setNomRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setNomResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPrenom">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getPrenomRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getPrenomResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setPrenom">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setPrenomRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setPrenomResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
       <wsdl:operation name="setMail">
 
          <wsdlsoap:operation soapAction=""/>
@@ -391,71 +497,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="setPrenom">
+      <wsdl:operation name="voirUser">
 
          <wsdlsoap:operation soapAction=""/>
 
-         <wsdl:input name="setPrenomRequest">
+         <wsdl:input name="voirUserRequest">
 
             <wsdlsoap:body use="literal"/>
 
          </wsdl:input>
 
-         <wsdl:output name="setPrenomResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="getPrenom">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="getPrenomRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="getPrenomResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="setNom">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="setNomRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="setNomResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="getNom">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="getNomRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="getNomResponse">
+         <wsdl:output name="voirUserResponse">
 
             <wsdlsoap:body use="literal"/>
 

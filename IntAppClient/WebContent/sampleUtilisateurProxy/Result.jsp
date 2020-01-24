@@ -60,27 +60,27 @@ if(getUtilisateur10mtemp == null){
 <TD COLSPAN="3" ALIGN="LEFT">returnp:</TD>
 <TR>
 <TD WIDTH="5%"></TD>
-<TD COLSPAN="2" ALIGN="LEFT">nom:</TD>
+<TD COLSPAN="2" ALIGN="LEFT">mail:</TD>
 <TD>
 <%
 if(getUtilisateur10mtemp != null){
-java.lang.String typenom13 = getUtilisateur10mtemp.getNom();
-        String tempResultnom13 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typenom13));
+java.lang.String typemail13 = getUtilisateur10mtemp.getMail();
+        String tempResultmail13 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typemail13));
         %>
-        <%= tempResultnom13 %>
+        <%= tempResultmail13 %>
         <%
 }%>
 </TD>
 <TR>
 <TD WIDTH="5%"></TD>
-<TD COLSPAN="2" ALIGN="LEFT">mail:</TD>
+<TD COLSPAN="2" ALIGN="LEFT">nom:</TD>
 <TD>
 <%
 if(getUtilisateur10mtemp != null){
-java.lang.String typemail15 = getUtilisateur10mtemp.getMail();
-        String tempResultmail15 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typemail15));
+java.lang.String typenom15 = getUtilisateur10mtemp.getNom();
+        String tempResultnom15 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(typenom15));
         %>
-        <%= tempResultmail15 %>
+        <%= tempResultnom15 %>
         <%
 }%>
 </TD>
@@ -127,72 +127,76 @@ case 24:
 break;
 case 29:
         gotMethod = true;
-        String mail_2id=  request.getParameter("mail32");
-            java.lang.String mail_2idTemp = null;
-        if(!mail_2id.equals("")){
-         mail_2idTemp  = mail_2id;
-        }
-        sampleUtilisateurProxyid.setMail(mail_2idTemp);
-break;
-case 34:
-        gotMethod = true;
-        java.lang.String getMail34mtemp = sampleUtilisateurProxyid.getMail();
-if(getMail34mtemp == null){
+        java.lang.String getNom29mtemp = sampleUtilisateurProxyid.getNom();
+if(getNom29mtemp == null){
 %>
-<%=getMail34mtemp %>
+<%=getNom29mtemp %>
 <%
 }else{
-        String tempResultreturnp35 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(getMail34mtemp));
+        String tempResultreturnp30 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(getNom29mtemp));
         %>
-        <%= tempResultreturnp35 %>
+        <%= tempResultreturnp30 %>
         <%
 }
 break;
+case 32:
+        gotMethod = true;
+        String nom_2id=  request.getParameter("nom35");
+            java.lang.String nom_2idTemp = null;
+        if(!nom_2id.equals("")){
+         nom_2idTemp  = nom_2id;
+        }
+        sampleUtilisateurProxyid.setNom(nom_2idTemp);
+break;
 case 37:
         gotMethod = true;
-        String prenom_3id=  request.getParameter("prenom40");
+        java.lang.String getPrenom37mtemp = sampleUtilisateurProxyid.getPrenom();
+if(getPrenom37mtemp == null){
+%>
+<%=getPrenom37mtemp %>
+<%
+}else{
+        String tempResultreturnp38 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(getPrenom37mtemp));
+        %>
+        <%= tempResultreturnp38 %>
+        <%
+}
+break;
+case 40:
+        gotMethod = true;
+        String prenom_3id=  request.getParameter("prenom43");
             java.lang.String prenom_3idTemp = null;
         if(!prenom_3id.equals("")){
          prenom_3idTemp  = prenom_3id;
         }
         sampleUtilisateurProxyid.setPrenom(prenom_3idTemp);
 break;
-case 42:
-        gotMethod = true;
-        java.lang.String getPrenom42mtemp = sampleUtilisateurProxyid.getPrenom();
-if(getPrenom42mtemp == null){
-%>
-<%=getPrenom42mtemp %>
-<%
-}else{
-        String tempResultreturnp43 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(getPrenom42mtemp));
-        %>
-        <%= tempResultreturnp43 %>
-        <%
-}
-break;
 case 45:
         gotMethod = true;
-        String nom_4id=  request.getParameter("nom48");
-            java.lang.String nom_4idTemp = null;
-        if(!nom_4id.equals("")){
-         nom_4idTemp  = nom_4id;
+        String mail_4id=  request.getParameter("mail48");
+            java.lang.String mail_4idTemp = null;
+        if(!mail_4id.equals("")){
+         mail_4idTemp  = mail_4id;
         }
-        sampleUtilisateurProxyid.setNom(nom_4idTemp);
+        sampleUtilisateurProxyid.setMail(mail_4idTemp);
 break;
 case 50:
         gotMethod = true;
-        java.lang.String getNom50mtemp = sampleUtilisateurProxyid.getNom();
-if(getNom50mtemp == null){
+        java.lang.String getMail50mtemp = sampleUtilisateurProxyid.getMail();
+if(getMail50mtemp == null){
 %>
-<%=getNom50mtemp %>
+<%=getMail50mtemp %>
 <%
 }else{
-        String tempResultreturnp51 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(getNom50mtemp));
+        String tempResultreturnp51 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(getMail50mtemp));
         %>
         <%= tempResultreturnp51 %>
         <%
 }
+break;
+case 53:
+        gotMethod = true;
+        sampleUtilisateurProxyid.voirUser();
 break;
 }
 } catch (Exception e) { 

@@ -25,22 +25,24 @@
       <operation name="setId" qname="operNS:setId" xmlns:operNS="http://model" soapAction="" >
         <parameter qname="pns:id" xmlns:pns="http://model" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
+      <operation name="getNom" qname="operNS:getNom" xmlns:operNS="http://model" returnQName="retNS:getNomReturn" xmlns:retNS="http://model" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="setNom" qname="operNS:setNom" xmlns:operNS="http://model" soapAction="" >
+        <parameter qname="pns:nom" xmlns:pns="http://model" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getPrenom" qname="operNS:getPrenom" xmlns:operNS="http://model" returnQName="retNS:getPrenomReturn" xmlns:retNS="http://model" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="setPrenom" qname="operNS:setPrenom" xmlns:operNS="http://model" soapAction="" >
+        <parameter qname="pns:prenom" xmlns:pns="http://model" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
       <operation name="setMail" qname="operNS:setMail" xmlns:operNS="http://model" soapAction="" >
         <parameter qname="pns:mail" xmlns:pns="http://model" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
       <operation name="getMail" qname="operNS:getMail" xmlns:operNS="http://model" returnQName="retNS:getMailReturn" xmlns:retNS="http://model" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
       </operation>
-      <operation name="setPrenom" qname="operNS:setPrenom" xmlns:operNS="http://model" soapAction="" >
-        <parameter qname="pns:prenom" xmlns:pns="http://model" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      <operation name="voirUser" qname="operNS:voirUser" xmlns:operNS="http://model" soapAction="" >
       </operation>
-      <operation name="getPrenom" qname="operNS:getPrenom" xmlns:operNS="http://model" returnQName="retNS:getPrenomReturn" xmlns:retNS="http://model" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
-      </operation>
-      <operation name="setNom" qname="operNS:setNom" xmlns:operNS="http://model" soapAction="" >
-        <parameter qname="pns:nom" xmlns:pns="http://model" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-      </operation>
-      <operation name="getNom" qname="operNS:getNom" xmlns:operNS="http://model" returnQName="retNS:getNomReturn" xmlns:retNS="http://model" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
-      </operation>
-      <parameter name="allowedMethods" value="setMail getPrenom setNom setId getId setPrenom getNom getMail"/>
+      <parameter name="allowedMethods" value="getPrenom setMail voirUser setNom setId getId setPrenom getNom getMail"/>
 
   </service>
 </deployment>

@@ -17,7 +17,9 @@ public class Connec {
 		try {
 			// bd fredo
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			 con = DriverManager.getConnection("jdbc:mysql://phpmyadmin.alwaysdata.com:3306","jhon","webservice2020");
+			 con = DriverManager.getConnection("jdbc:mysql://mysql-jhon.alwaysdata.net:3306/jhon_bdd?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC","jhon","webservice2020");
+					 //("jdbc:mysql://phpmyadmin.alwaysdata.com:3306","jhon","webservice2020");
+			 //("jdbc:mysql://mysql-cwi.alwaysdata.net:3306/cwi_appli?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC","cwi_admin","admincwi");
 			//con = DriverManager.getConnection(urlBD); https://phpmyadmin.alwaysdata.com Port : 3306
 			Statement stmt = con.createStatement();
 		    stmt.executeUpdate(req);
@@ -40,10 +42,10 @@ public class Connec {
 		ResultSet rslt2 = null;
 		Connection con = null;
 		
-		
+		String user = "jhon";
 		   
 					Class.forName("com.mysql.cj.jdbc.Driver");
-					con = DriverManager.getConnection("jdbc:mysql://phpmyadmin.alwaysdata.com:3306","jhon","webservice2020");
+					con = DriverManager.getConnection("jdbc:mysql://mysql-jhon.alwaysdata.net:3306/jhon_bdd?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC","jhon","webservice2020");
 			//con = DriverManager.getConnection(urlBD);
 			rslt2 = con.createStatement().executeQuery(req);
 			/* Ici, nous placerons nos requêtes vers la BDD */

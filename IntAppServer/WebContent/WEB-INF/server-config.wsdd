@@ -7,8 +7,8 @@
   <ns1:parameter name="dotNetSoapEncFix" value="true"/>
   <ns1:parameter name="enableNamespacePrefixOptimization" value="false"/>
   <ns1:parameter name="sendXMLDeclaration" value="true"/>
-  <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
   <ns1:parameter name="sendXsiTypes" value="true"/>
+  <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
   <ns1:requestFlow>
    <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
     <ns1:parameter name="scope" value="session"/>
@@ -37,11 +37,11 @@
    <ns2:parameter qname="ns1:S" type="xsd:string"/>
   </ns2:operation>
   <ns1:parameter name="allowedMethods" value="hello"/>
-  <ns1:parameter name="wsdlPortType" value="Test"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
-  <ns1:parameter name="schemaQualified" value="http://model"/>
-  <ns1:parameter name="wsdlServicePort" value="Test"/>
+  <ns1:parameter name="wsdlPortType" value="Test"/>
   <ns1:parameter name="className" value="model.Test"/>
+  <ns1:parameter name="wsdlServicePort" value="Test"/>
+  <ns1:parameter name="schemaQualified" value="http://model"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://model"/>
   <ns1:parameter name="wsdlServiceElement" value="TestService"/>
  </ns1:service>
@@ -50,19 +50,20 @@
   <ns1:operation name="setId" qname="ns3:setId" soapAction="" xmlns:ns3="http://model">
    <ns1:parameter qname="ns3:id" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
   </ns1:operation>
-  <ns1:operation name="setMail" qname="ns4:setMail" soapAction="" xmlns:ns4="http://model">
-   <ns1:parameter qname="ns4:mail" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="getNom" qname="ns4:getNom" returnQName="ns4:getNomReturn" returnType="xsd:string" soapAction="" xmlns:ns4="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="setNom" qname="ns5:setNom" soapAction="" xmlns:ns5="http://model">
+   <ns1:parameter qname="ns5:nom" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
   </ns1:operation>
-  <ns1:operation name="getMail" qname="ns5:getMail" returnQName="ns5:getMailReturn" returnType="xsd:string" soapAction="" xmlns:ns5="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
-  <ns1:operation name="setPrenom" qname="ns6:setPrenom" soapAction="" xmlns:ns6="http://model">
-   <ns1:parameter qname="ns6:prenom" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="getPrenom" qname="ns6:getPrenom" returnQName="ns6:getPrenomReturn" returnType="xsd:string" soapAction="" xmlns:ns6="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="setPrenom" qname="ns7:setPrenom" soapAction="" xmlns:ns7="http://model">
+   <ns1:parameter qname="ns7:prenom" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
   </ns1:operation>
-  <ns1:operation name="getPrenom" qname="ns7:getPrenom" returnQName="ns7:getPrenomReturn" returnType="xsd:string" soapAction="" xmlns:ns7="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
-  <ns1:operation name="setNom" qname="ns8:setNom" soapAction="" xmlns:ns8="http://model">
-   <ns1:parameter qname="ns8:nom" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="setMail" qname="ns8:setMail" soapAction="" xmlns:ns8="http://model">
+   <ns1:parameter qname="ns8:mail" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
   </ns1:operation>
-  <ns1:operation name="getNom" qname="ns9:getNom" returnQName="ns9:getNomReturn" returnType="xsd:string" soapAction="" xmlns:ns9="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
-  <ns1:parameter name="allowedMethods" value="setMail getPrenom setNom setId getId setPrenom getNom getMail"/>
+  <ns1:operation name="getMail" qname="ns9:getMail" returnQName="ns9:getMailReturn" returnType="xsd:string" soapAction="" xmlns:ns9="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="voirUser" qname="ns10:voirUser" soapAction="" xmlns:ns10="http://model"/>
+  <ns1:parameter name="allowedMethods" value="getPrenom setMail voirUser setNom setId getId setPrenom getNom getMail"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="Utilisateur"/>
   <ns1:parameter name="className" value="model.Utilisateur"/>
