@@ -26,9 +26,7 @@ public class Utilisateur {
 	 * 
 	 * return false; }
 	 */
-	
-	
-	
+		
 	
 	
 	// getters and setters 
@@ -56,8 +54,6 @@ public class Utilisateur {
 	public void setMail(String mail) {
 		Mail = mail;
 	}
-
-
 	
 	
 	public ArrayList<Integer> getRelations() {
