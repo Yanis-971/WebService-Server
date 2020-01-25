@@ -100,26 +100,27 @@ public class Utilisateur {
 		
 	}
 	
-public boolean addUsers (String nom , String prenom , String pseudo  ) {
-		
-		Connec con = new Connec();
-		String req1 = "INSERT INTO Users (  nom , prenom , pseudo ) values ('"+nom+"','"+prenom+"','"+pseudo+"')";
-		System.out.println(req1);
-		
-		
-			try {
-				con.conU(req1);
-				System.out.println("Utilisateur ajouté");
+	public boolean connecUsers(String pseudo,String mdp) throws ClassNotFoundException, SQLException {
+	       Connec con2 = new Connec();
+	       
+	        //select * from JOUEURS where pseudo = '' and mdp ='';
+			String req2 = "select * from Users where pseudo = '" +pseudo+ "'and mdp='"+mdp+"'"  ;
+			System.out.println(req2);
+			
+			if (con2.conE(req2).next()) {
+				
+				System.out.println("ok vous etes co");
 				return true;
-			} catch (ClassNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			}
+			else {
+				System.out.println("identifiant incorrect");
+				return false;
+			
 			}
 			
-        return false;
-		
-		
 	}
+	
+	
 	
 	
 
