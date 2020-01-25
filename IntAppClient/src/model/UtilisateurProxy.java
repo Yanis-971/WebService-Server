@@ -56,18 +56,6 @@ public class UtilisateurProxy implements model.Utilisateur {
     utilisateur.setId(id);
   }
   
-  public java.lang.String getNom() throws java.rmi.RemoteException{
-    if (utilisateur == null)
-      _initUtilisateurProxy();
-    return utilisateur.getNom();
-  }
-  
-  public void setNom(java.lang.String nom) throws java.rmi.RemoteException{
-    if (utilisateur == null)
-      _initUtilisateurProxy();
-    utilisateur.setNom(nom);
-  }
-  
   public java.lang.String getPrenom() throws java.rmi.RemoteException{
     if (utilisateur == null)
       _initUtilisateurProxy();
@@ -86,22 +74,34 @@ public class UtilisateurProxy implements model.Utilisateur {
     utilisateur.setMail(mail);
   }
   
-  public java.lang.String getMail() throws java.rmi.RemoteException{
-    if (utilisateur == null)
-      _initUtilisateurProxy();
-    return utilisateur.getMail();
-  }
-  
   public void voirUser() throws java.rmi.RemoteException{
     if (utilisateur == null)
       _initUtilisateurProxy();
     utilisateur.voirUser();
   }
   
-  public boolean addUsers(java.lang.String nom, java.lang.String prenom, java.lang.String pseudo) throws java.rmi.RemoteException{
+  public java.lang.String getMail() throws java.rmi.RemoteException{
     if (utilisateur == null)
       _initUtilisateurProxy();
-    return utilisateur.addUsers(nom, prenom, pseudo);
+    return utilisateur.getMail();
+  }
+  
+  public java.lang.String getNom() throws java.rmi.RemoteException{
+    if (utilisateur == null)
+      _initUtilisateurProxy();
+    return utilisateur.getNom();
+  }
+  
+  public void setNom(java.lang.String nom) throws java.rmi.RemoteException{
+    if (utilisateur == null)
+      _initUtilisateurProxy();
+    utilisateur.setNom(nom);
+  }
+  
+  public boolean connecUsers(java.lang.String pseudo, java.lang.String mdp) throws java.rmi.RemoteException{
+    if (utilisateur == null)
+      _initUtilisateurProxy();
+    return utilisateur.connecUsers(pseudo, mdp);
   }
   
   public boolean addUtilisateurs(java.lang.String mdp, java.lang.String nom, java.lang.String prenom, java.lang.String pseudo) throws java.rmi.RemoteException{
