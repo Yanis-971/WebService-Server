@@ -56,22 +56,28 @@ public class UtilisateurProxy implements model.Utilisateur {
     utilisateur.setId(id);
   }
   
+  public java.lang.String getNom() throws java.rmi.RemoteException{
+    if (utilisateur == null)
+      _initUtilisateurProxy();
+    return utilisateur.getNom();
+  }
+  
   public java.lang.String getPrenom() throws java.rmi.RemoteException{
     if (utilisateur == null)
       _initUtilisateurProxy();
     return utilisateur.getPrenom();
   }
   
+  public void setNom(java.lang.String nom) throws java.rmi.RemoteException{
+    if (utilisateur == null)
+      _initUtilisateurProxy();
+    utilisateur.setNom(nom);
+  }
+  
   public void setPrenom(java.lang.String prenom) throws java.rmi.RemoteException{
     if (utilisateur == null)
       _initUtilisateurProxy();
     utilisateur.setPrenom(prenom);
-  }
-  
-  public void setMail(java.lang.String mail) throws java.rmi.RemoteException{
-    if (utilisateur == null)
-      _initUtilisateurProxy();
-    utilisateur.setMail(mail);
   }
   
   public void voirUser() throws java.rmi.RemoteException{
@@ -86,16 +92,16 @@ public class UtilisateurProxy implements model.Utilisateur {
     return utilisateur.getMail();
   }
   
-  public java.lang.String getNom() throws java.rmi.RemoteException{
+  public void setMail(java.lang.String mail) throws java.rmi.RemoteException{
     if (utilisateur == null)
       _initUtilisateurProxy();
-    return utilisateur.getNom();
+    utilisateur.setMail(mail);
   }
   
-  public void setNom(java.lang.String nom) throws java.rmi.RemoteException{
+  public boolean addUtilisateurs(java.lang.String mdp, java.lang.String nom, java.lang.String prenom, java.lang.String pseudo) throws java.rmi.RemoteException{
     if (utilisateur == null)
       _initUtilisateurProxy();
-    utilisateur.setNom(nom);
+    return utilisateur.addUtilisateurs(mdp, nom, prenom, pseudo);
   }
   
   public boolean connecUsers(java.lang.String pseudo, java.lang.String mdp) throws java.rmi.RemoteException{
@@ -104,10 +110,16 @@ public class UtilisateurProxy implements model.Utilisateur {
     return utilisateur.connecUsers(pseudo, mdp);
   }
   
-  public boolean addUtilisateurs(java.lang.String mdp, java.lang.String nom, java.lang.String prenom, java.lang.String pseudo) throws java.rmi.RemoteException{
+  public boolean addFriend(java.lang.String pseudo) throws java.rmi.RemoteException{
     if (utilisateur == null)
       _initUtilisateurProxy();
-    return utilisateur.addUtilisateurs(mdp, nom, prenom, pseudo);
+    return utilisateur.addFriend(pseudo);
+  }
+  
+  public boolean liaisonFriends(int idfriend) throws java.rmi.RemoteException{
+    if (utilisateur == null)
+      _initUtilisateurProxy();
+    return utilisateur.liaisonFriends(idfriend);
   }
   
   

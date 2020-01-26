@@ -106,9 +106,12 @@ public class Utilisateur {
 	        //select * from JOUEURS where pseudo = '' and mdp ='';
 			String req2 = "select * from Users where pseudo = '" +pseudo+ "'and mdp='"+mdp+"'"  ;
 			System.out.println(req2);
-			
-			if (con2.conE(req2).next()) {
-				
+			int idbd;
+			ResultSet rslt = con2.conE(req2);
+			if (rslt.next()) {
+				idbd = rslt.getInt("id");
+				System.out.println("Voci l'id de l'utilisateur conecté " + idbd);
+				this.id=idbd;
 				System.out.println("ok vous etes co");
 				return true;
 			}
@@ -121,9 +124,39 @@ public class Utilisateur {
 	}
 	
 	
+	public boolean liaisonFriends(int idfriend) throws ClassNotFoundException {
+		Connec con4 = new Connec();
+		String req2 = "INSERT INTO Friends (id_friend1,id_friend2) values ('"+this.id+"','"+idfriend+"')";
+		System.out.println(req2);
+		con4.conU(req2);
+		 return true; 
+		
+	}
+	
+	public boolean addFriend(String pseudo) throws ClassNotFoundException, SQLException {
+	    Connec con2 = new Connec();
+
+		String req2 = "select * from Users where pseudo = '" +pseudo+"'";
+		System.out.println(req2);
+		ResultSet rslt =con2.conE(req2) ;
+		
+		if (rslt.next()) {
+			System.out.println("ami trouvé");
+			int idfriend = rslt.getInt("id");
+			System.out.println(idfriend);
+			liaisonFriends(idfriend);
+			return true;
+		}
+		else {
+			System.out.println("identifiant incorrect");
+			return false;
+		
+		}
+	}
 	
 	
 	
+
 	
 	
 
