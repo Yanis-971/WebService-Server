@@ -122,5 +122,17 @@ public class UtilisateurProxy implements model.Utilisateur {
     return utilisateur.liaisonFriends(idfriend);
   }
   
+  public boolean sendmessage(java.lang.String message, int idfriends) throws java.rmi.RemoteException{
+    if (utilisateur == null)
+      _initUtilisateurProxy();
+    return utilisateur.sendmessage(message, idfriends);
+  }
+  
+  public boolean verifriends(int idFriends) throws java.rmi.RemoteException{
+    if (utilisateur == null)
+      _initUtilisateurProxy();
+    return utilisateur.verifriends(idFriends);
+  }
+  
   
 }

@@ -21,6 +21,8 @@
 <LI><A HREF="Input.jsp?method=67" TARGET="inputs"> connecUsers(java.lang.String,java.lang.String)</A></LI>
 <LI><A HREF="Input.jsp?method=74" TARGET="inputs"> addFriend(java.lang.String)</A></LI>
 <LI><A HREF="Input.jsp?method=79" TARGET="inputs"> liaisonFriends(int)</A></LI>
+<LI><A HREF="Input.jsp?method=84" TARGET="inputs"> sendmessage(java.lang.String,int)</A></LI>
+<LI><A HREF="Input.jsp?method=91" TARGET="inputs"> verifriends(int)</A></LI>
 </UL>
 </BODY>
 </HTML>

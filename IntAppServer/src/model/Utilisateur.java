@@ -1,5 +1,6 @@
 package model;
 
+import javax.jws.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -7,9 +8,10 @@ import java.util.List;
 
 import controleur.Connec;
 
+
 public class Utilisateur {
 	
-	private int id;
+	private int id=1;
 	private String Nom;
 	private String Prenom;
 	private String Mail;
@@ -126,12 +128,47 @@ public class Utilisateur {
 	
 	public boolean liaisonFriends(int idfriend) throws ClassNotFoundException {
 		Connec con4 = new Connec();
-		String req2 = "INSERT INTO Friends (id_friend1,id_friend2) values ('"+this.id+"','"+idfriend+"')";
-		System.out.println(req2);
-		con4.conU(req2);
-		 return true; 
+		String req = "INSERT INTO Friends (id_friend1,id_friend2) values ('"+this.id+"','"+idfriend+"')";
+		System.out.println(req);
+		try { 
+			con4.conU(req);
+			System.out.println("ami jouté");
+			return true;
+		}
+		catch(ClassNotFoundException e) {
+			System.out.println("echec ajout amis");
+			e.printStackTrace();
+		}
+		 
+		 return false;
 		
 	}
+	
+	
+	public boolean verifriends(int idFriends) {
+		//Fonction qui retourne faux si l'ami à déjà été ajouté
+		Connec con2 = new Connec();
+		String req2 = "select * from Friends where id_friend1 = '" +this.id+ "'and id_friend2='" +idFriends+"'"  ;
+		
+		try {
+			if (con2.conE(req2).next()) {
+				System.out.println("Vous avez déjà ajouté cette ami");
+				return false;
+			}
+			else {
+				System.out.println("pas encore d'ami à ce nom");
+				return true;
+			}
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
+	
 	
 	public boolean addFriend(String pseudo) throws ClassNotFoundException, SQLException {
 	    Connec con2 = new Connec();
@@ -139,11 +176,13 @@ public class Utilisateur {
 		String req2 = "select * from Users where pseudo = '" +pseudo+"'";
 		System.out.println(req2);
 		ResultSet rslt =con2.conE(req2) ;
-		
+		boolean verif = false;
 		if (rslt.next()) {
 			System.out.println("ami trouvé");
 			int idfriend = rslt.getInt("id");
+			verif =verifriends(idfriend);
 			System.out.println(idfriend);
+			if (verif)
 			liaisonFriends(idfriend);
 			return true;
 		}
@@ -155,7 +194,48 @@ public class Utilisateur {
 	}
 	
 	
-	
+     public boolean sendmessage (String message , int idfriends) {
+    	 Connec con = new Connec();
+    	 String req ="INSERT INTO Privatemessages (authorid , receiverid , message ,  date ) values ('"+this.id+"', '"+idfriends+"','"+message+"',NULL ) ";
+    	 System.out.println(req);
+    	 
+    	 try {
+			con.conU(req);
+			System.out.println("Votre message a été envoyé");
+			return true;
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			System.out.println("echec envoi du message");
+			e.printStackTrace();
+			
+		}
+    	 return false;
+     }
+
+
+//     public ArrayList<Message> liremessage(int idFriends) throws ClassNotFoundException, SQLException {
+//    	 Connec con2 = new Connec();
+//    	 ArrayList<Message> lmessage= new ArrayList<Message>();
+//    	 String msgtmp; int idtmp;
+//    	 int i=1;
+//    	 String req = "select * from Privatemessages where (authorid = '" +this.id+ "'and receiverid='" +idFriends+"') or (authorid='"+idFriends+"' and receiverid= '"+this.id+"')";
+//    	 System.out.println(req);
+//    	 ResultSet rslt =con2.conE(req) ;
+//    	 if (rslt.next()) {
+//    		 idtmp = rslt.getInt("authorid");
+//    		 msgtmp = rslt.getString("message");
+//    		 
+//    		 Message m = new Message (idtmp,msgtmp);
+//    		 
+//    		 lmessage.add(m);
+//    		
+//    	 }
+//    	 
+// 
+//		return lmessage;
+//    	 
+//     }
+//	
 
 	
 	

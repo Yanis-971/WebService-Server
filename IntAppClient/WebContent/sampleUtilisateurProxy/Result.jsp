@@ -267,6 +267,31 @@ case 79:
         <%= tempResultreturnp80 %>
         <%
 break;
+case 84:
+        gotMethod = true;
+        String message_13id=  request.getParameter("message87");
+            java.lang.String message_13idTemp = null;
+        if(!message_13id.equals("")){
+         message_13idTemp  = message_13id;
+        }
+        String idfriends_14id=  request.getParameter("idfriends89");
+        int idfriends_14idTemp  = Integer.parseInt(idfriends_14id);
+        boolean sendmessage84mtemp = sampleUtilisateurProxyid.sendmessage(message_13idTemp,idfriends_14idTemp);
+        String tempResultreturnp85 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(sendmessage84mtemp));
+        %>
+        <%= tempResultreturnp85 %>
+        <%
+break;
+case 91:
+        gotMethod = true;
+        String idFriends_15id=  request.getParameter("idFriends94");
+        int idFriends_15idTemp  = Integer.parseInt(idFriends_15id);
+        boolean verifriends91mtemp = sampleUtilisateurProxyid.verifriends(idFriends_15idTemp);
+        String tempResultreturnp92 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(verifriends91mtemp));
+        %>
+        <%= tempResultreturnp92 %>
+        <%
+break;
 }
 } catch (Exception e) { 
 %>

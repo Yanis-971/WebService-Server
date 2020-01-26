@@ -28,14 +28,36 @@
   <ns1:parameter name="className" value="org.apache.axis.utils.Admin"/>
   <ns1:namespace>http://xml.apache.org/axis/wsdd/</ns1:namespace>
  </ns1:service>
+ <ns1:service name="Message" provider="java:RPC" style="wrapped" use="literal">
+  <ns2:operation name="getId" qname="ns1:getId" returnQName="ns1:getIdReturn" returnType="xsd:int" soapAction="" xmlns:ns1="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://xml.apache.org/axis/wsdd/"/>
+  <ns1:operation name="setDate" qname="ns2:setDate" soapAction="" xmlns:ns2="http://model">
+   <ns1:parameter qname="ns2:date" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="getDate" qname="ns3:getDate" returnQName="ns3:getDateReturn" returnType="xsd:string" soapAction="" xmlns:ns3="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="setId" qname="ns4:setId" soapAction="" xmlns:ns4="http://model">
+   <ns1:parameter qname="ns4:id" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="getContenu" qname="ns5:getContenu" returnQName="ns5:getContenuReturn" returnType="xsd:string" soapAction="" xmlns:ns5="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="setContenu" qname="ns6:setContenu" soapAction="" xmlns:ns6="http://model">
+   <ns1:parameter qname="ns6:contenu" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="getContenu setDate setId getId getDate setContenu"/>
+  <ns1:parameter name="wsdlPortType" value="Message"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="schemaQualified" value="http://model"/>
+  <ns1:parameter name="wsdlServicePort" value="Message"/>
+  <ns1:parameter name="className" value="model.Message"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://model"/>
+  <ns1:parameter name="wsdlServiceElement" value="MessageService"/>
+ </ns1:service>
  <ns1:service name="Version" provider="java:RPC">
   <ns1:parameter name="allowedMethods" value="getVersion"/>
   <ns1:parameter name="className" value="org.apache.axis.Version"/>
  </ns1:service>
  <ns1:service name="Test" provider="java:RPC" style="wrapped" use="literal">
-  <ns2:operation name="hello" qname="ns1:hello" returnQName="ns1:helloReturn" returnType="xsd:string" soapAction="" xmlns:ns1="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://xml.apache.org/axis/wsdd/">
-   <ns2:parameter qname="ns1:S" type="xsd:string"/>
-  </ns2:operation>
+  <ns1:operation name="hello" qname="ns7:hello" returnQName="ns7:helloReturn" returnType="xsd:string" soapAction="" xmlns:ns7="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns7:S" type="xsd:string"/>
+  </ns1:operation>
   <ns1:parameter name="allowedMethods" value="hello"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="Test"/>
@@ -46,40 +68,47 @@
   <ns1:parameter name="wsdlServiceElement" value="TestService"/>
  </ns1:service>
  <ns1:service name="Utilisateur" provider="java:RPC" style="wrapped" use="literal">
-  <ns1:operation name="getId" qname="ns2:getId" returnQName="ns2:getIdReturn" returnType="xsd:int" soapAction="" xmlns:ns2="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
-  <ns1:operation name="setId" qname="ns3:setId" soapAction="" xmlns:ns3="http://model">
-   <ns1:parameter qname="ns3:id" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="getId" qname="ns8:getId" returnQName="ns8:getIdReturn" returnType="xsd:int" soapAction="" xmlns:ns8="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="setId" qname="ns9:setId" soapAction="" xmlns:ns9="http://model">
+   <ns1:parameter qname="ns9:id" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
   </ns1:operation>
-  <ns1:operation name="getNom" qname="ns4:getNom" returnQName="ns4:getNomReturn" returnType="xsd:string" soapAction="" xmlns:ns4="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
-  <ns1:operation name="getPrenom" qname="ns5:getPrenom" returnQName="ns5:getPrenomReturn" returnType="xsd:string" soapAction="" xmlns:ns5="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
-  <ns1:operation name="setNom" qname="ns6:setNom" soapAction="" xmlns:ns6="http://model">
-   <ns1:parameter qname="ns6:nom" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="liaisonFriends" qname="ns10:liaisonFriends" returnQName="ns10:liaisonFriendsReturn" returnType="xsd:boolean" soapAction="" xmlns:ns10="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns10:idfriend" type="xsd:int"/>
   </ns1:operation>
-  <ns1:operation name="setPrenom" qname="ns7:setPrenom" soapAction="" xmlns:ns7="http://model">
-   <ns1:parameter qname="ns7:prenom" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
-  </ns1:operation>
-  <ns1:operation name="voirUser" qname="ns8:voirUser" soapAction="" xmlns:ns8="http://model"/>
-  <ns1:operation name="getMail" qname="ns9:getMail" returnQName="ns9:getMailReturn" returnType="xsd:string" soapAction="" xmlns:ns9="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
-  <ns1:operation name="setMail" qname="ns10:setMail" soapAction="" xmlns:ns10="http://model">
-   <ns1:parameter qname="ns10:mail" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
-  </ns1:operation>
-  <ns1:operation name="addUtilisateurs" qname="ns11:addUtilisateurs" returnQName="ns11:addUtilisateursReturn" returnType="xsd:boolean" soapAction="" xmlns:ns11="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-   <ns1:parameter qname="ns11:mdp" type="xsd:string"/>
-   <ns1:parameter qname="ns11:nom" type="xsd:string"/>
-   <ns1:parameter qname="ns11:prenom" type="xsd:string"/>
+  <ns1:operation name="addFriend" qname="ns11:addFriend" returnQName="ns11:addFriendReturn" returnType="xsd:boolean" soapAction="" xmlns:ns11="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
    <ns1:parameter qname="ns11:pseudo" type="xsd:string"/>
   </ns1:operation>
-  <ns1:operation name="connecUsers" qname="ns12:connecUsers" returnQName="ns12:connecUsersReturn" returnType="xsd:boolean" soapAction="" xmlns:ns12="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-   <ns1:parameter qname="ns12:pseudo" type="xsd:string"/>
-   <ns1:parameter qname="ns12:mdp" type="xsd:string"/>
+  <ns1:operation name="verifriends" qname="ns12:verifriends" returnQName="ns12:verifriendsReturn" returnType="xsd:boolean" soapAction="" xmlns:ns12="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns12:idFriends" type="xsd:int"/>
   </ns1:operation>
-  <ns1:operation name="addFriend" qname="ns13:addFriend" returnQName="ns13:addFriendReturn" returnType="xsd:boolean" soapAction="" xmlns:ns13="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ns1:operation name="connecUsers" qname="ns13:connecUsers" returnQName="ns13:connecUsersReturn" returnType="xsd:boolean" soapAction="" xmlns:ns13="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
    <ns1:parameter qname="ns13:pseudo" type="xsd:string"/>
+   <ns1:parameter qname="ns13:mdp" type="xsd:string"/>
   </ns1:operation>
-  <ns1:operation name="liaisonFriends" qname="ns14:liaisonFriends" returnQName="ns14:liaisonFriendsReturn" returnType="xsd:boolean" soapAction="" xmlns:ns14="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-   <ns1:parameter qname="ns14:idfriend" type="xsd:int"/>
+  <ns1:operation name="addUtilisateurs" qname="ns14:addUtilisateurs" returnQName="ns14:addUtilisateursReturn" returnType="xsd:boolean" soapAction="" xmlns:ns14="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns14:mdp" type="xsd:string"/>
+   <ns1:parameter qname="ns14:nom" type="xsd:string"/>
+   <ns1:parameter qname="ns14:prenom" type="xsd:string"/>
+   <ns1:parameter qname="ns14:pseudo" type="xsd:string"/>
   </ns1:operation>
-  <ns1:parameter name="allowedMethods" value="addUtilisateurs addFriend liaisonFriends connecUsers setNom getId setPrenom getMail getPrenom setMail voirUser setId getNom"/>
+  <ns1:operation name="sendmessage" qname="ns15:sendmessage" returnQName="ns15:sendmessageReturn" returnType="xsd:boolean" soapAction="" xmlns:ns15="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns15:message" type="xsd:string"/>
+   <ns1:parameter qname="ns15:idfriends" type="xsd:int"/>
+  </ns1:operation>
+  <ns1:operation name="voirUser" qname="ns16:voirUser" soapAction="" xmlns:ns16="http://model"/>
+  <ns1:operation name="getNom" qname="ns17:getNom" returnQName="ns17:getNomReturn" returnType="xsd:string" soapAction="" xmlns:ns17="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="setNom" qname="ns18:setNom" soapAction="" xmlns:ns18="http://model">
+   <ns1:parameter qname="ns18:nom" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="getPrenom" qname="ns19:getPrenom" returnQName="ns19:getPrenomReturn" returnType="xsd:string" soapAction="" xmlns:ns19="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="setPrenom" qname="ns20:setPrenom" soapAction="" xmlns:ns20="http://model">
+   <ns1:parameter qname="ns20:prenom" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="getMail" qname="ns21:getMail" returnQName="ns21:getMailReturn" returnType="xsd:string" soapAction="" xmlns:ns21="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="setMail" qname="ns22:setMail" soapAction="" xmlns:ns22="http://model">
+   <ns1:parameter qname="ns22:mail" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="addUtilisateurs sendmessage liaisonFriends addFriend connecUsers setNom getId setPrenom getMail getPrenom setMail voirUser setId verifriends getNom"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="Utilisateur"/>
   <ns1:parameter name="className" value="model.Utilisateur"/>
