@@ -38,18 +38,13 @@ public class Connexion extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
 		String pseudo = request.getParameter("pseudo");
 		String pswd = request.getParameter("pswd");
-		
-		boolean connect;
-		
+		boolean connection;
 		Utilisateur service = new UtilisateurProxy();
-		connect = service.connecUsers(pseudo, pswd);
-		if (connect) 
-			 response.sendRedirect("/IntAppClient/home.jsp");
-	   else 
-		   doGet(request, response);
+		connection=service.connecUsers(pseudo, pswd);
+		
+		doGet(request, response);
 	}
 
 }
