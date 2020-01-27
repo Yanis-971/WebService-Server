@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.Utilisateur;
+import model.UtilisateurProxy;
+
 /**
  * Servlet implementation class Inscription
  */
@@ -28,7 +31,8 @@ public class Inscription extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		
+		this.getServletContext().getRequestDispatcher("/join.jsp").forward(request, response);
+
 	}
 
 	/**
@@ -36,7 +40,19 @@ public class Inscription extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		String nom = request.getParameter("nom");
+		String prenom = request.getParameter("prenom");
+		String pseudo = request.getParameter("pseudo");
+		String pswd = request.getParameter("pswd");
+		
+		boolean inscrip;
+		
+		Utilisateur service = new UtilisateurProxy();
+		inscrip = service.addUtilisateurs(pswd, nom, prenom, pseudo);
+		if (inscrip) 
+			 response.sendRedirect("/IntAppClient/home.jsp");
+	   else 
+		   doGet(request, response);
 	}
 
 }
