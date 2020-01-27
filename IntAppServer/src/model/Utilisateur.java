@@ -1,6 +1,5 @@
 package model;
 
-import javax.jws.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -213,29 +212,31 @@ public class Utilisateur {
      }
 
 
-//     public ArrayList<Message> liremessage(int idFriends) throws ClassNotFoundException, SQLException {
-//    	 Connec con2 = new Connec();
-//    	 ArrayList<Message> lmessage= new ArrayList<Message>();
-//    	 String msgtmp; int idtmp;
-//    	 int i=1;
-//    	 String req = "select * from Privatemessages where (authorid = '" +this.id+ "'and receiverid='" +idFriends+"') or (authorid='"+idFriends+"' and receiverid= '"+this.id+"')";
-//    	 System.out.println(req);
-//    	 ResultSet rslt =con2.conE(req) ;
-//    	 if (rslt.next()) {
-//    		 idtmp = rslt.getInt("authorid");
-//    		 msgtmp = rslt.getString("message");
-//    		 
-//    		 Message m = new Message (idtmp,msgtmp);
-//    		 
-//    		 lmessage.add(m);
-//    		
-//    	 }
-//    	 
-// 
-//		return lmessage;
-//    	 
-//     }
-//	
+     public Message[] liremessage(int idFriends) throws ClassNotFoundException, SQLException {
+    	 Message [] buff = new Message[500] ;
+    	 
+    	 Connec con2 = new Connec();
+    	
+    	 String msgtmp; int idtmp;
+    	 
+    	 int i = 0;
+    	 
+    	 String req = "select * from Privatemessages where (authorid = '" +this.id+ "'and receiverid='" +idFriends+"') or (authorid='"+idFriends+"' and receiverid= '"+this.id+"')";
+    	 System.out.println(req);
+    	 ResultSet rslt =con2.conE(req) ;
+    	 while (rslt.next()) {
+    		 idtmp = rslt.getInt("authorid");
+    		 msgtmp = rslt.getString("message");
+    		 buff[i] = new Message (idtmp,msgtmp);
+    		 i++;
+    	 }
+    	 
+    	 for (int j = 0; j < buff.length; j++) {
+			System.out.println(buff[j].contenu);
+		}
+		return buff; 
+     }
+	
 
 	
 	
