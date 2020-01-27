@@ -13,17 +13,12 @@
       <operation xmlns:operNS="http://model" name="setId" qname="operNS:setId" soapAction="">
         <parameter xmlns:pns="http://model" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:int"/>
       </operation>
-      <operation xmlns:operNS="http://model" name="setMail" qname="operNS:setMail" soapAction="">
-        <parameter xmlns:pns="http://model" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:mail" type="tns:string"/>
-      </operation>
       <operation xmlns:operNS="http://model" name="voirUser" qname="operNS:voirUser" soapAction="">
       </operation>
       <operation xmlns:operNS="http://model" xmlns:retNS="http://model" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getNom" qname="operNS:getNom" returnQName="retNS:getNomReturn" returnType="rtns:string" soapAction="">
       </operation>
       <operation xmlns:operNS="http://model" name="setPrenom" qname="operNS:setPrenom" soapAction="">
         <parameter xmlns:pns="http://model" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:prenom" type="tns:string"/>
-      </operation>
-      <operation xmlns:operNS="http://model" xmlns:retNS="http://model" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getMail" qname="operNS:getMail" returnQName="retNS:getMailReturn" returnType="rtns:string" soapAction="">
       </operation>
       <operation xmlns:operNS="http://model" name="setNom" qname="operNS:setNom" soapAction="">
         <parameter xmlns:pns="http://model" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:nom" type="tns:string"/>
@@ -56,10 +51,18 @@
       <operation xmlns:operNS="http://model" xmlns:retNS="http://model" xmlns:rtns="http://model" name="liremessage" qname="operNS:liremessage" returnQName="retNS:liremessageReturn" returnType="rtns:Message" soapAction="">
         <parameter xmlns:pns="http://model" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:idFriends" type="tns:int"/>
       </operation>
+      <operation xmlns:operNS="http://model" name="setPseudo" qname="operNS:setPseudo" soapAction="">
+        <parameter xmlns:pns="http://model" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:pseudo" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://model" xmlns:retNS="http://model" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getPseudo" qname="operNS:getPseudo" returnQName="retNS:getPseudoReturn" returnType="rtns:string" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://model" xmlns:retNS="http://model" xmlns:rtns="http://model" name="getFriendList" qname="operNS:getFriendList" returnQName="retNS:getFriendListReturn" returnType="rtns:Friend" soapAction="">
+      </operation>
       <operation xmlns:operNS="http://model" xmlns:retNS="http://model" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getId" qname="operNS:getId" returnQName="retNS:getIdReturn" returnType="rtns:int" soapAction="">
       </operation>
-      <parameter name="allowedMethods" value="addUtilisateurs sendmessage liaisonFriends addFriend liremessage connecUsers setNom setPrenom getId getMail setMail getPrenom voirUser setId verifriends getNom"/>
+      <parameter name="allowedMethods" value="addUtilisateurs sendmessage liaisonFriends addFriend liremessage connecUsers setNom setPrenom getId getPseudo setPseudo getPrenom voirUser setId getFriendList verifriends getNom"/>
 
       <typeMapping xmlns:ns="http://model" qname="ns:Message" type="java:model.Message" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://model" qname="ns:Friend" type="java:model.Friend" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
   </service>
 </deployment>
