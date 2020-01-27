@@ -31,7 +31,7 @@
         <h1 class="cover-heading">Int APP Client</h1>
         <p class="lead">Projet Web-Service</p>
         <p class="lead">
-          <a href="/IntAppClient/login" class="btn btn-lg btn-secondary">Start</a>
+          <a href="/IntAppClient/Connexion" class="btn btn-lg btn-secondary">Start</a>
         </p>
       </main>
 
