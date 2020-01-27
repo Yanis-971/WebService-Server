@@ -10,17 +10,18 @@ package model;
 public interface Utilisateur extends java.rmi.Remote {
     public int getId() throws java.rmi.RemoteException;
     public void setId(int id) throws java.rmi.RemoteException;
-    public boolean liaisonFriends(int idfriend) throws java.rmi.RemoteException;
+    public void setNom(java.lang.String nom) throws java.rmi.RemoteException;
+    public void setPrenom(java.lang.String prenom) throws java.rmi.RemoteException;
+    public void voirUser() throws java.rmi.RemoteException;
+    public boolean addUtilisateurs(java.lang.String mdp, java.lang.String nom, java.lang.String prenom, java.lang.String pseudo) throws java.rmi.RemoteException;
+    public java.lang.String getPrenom() throws java.rmi.RemoteException;
+    public java.lang.String getNom() throws java.rmi.RemoteException;
     public boolean addFriend(java.lang.String pseudo) throws java.rmi.RemoteException;
     public boolean verifriends(int idFriends) throws java.rmi.RemoteException;
     public boolean connecUsers(java.lang.String pseudo, java.lang.String mdp) throws java.rmi.RemoteException;
-    public boolean addUtilisateurs(java.lang.String mdp, java.lang.String nom, java.lang.String prenom, java.lang.String pseudo) throws java.rmi.RemoteException;
+    public boolean liaisonFriends(int idfriend) throws java.rmi.RemoteException;
     public boolean sendmessage(java.lang.String message, int idfriends) throws java.rmi.RemoteException;
-    public void voirUser() throws java.rmi.RemoteException;
-    public java.lang.String getNom() throws java.rmi.RemoteException;
-    public void setNom(java.lang.String nom) throws java.rmi.RemoteException;
-    public java.lang.String getPrenom() throws java.rmi.RemoteException;
-    public void setPrenom(java.lang.String prenom) throws java.rmi.RemoteException;
-    public java.lang.String getMail() throws java.rmi.RemoteException;
-    public void setMail(java.lang.String mail) throws java.rmi.RemoteException;
+    public java.lang.String getPseudo() throws java.rmi.RemoteException;
+    public void setPseudo(java.lang.String pseudo) throws java.rmi.RemoteException;
+    public model.Message[] liremessage(int idFriends) throws java.rmi.RemoteException;
 }
