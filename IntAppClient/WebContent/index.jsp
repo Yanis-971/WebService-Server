@@ -33,6 +33,9 @@
         <p class="lead">
           <a href="/IntAppClient/Connexion" class="btn btn-lg btn-secondary">Start</a>
         </p>
+        <p class="lead">
+          <a href="/IntAppClient/Inscription" class="btn btn-lg btn-warning">Join</a>
+        </p>
       </main>
 
       <footer class="mastfoot mt-auto">

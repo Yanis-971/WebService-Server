@@ -21,18 +21,17 @@
   <body class="bg-light">
 
     <div class="container">
-      <div class="py-5 text-center">
-        <img class="d-block mx-auto mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-        <h2>Checkout form</h2>
-        <p class="lead">Below is an example form built entirely with Bootstrap's form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
+      <div class="text-center mb-4">
+<!--         <img class="d-block mx-auto mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+ -->        <h2>Join Us</h2>
+        <p class="lead">Sign In Int App</p>
       </div>
 
-      <div class="row">
-        <div class="col-md-4 order-md-2 mb-4">
-        </div>
+      
+
+      
         
-        <div class="col-md-8 order-md-1">
-          <h4 class="mb-3">Join Us</h4>
+     
           <form class="needs-validation" action="Inscription" method="post" novalidate>
             <div class="row">
               <div class="col-md-6 mb-3">
@@ -71,13 +70,13 @@
 
             <button class="btn btn-primary btn-lg btn-block" type="submit">Sign Up</button>
           </form>
-        </div>
-      </div>
+       
+     
 
       <footer class="my-5 pt-5 text-muted text-center text-small">
         <p class="mb-1">&copy; 2020 IntApp</p>
        
-        <a href="IntAppClient/index.jsp">Page d'accueil</a>
+        <a href="/IntAppClient/index.jsp">Page d'accueil</a>
           
       </footer>
     </div>
