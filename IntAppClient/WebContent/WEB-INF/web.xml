@@ -55,4 +55,13 @@
     <url-pattern>/join</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+    <servlet-name>Accueil</servlet-name>
+    <servlet-class>controler.Accueil</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Accueil</servlet-name>
+    <url-pattern>/home</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
