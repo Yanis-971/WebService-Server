@@ -16,7 +16,7 @@ public class Utilisateur {
 	private String pseudo;
 //	private ArrayList<Integer> Relations;
 	
-	
+	private Connec con2 = new Connec();
 	/*
 	 * public List<Friend> getfriendList() { // fonction qui retourne la liste des
 	 * amis de l'utilisateur
@@ -279,5 +279,98 @@ public class Utilisateur {
 		
 	}
 	
+	
+	
+//	public Group [] getGrouplist() {
+//		Connec con2 = new Connec();
+//		Group [] buff = new Group[50];
+//		String req2 = "select * from Friends join Users on Friends.id_friend2 = Users.id where Friends.id_friend1 = '" +this.id+"'";
+//   	 	System.out.println(req2);
+//   	 	ResultSet rslt =con2.conE(req2) ;
+//   	 	
+//   	 int i =0;
+//   	 while (rslt.next()) {
+//   		 
+//   		 
+//		buff[i]=new Group(rslt.getInt("id"), rslt.getString("nom"), rslt.getString("prenom"));
+//		i++;
+//	 }
+//   	 
+//   	 for (int j = 0; j < friend.length; j++) {
+//		System.out.println(friend[j].pseudo);
+//	}
+//   	 		
+//		return buff;
+//
+//	}
+	
+	public int getIdGroupByName(String name) throws ClassNotFoundException, SQLException {
+		
+		String req2 = "Select * from `Group` where name = "+name;
+		ResultSet rslt = con2.conE(req2) ;
+		if(rslt.next()) {
+			return rslt.getInt("id");
+		}
+		return -1;
+	}
+	
+	
+	public boolean addAdmin(String groupname) throws ClassNotFoundException, SQLException {
+		Connec con = new Connec();
+		String req2 = "insert into GroupUserList (  id_groupe	, id_user  ) values ('"+getIdGroupByName(groupname)+"','"+this.id+"')";
+		System.out.println(req2);
+		con.conU(req2) ;
+		return false;
+	}
+	
+	public boolean addgroup(String groupname,String description) throws SQLException, InterruptedException {
+		
+		String req2 = "INSERT into `Group`( name , description ) values ('"+groupname+"','"+description+"')";
+   	 	System.out.println(req2);
+   	 	
+			try {
+				con2.conU(req2) ;
+				addAdmin(groupname);
+				System.out.println("ajout du groupe");
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				System.out.println("pas d'ajout du groupe");
+				e.printStackTrace();
+			}
+		
+		return false;
+		
+	}
+	
+	public int idBypseudo(String pseudo) throws ClassNotFoundException, SQLException {
+		String req2 = "select * from Users where pseudo ="+pseudo ;
+		ResultSet rslt = con2.conE(req2) ;
+		if(rslt.next()) {
+			return rslt.getInt("id");
+		}
+		return -1;
+	}
+	
+	public boolean addUserToGroup(String pseudo,int idgroup) {
+		String req2 = "select * from GroupUserList where id_groupe ='"+idgroup+"'and id_user ='"+this.id+"' and isAdmin = True" ;
+   	 	System.out.println(req2);
+   	 try {
+		ResultSet rslt =con2.conE(req2) ;
+		if(rslt.next()) {
+			if(idBypseudo(pseudo)!=-1) {
+				System.out.println("coucou");
+				req2 = "insert into GroupUserList (  id_groupe	, id_user  ) values ('"+idgroup+"','"+idBypseudo(pseudo)+"')";
+		   	 	System.out.println(req2);
+				con2.conU(req2);
+			}
+			
+		}
+	} catch (ClassNotFoundException | SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+		return false;
+
+	}
 
 }
