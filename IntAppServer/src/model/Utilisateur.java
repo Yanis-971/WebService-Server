@@ -10,10 +10,11 @@ import controleur.Connec;
 
 public class Utilisateur {
 	
-	private int id=1;
+	private int id;
 	private String Nom;
 	private String Prenom;
 	private String pseudo;
+	private String mdp;
 //	private ArrayList<Integer> Relations;
 	
 	
@@ -28,25 +29,29 @@ public class Utilisateur {
 	 * return false; }
 	 */
 	
-		
-	public Utilisateur(int id, String nom, String prenom, String pseudo) {
+	
+	
+
+	
+	
+	public Utilisateur(int id, String nom, String prenom, String pseudo, String mdp) {
 		super();
 		this.id = id;
 		Nom = nom;
 		Prenom = prenom;
 		this.pseudo = pseudo;
+		this.mdp = mdp;
 	}
-	
-	
-	// getters and setters 
-	
-	
+
+
 	public Utilisateur() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
 
+	// getters and setters 
+	
 	public int getId() {
 		return id;
 	}
@@ -77,6 +82,14 @@ public class Utilisateur {
 		Prenom = prenom;
 	}
 	
+	public String getMdp() {
+		return mdp;
+	}
+
+
+	public void setMdp(String mdp) {
+		this.mdp = mdp;
+	}
 	
 /*	public ArrayList<Integer> getRelations() {
 		return Relations;
@@ -85,6 +98,9 @@ public class Utilisateur {
 		Relations = relations;
 	} */
 	
+	
+	
+	///// Méthodes
 	
 	public void voirUser() throws ClassNotFoundException, SQLException {
 		Connec con = new Connec ();
@@ -118,7 +134,6 @@ public class Utilisateur {
 			}
 			
         return false;
-		
 		
 	}
 	
@@ -278,6 +293,9 @@ public class Utilisateur {
 		return friend;
 		
 	}
+
+
+	
 	
 
 }
