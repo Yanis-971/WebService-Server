@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.Utilisateur;
+import model.UtilisateurProxy;
+
 /**
  * Servlet implementation class Accueil
  */

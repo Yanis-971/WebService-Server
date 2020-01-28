@@ -13,7 +13,7 @@ public class Utilisateur {
 	private int id=1;
 	private String Nom;
 	private String Prenom;
-	private String Mail;
+	private String pseudo;
 //	private ArrayList<Integer> Relations;
 	
 	
@@ -27,13 +27,40 @@ public class Utilisateur {
 	 * 
 	 * return false; }
 	 */
+	
 		
+	public Utilisateur(int id, String nom, String prenom, String pseudo) {
+		super();
+		this.id = id;
+		Nom = nom;
+		Prenom = prenom;
+		this.pseudo = pseudo;
+	}
 	
 	
 	// getters and setters 
+	
+	
+	public Utilisateur() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
 	public int getId() {
 		return id;
 	}
+	
+	public String getPseudo() {
+		return pseudo;
+	}
+
+
+	public void setPseudo(String pseudo) {
+		this.pseudo = pseudo;
+	}
+
+
 	public void setId(int id) {
 		this.id = id;
 	}
@@ -48,12 +75,6 @@ public class Utilisateur {
 	}
 	public void setPrenom(String prenom) {
 		Prenom = prenom;
-	}
-	public String getMail() {
-		return Mail;
-	}
-	public void setMail(String mail) {
-		Mail = mail;
 	}
 	
 	
@@ -212,31 +233,51 @@ public class Utilisateur {
      }
 
 
-//     public ArrayList<Message> liremessage(int idFriends) throws ClassNotFoundException, SQLException {
-//    	 Connec con2 = new Connec();
-//    	 ArrayList<Message> lmessage= new ArrayList<Message>();
-//    	 String msgtmp; int idtmp;
-//    	 int i=1;
-//    	 String req = "select * from Privatemessages where (authorid = '" +this.id+ "'and receiverid='" +idFriends+"') or (authorid='"+idFriends+"' and receiverid= '"+this.id+"')";
-//    	 System.out.println(req);
-//    	 ResultSet rslt =con2.conE(req) ;
-//    	 if (rslt.next()) {
-//    		 idtmp = rslt.getInt("authorid");
-//    		 msgtmp = rslt.getString("message");
-//    		 
-//    		 Message m = new Message (idtmp,msgtmp);
-//    		 
-//    		 lmessage.add(m);
-//    		
-//    	 }
-//    	 
-// 
-//		return lmessage;
-//    	 
-//     }
-//	
-
+     public Message[] liremessage(int idFriends) throws ClassNotFoundException, SQLException {
+    	 Message [] buff = new Message[500] ;
+    	 
+    	 Connec con2 = new Connec();
+    	
+    	 String msgtmp; int idtmp;
+    	 
+    	 int i = 0;
+    	 
+    	 String req = "select * from Privatemessages where (authorid = '" +this.id+ "'and receiverid='" +idFriends+"') or (authorid='"+idFriends+"' and receiverid= '"+this.id+"')";
+    	 System.out.println(req);
+    	 ResultSet rslt =con2.conE(req) ;
+    	 while (rslt.next()) {
+    		 idtmp = rslt.getInt("authorid");
+    		 msgtmp = rslt.getString("message");
+    		 buff[i] = new Message (idtmp,msgtmp);
+    		 i++;
+    	 }
+    	 
+    	 for (int j = 0; j < buff.length; j++) {
+			System.out.println(buff[j].contenu);
+		}
+		return buff; 
+     }
 	
+
+	public Friend [] getFriendList() throws ClassNotFoundException, SQLException{
+   	 	Connec con2 = new Connec();
+   	 	Friend [] friend = new Friend[20];
+		String req2 = "select * from Friends join Users on Friends.id_friend2 = Users.id where Friends.id_friend1 = '" +this.id+"'";
+   	 	System.out.println(req2);
+   	 	ResultSet rslt =con2.conE(req2) ;
+   	 	int i =0;
+	   	 while (rslt.next()) {
+			friend[i]=new Friend(rslt.getInt("id"), rslt.getString("nom"), rslt.getString("prenom"),rslt.getString("pseudo"));
+			i++;
+		 }
+	   	 
+	   	 for (int j = 0; j < friend.length; j++) {
+			System.out.println(friend[j].pseudo);
+		}
+		
+		return friend;
+		
+	}
 	
 
 }
