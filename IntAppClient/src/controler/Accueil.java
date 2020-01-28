@@ -34,7 +34,7 @@ public class Accueil extends HttpServlet {
 		this.getServletContext().getRequestDispatcher("/WEB-INF/home.jsp").forward(request, response);
 		HttpSession session = request.getSession();
 		Utilisateur user = new UtilisateurProxy();
-		user =(UtilisateurProxy) session.getAttribute("User");
+		//user =(UtilisateurProxy) session.getAttribute("User");
 	
 	}
 

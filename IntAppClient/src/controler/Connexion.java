@@ -52,7 +52,7 @@ public class Connexion extends HttpServlet {
 			user.setMdp(pswd);
 			HttpSession session = request.getSession();
 			session.setAttribute("User", user);
-			 response.sendRedirect("/IntAppClient/Accueil");
+			response.sendRedirect("/IntAppClient/Accueil");
 		}
 	   else 
 		   doGet(request, response);
