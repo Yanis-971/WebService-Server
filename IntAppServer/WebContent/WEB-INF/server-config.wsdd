@@ -7,8 +7,8 @@
   <ns1:parameter name="dotNetSoapEncFix" value="true"/>
   <ns1:parameter name="enableNamespacePrefixOptimization" value="false"/>
   <ns1:parameter name="sendXMLDeclaration" value="true"/>
-  <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
   <ns1:parameter name="sendXsiTypes" value="true"/>
+  <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
   <ns1:requestFlow>
    <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
     <ns1:parameter name="scope" value="session"/>
@@ -42,11 +42,11 @@
    <ns1:parameter qname="ns6:contenu" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
   </ns1:operation>
   <ns1:parameter name="allowedMethods" value="getContenu setDate setId getId getDate setContenu"/>
-  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="Message"/>
-  <ns1:parameter name="className" value="model.Message"/>
-  <ns1:parameter name="wsdlServicePort" value="Message"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="schemaQualified" value="http://model"/>
+  <ns1:parameter name="wsdlServicePort" value="Message"/>
+  <ns1:parameter name="className" value="model.Message"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://model"/>
   <ns1:parameter name="wsdlServiceElement" value="MessageService"/>
  </ns1:service>
@@ -59,11 +59,11 @@
    <ns1:parameter qname="ns7:S" type="xsd:string"/>
   </ns1:operation>
   <ns1:parameter name="allowedMethods" value="hello"/>
-  <ns1:parameter name="wsdlPortType" value="Test"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
-  <ns1:parameter name="schemaQualified" value="http://model"/>
-  <ns1:parameter name="wsdlServicePort" value="Test"/>
+  <ns1:parameter name="wsdlPortType" value="Test"/>
   <ns1:parameter name="className" value="model.Test"/>
+  <ns1:parameter name="wsdlServicePort" value="Test"/>
+  <ns1:parameter name="schemaQualified" value="http://model"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://model"/>
   <ns1:parameter name="wsdlServiceElement" value="TestService"/>
  </ns1:service>

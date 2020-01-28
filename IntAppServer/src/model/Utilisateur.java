@@ -10,11 +10,11 @@ import controleur.Connec;
 
 public class Utilisateur {
 	
-	private int id;
-	private String Nom;
-	private String Prenom;
-	private String pseudo;
-	private String mdp;
+	public int id;
+	public String Nom;
+	public String Prenom;
+	public String pseudo;
+	public String mdp;
 //	private ArrayList<Integer> Relations;
 	
 	
