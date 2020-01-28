@@ -30,7 +30,7 @@ public class Connexion extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		this.getServletContext().getRequestDispatcher("/login.jsp").forward(request, response);
+		this.getServletContext().getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
 	}
 
 	/**
@@ -47,7 +47,7 @@ public class Connexion extends HttpServlet {
 		Utilisateur service = new UtilisateurProxy();
 		connect = service.connecUsers(pseudo, pswd);
 		if (connect) 
-			 response.sendRedirect("/IntAppClient/home.jsp");
+			 response.sendRedirect("/WEB-INF/home.jsp");
 	   else 
 		   doGet(request, response);
 	}

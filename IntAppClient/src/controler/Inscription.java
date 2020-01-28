@@ -31,7 +31,7 @@ public class Inscription extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		this.getServletContext().getRequestDispatcher("/join.jsp").forward(request, response);
+		this.getServletContext().getRequestDispatcher("/WEB-INF/join.jsp").forward(request, response);
 
 	}
 
@@ -50,7 +50,7 @@ public class Inscription extends HttpServlet {
 		Utilisateur service = new UtilisateurProxy();
 		inscrip = service.addUtilisateurs(pswd, nom, prenom, pseudo);
 		if (inscrip) 
-			 response.sendRedirect("/IntAppClient/home.jsp");
+			 response.sendRedirect("/WEB-INF/home.jsp");
 	   else 
 		   doGet(request, response);
 	}
