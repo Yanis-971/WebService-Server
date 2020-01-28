@@ -36,15 +36,15 @@
         <label for="inputPassword">Password</label>
       </div>
 
-      <div class="checkbox mb-3">
+     <!--  <div class="checkbox mb-3">
         <label>
           <input type="checkbox" value="remember-me"> Remember me
         </label>
-      </div>
+      </div> -->
       
       <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
       <p class="mt-5 mb-3 text-muted text-center">2020</p>
-      <a href="/IntAppClient/index.jsp">Page d'accueil</a>
+      <a href="">Page d'accueil</a>
     </form>
   </body>
 </html>

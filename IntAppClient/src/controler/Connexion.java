@@ -47,7 +47,7 @@ public class Connexion extends HttpServlet {
 		Utilisateur service = new UtilisateurProxy();
 		connect = service.connecUsers(pseudo, pswd);
 		if (connect) 
-			 response.sendRedirect("/WEB-INF/home.jsp");
+			 response.sendRedirect("/IntAppClient/Accueil");
 	   else 
 		   doGet(request, response);
 	}

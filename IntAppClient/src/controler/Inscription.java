@@ -50,7 +50,7 @@ public class Inscription extends HttpServlet {
 		Utilisateur service = new UtilisateurProxy();
 		inscrip = service.addUtilisateurs(pswd, nom, prenom, pseudo);
 		if (inscrip) 
-			 response.sendRedirect("/WEB-INF/home.jsp");
+			 response.sendRedirect("/IntAppClient/Accueil");
 	   else 
 		   doGet(request, response);
 	}
