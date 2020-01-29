@@ -343,7 +343,8 @@ public class Utilisateur {
 	}
 	
 	public int idBypseudo(String pseudo) throws ClassNotFoundException, SQLException {
-		String req2 = "select * from Users where pseudo ="+pseudo ;
+		String req2 = "select * from Users where pseudo = '" +pseudo+ "'";
+		System.out.println(req2);
 		ResultSet rslt = con2.conE(req2) ;
 		if(rslt.next()) {
 			return rslt.getInt("id");
