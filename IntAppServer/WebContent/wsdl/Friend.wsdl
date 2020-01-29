@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://model" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://model" xmlns:intf="http://model" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://model" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="setId">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setIdResponse">
+    <complexType/>
+   </element>
+   <element name="setPrenom">
+    <complexType>
+     <sequence>
+      <element name="prenom" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setPrenomResponse">
+    <complexType/>
+   </element>
+   <element name="setNom">
+    <complexType>
+     <sequence>
+      <element name="nom" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setNomResponse">
+    <complexType/>
+   </element>
+   <element name="getNom">
+    <complexType/>
+   </element>
+   <element name="getNomResponse">
+    <complexType>
+     <sequence>
+      <element name="getNomReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getPrenom">
+    <complexType/>
+   </element>
+   <element name="getPrenomResponse">
+    <complexType>
+     <sequence>
+      <element name="getPrenomReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getPseudo">
+    <complexType/>
+   </element>
+   <element name="getPseudoResponse">
+    <complexType>
+     <sequence>
+      <element name="getPseudoReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setPseudo">
+    <complexType>
+     <sequence>
+      <element name="pseudo" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setPseudoResponse">
+    <complexType/>
+   </element>
+   <element name="getId">
+    <complexType/>
+   </element>
+   <element name="getIdResponse">
+    <complexType>
+     <sequence>
+      <element name="getIdReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="setNomRequest">
+
+      <wsdl:part element="impl:setNom" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getIdRequest">
+
+      <wsdl:part element="impl:getId" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPrenomResponse">
+
+      <wsdl:part element="impl:getPrenomResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setNomResponse">
+
+      <wsdl:part element="impl:setNomResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setPrenomRequest">
+
+      <wsdl:part element="impl:setPrenom" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPseudoRequest">
+
+      <wsdl:part element="impl:getPseudo" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setPseudoRequest">
+
+      <wsdl:part element="impl:setPseudo" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setIdResponse">
+
+      <wsdl:part element="impl:setIdResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNomResponse">
+
+      <wsdl:part element="impl:getNomResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPseudoResponse">
+
+      <wsdl:part element="impl:getPseudoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setPrenomResponse">
+
+      <wsdl:part element="impl:setPrenomResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPrenomRequest">
+
+      <wsdl:part element="impl:getPrenom" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getNomRequest">
+
+      <wsdl:part element="impl:getNom" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getIdResponse">
+
+      <wsdl:part element="impl:getIdResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setIdRequest">
+
+      <wsdl:part element="impl:setId" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setPseudoResponse">
+
+      <wsdl:part element="impl:setPseudoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Friend">
+
+      <wsdl:operation name="setId">
+
+         <wsdl:input message="impl:setIdRequest" name="setIdRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setIdResponse" name="setIdResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setPrenom">
+
+         <wsdl:input message="impl:setPrenomRequest" name="setPrenomRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setPrenomResponse" name="setPrenomResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setNom">
+
+         <wsdl:input message="impl:setNomRequest" name="setNomRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setNomResponse" name="setNomResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getNom">
+
+         <wsdl:input message="impl:getNomRequest" name="getNomRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getNomResponse" name="getNomResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPrenom">
+
+         <wsdl:input message="impl:getPrenomRequest" name="getPrenomRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getPrenomResponse" name="getPrenomResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPseudo">
+
+         <wsdl:input message="impl:getPseudoRequest" name="getPseudoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getPseudoResponse" name="getPseudoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setPseudo">
+
+         <wsdl:input message="impl:setPseudoRequest" name="setPseudoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setPseudoResponse" name="setPseudoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getId">
+
+         <wsdl:input message="impl:getIdRequest" name="getIdRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getIdResponse" name="getIdResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="FriendSoapBinding" type="impl:Friend">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="setId">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setIdRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setIdResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setPrenom">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setPrenomRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setPrenomResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setNom">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setNomRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setNomResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getNom">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getNomRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getNomResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPrenom">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getPrenomRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getPrenomResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPseudo">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getPseudoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getPseudoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setPseudo">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setPseudoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setPseudoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getId">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getIdRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getIdResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="FriendService">
+
+      <wsdl:port binding="impl:FriendSoapBinding" name="Friend">
+
+         <wsdlsoap:address location="http://localhost:8080/IntAppServer/services/Friend"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

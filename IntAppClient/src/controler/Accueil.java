@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import beans.User;
+import model.Friend;
+import model.FriendProxy;
 import model.Utilisateur;
 import model.UtilisateurProxy;
 
@@ -33,7 +36,22 @@ public class Accueil extends HttpServlet {
 		// TODO Auto-generated method stub
 		this.getServletContext().getRequestDispatcher("/WEB-INF/home.jsp").forward(request, response);
 		HttpSession session = request.getSession();
+		
+		User u = new User();
+		u=(User) session.getAttribute("User");
+		
 		Utilisateur user = new UtilisateurProxy();
+		
+		String[] tabs;
+		tabs =user.getFriendList(u.getId());
+		
+		
+		for (int j = 0; j < tabs.length; j++) {
+			System.out.println(tabs[j]);
+		}
+		
+		request.setAttribute("tabs", tabs);
+		
 		//user =(UtilisateurProxy) session.getAttribute("User");
 	
 	}

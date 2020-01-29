@@ -41,7 +41,7 @@
 
     <main role="main" class="container">
     
-    <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-orange rounded box-shadow">
+    <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-warning rounded box-shadow">
         <div class="lh-100">
           <h6 class="mb-0 text-white lh-100">${sessionScope.User.pseudo}</h6>
           <small>${sessionScope.User.id}</small>
@@ -52,9 +52,17 @@
         <h6 class="border-bottom border-gray pb-2 mb-0">Amis</h6>
         <div class="media text-muted pt-3">
           <!-- <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded"> -->
+           <c:forEach var="tab" items="${ tabs }">
           <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-            <strong class="d-block text-gray-dark">@username</strong>
-          </p>
+        
+            <strong class="d-block text-gray-dark"><c:out value="${ tab }" /></strong>
+            </p>
+           </c:forEach>
+           
+           
+          
+           
+          
         </div>
         
         <small class="d-block text-right mt-3">

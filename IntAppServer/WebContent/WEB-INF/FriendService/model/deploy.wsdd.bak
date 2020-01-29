@@ -1,0 +1,46 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from FriendService WSDL service -->
+
+  <service name="Friend" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://model"/>
+      <parameter name="wsdlServiceElement" value="FriendService"/>
+      <parameter name="schemaQualified" value="http://model"/>
+      <parameter name="wsdlServicePort" value="Friend"/>
+      <parameter name="className" value="model.FriendSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="Friend"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="setId" qname="operNS:setId" xmlns:operNS="http://model" soapAction="" >
+        <parameter qname="pns:id" xmlns:pns="http://model" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="setPrenom" qname="operNS:setPrenom" xmlns:operNS="http://model" soapAction="" >
+        <parameter qname="pns:prenom" xmlns:pns="http://model" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="setNom" qname="operNS:setNom" xmlns:operNS="http://model" soapAction="" >
+        <parameter qname="pns:nom" xmlns:pns="http://model" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getNom" qname="operNS:getNom" xmlns:operNS="http://model" returnQName="retNS:getNomReturn" xmlns:retNS="http://model" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="getPrenom" qname="operNS:getPrenom" xmlns:operNS="http://model" returnQName="retNS:getPrenomReturn" xmlns:retNS="http://model" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="getPseudo" qname="operNS:getPseudo" xmlns:operNS="http://model" returnQName="retNS:getPseudoReturn" xmlns:retNS="http://model" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="setPseudo" qname="operNS:setPseudo" xmlns:operNS="http://model" soapAction="" >
+        <parameter qname="pns:pseudo" xmlns:pns="http://model" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getId" qname="operNS:getId" xmlns:operNS="http://model" returnQName="retNS:getIdReturn" xmlns:retNS="http://model" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <parameter name="allowedMethods" value="getPrenom setNom setId setPrenom getId getNom getPseudo setPseudo"/>
+
+  </service>
+</deployment>

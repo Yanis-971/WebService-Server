@@ -1,5 +1,8 @@
 eclipse.preferences.version=1
 encoding//src/model/Friend.java=UTF-8
+encoding//src/model/FriendService.java=UTF-8
+encoding//src/model/FriendServiceLocator.java=UTF-8
+encoding//src/model/FriendSoapBindingStub.java=UTF-8
 encoding//src/model/Message.java=UTF-8
 encoding//src/model/MessageService.java=UTF-8
 encoding//src/model/MessageServiceLocator.java=UTF-8

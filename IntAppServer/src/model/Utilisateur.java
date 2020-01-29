@@ -275,25 +275,25 @@ public class Utilisateur {
      }
 	
 
-	public Friend [] getFriendList() throws ClassNotFoundException, SQLException{
-   	 	Connec con2 = new Connec();
-   	 	Friend [] friend = new Friend[20];
-		String req2 = "select * from Friends join Users on Friends.id_friend2 = Users.id where Friends.id_friend1 = '" +this.id+"'";
-   	 	System.out.println(req2);
-   	 	ResultSet rslt =con2.conE(req2) ;
-   	 	int i =0;
-	   	 while (rslt.next()) {
-			friend[i]=new Friend(rslt.getInt("id"), rslt.getString("nom"), rslt.getString("prenom"),rslt.getString("pseudo"));
-			i++;
-		 }
-	   	 
-	   	 for (int j = 0; j < friend.length; j++) {
-			System.out.println(friend[j].pseudo);
-		}
-		
-		return friend;
-		
-	}
+     public String [] getFriendList(int idu) throws ClassNotFoundException, SQLException{
+    	 	Connec con2 = new Connec();
+    	   String [] friend = new String [20];
+ 		String req2 = "select * from Friends join Users on Friends.id_friend2 = Users.id where Friends.id_friend1 = '" +idu+"'";
+    	 	System.out.println(req2);
+    	 	ResultSet rslt =con2.conE(req2) ;
+    	 	int i =0;
+ 	   	 while (rslt.next()) {
+ 			friend[i]=new String(rslt.getString("pseudo"));
+ 			i++;
+ 		 }
+ 	   	 
+ 	   	 for (int j = 0; j < friend.length; j++) {
+ 			System.out.println(friend[j]);
+ 		}
+ 		
+ 		return friend;
+ 		
+ 	}
 
 
 	
@@ -394,7 +394,7 @@ public class Utilisateur {
 	}
 	
 	
-	public String PseudoById(int id) throws ClassNotFoundException, SQLException {
+	public String pseudoById(int id) throws ClassNotFoundException, SQLException {
 		String req2 = "select * from Users where id = '" +id+ "'";
 		System.out.println(req2);
 		ResultSet rslt = con2.conE(req2) ;
