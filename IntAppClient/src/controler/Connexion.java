@@ -43,6 +43,8 @@ public class Connexion extends HttpServlet {
 		boolean connection;
 		Utilisateur service = new UtilisateurProxy();
 		connection=service.connecUsers(pseudo, pswd);
+		int id = service.idBypseudo(pseudo);
+		System.out.println("int i "+ id);
 		
 		doGet(request, response);
 	}
