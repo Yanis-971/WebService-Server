@@ -392,5 +392,17 @@ public class Utilisateur {
 		return false;
 
 	}
+	
+	
+	public String PseudoById(int id) throws ClassNotFoundException, SQLException {
+		String req2 = "select * from Users where id = '" +id+ "'";
+		System.out.println(req2);
+		ResultSet rslt = con2.conE(req2) ;
+		if(rslt.next()) {
+			return rslt.getString("pseudo");
+		}
+		return null;
+	}
+	
 
 }
