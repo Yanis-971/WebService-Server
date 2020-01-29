@@ -6,7 +6,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import beans.User;
 import model.Utilisateur;
 import model.UtilisateurProxy;
 
@@ -30,7 +32,7 @@ public class Connexion extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		this.getServletContext().getRequestDispatcher("/login.jsp").forward(request, response);
+		this.getServletContext().getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
 	}
 
 	/**
@@ -38,15 +40,28 @@ public class Connexion extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
 		String pseudo = request.getParameter("pseudo");
 		String pswd = request.getParameter("pswd");
-		boolean connection;
-		Utilisateur service = new UtilisateurProxy();
-		connection=service.connecUsers(pseudo, pswd);
-		int id = service.idBypseudo(pseudo);
-		System.out.println("int i "+ id);
 		
-		doGet(request, response);
+		boolean connect;
+		
+		
+		
+		Utilisateur user = new UtilisateurProxy();
+		user.getClass();
+		
+		connect = user.connecUsers(pseudo,pswd);
+		if (connect) { 
+			user.setPseudo(pseudo);
+			System.out.println("id de l'user " + user.getClass());
+			HttpSession session = request.getSession();
+			session.setAttribute("User", user);
+			response.sendRedirect("/IntAppClient/Accueil");
+			 
+		}
+	   else 
+		   doGet(request, response);
 	}
 
 }

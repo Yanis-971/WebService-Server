@@ -1,5 +1,6 @@
 package model;
 
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -10,10 +11,11 @@ import controleur.Connec;
 
 public class Utilisateur {
 	
-	private int id=1;
-	private String Nom;
-	private String Prenom;
-	private String pseudo;
+	public int id;
+	public String Nom;
+	public String Prenom;
+	public String pseudo;
+	public String mdp;
 //	private ArrayList<Integer> Relations;
 	
 	private Connec con2 = new Connec();
@@ -28,25 +30,29 @@ public class Utilisateur {
 	 * return false; }
 	 */
 	
-		
-	public Utilisateur(int id, String nom, String prenom, String pseudo) {
+	
+	
+
+	
+	
+	public Utilisateur(int id, String nom, String prenom, String pseudo, String mdp) {
 		super();
 		this.id = id;
 		Nom = nom;
 		Prenom = prenom;
 		this.pseudo = pseudo;
+		this.mdp = mdp;
 	}
-	
-	
-	// getters and setters 
-	
-	
+
+
 	public Utilisateur() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
 
+	// getters and setters 
+	
 	public int getId() {
 		return id;
 	}
@@ -77,6 +83,14 @@ public class Utilisateur {
 		Prenom = prenom;
 	}
 	
+	public String getMdp() {
+		return mdp;
+	}
+
+
+	public void setMdp(String mdp) {
+		this.mdp = mdp;
+	}
 	
 /*	public ArrayList<Integer> getRelations() {
 		return Relations;
@@ -85,6 +99,9 @@ public class Utilisateur {
 		Relations = relations;
 	} */
 	
+	
+	
+	///// Méthodes
 	
 	public void voirUser() throws ClassNotFoundException, SQLException {
 		Connec con = new Connec ();
@@ -118,7 +135,6 @@ public class Utilisateur {
 			}
 			
         return false;
-		
 		
 	}
 	
@@ -278,6 +294,9 @@ public class Utilisateur {
 		return friend;
 		
 	}
+
+
+	
 	
 	
 	

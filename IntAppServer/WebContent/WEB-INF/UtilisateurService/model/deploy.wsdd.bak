@@ -20,10 +20,28 @@
       <parameter name="className" value="model.UtilisateurSoapBindingImpl"/>
       <parameter name="wsdlPortType" value="Utilisateur"/>
       <parameter name="typeMappingVersion" value="1.2"/>
-      <operation name="getId" qname="operNS:getId" xmlns:operNS="http://model" returnQName="retNS:getIdReturn" xmlns:retNS="http://model" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
-      </operation>
       <operation name="setId" qname="operNS:setId" xmlns:operNS="http://model" soapAction="" >
         <parameter qname="pns:id" xmlns:pns="http://model" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getPseudo" qname="operNS:getPseudo" xmlns:operNS="http://model" returnQName="retNS:getPseudoReturn" xmlns:retNS="http://model" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="setPseudo" qname="operNS:setPseudo" xmlns:operNS="http://model" soapAction="" >
+        <parameter qname="pns:pseudo" xmlns:pns="http://model" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getNom" qname="operNS:getNom" xmlns:operNS="http://model" returnQName="retNS:getNomReturn" xmlns:retNS="http://model" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="getPrenom" qname="operNS:getPrenom" xmlns:operNS="http://model" returnQName="retNS:getPrenomReturn" xmlns:retNS="http://model" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="setNom" qname="operNS:setNom" xmlns:operNS="http://model" soapAction="" >
+        <parameter qname="pns:nom" xmlns:pns="http://model" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="setPrenom" qname="operNS:setPrenom" xmlns:operNS="http://model" soapAction="" >
+        <parameter qname="pns:prenom" xmlns:pns="http://model" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getMdp" qname="operNS:getMdp" xmlns:operNS="http://model" returnQName="retNS:getMdpReturn" xmlns:retNS="http://model" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="setMdp" qname="operNS:setMdp" xmlns:operNS="http://model" soapAction="" >
+        <parameter qname="pns:mdp" xmlns:pns="http://model" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
       <operation name="addUtilisateurs" qname="operNS:addUtilisateurs" xmlns:operNS="http://model" returnQName="retNS:addUtilisateursReturn" xmlns:retNS="http://model" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
         <parameter qname="pns:mdp" xmlns:pns="http://model" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
@@ -31,12 +49,7 @@
         <parameter qname="pns:prenom" xmlns:pns="http://model" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
         <parameter qname="pns:pseudo" xmlns:pns="http://model" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
-      <operation name="sendmessage" qname="operNS:sendmessage" xmlns:operNS="http://model" returnQName="retNS:sendmessageReturn" xmlns:retNS="http://model" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
-        <parameter qname="pns:message" xmlns:pns="http://model" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-        <parameter qname="pns:idfriends" xmlns:pns="http://model" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-      </operation>
-      <operation name="addFriend" qname="operNS:addFriend" xmlns:operNS="http://model" returnQName="retNS:addFriendReturn" xmlns:retNS="http://model" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
-        <parameter qname="pns:pseudo" xmlns:pns="http://model" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      <operation name="voirUser" qname="operNS:voirUser" xmlns:operNS="http://model" soapAction="" >
       </operation>
       <operation name="liaisonFriends" qname="operNS:liaisonFriends" xmlns:operNS="http://model" returnQName="retNS:liaisonFriendsReturn" xmlns:retNS="http://model" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
         <parameter qname="pns:idfriend" xmlns:pns="http://model" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
@@ -48,46 +61,21 @@
       <operation name="verifriends" qname="operNS:verifriends" xmlns:operNS="http://model" returnQName="retNS:verifriendsReturn" xmlns:retNS="http://model" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
         <parameter qname="pns:idFriends" xmlns:pns="http://model" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
-      <operation name="setPseudo" qname="operNS:setPseudo" xmlns:operNS="http://model" soapAction="" >
+      <operation name="addFriend" qname="operNS:addFriend" xmlns:operNS="http://model" returnQName="retNS:addFriendReturn" xmlns:retNS="http://model" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
         <parameter qname="pns:pseudo" xmlns:pns="http://model" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-      </operation>
-      <operation name="getPseudo" qname="operNS:getPseudo" xmlns:operNS="http://model" returnQName="retNS:getPseudoReturn" xmlns:retNS="http://model" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
-      </operation>
-      <operation name="setNom" qname="operNS:setNom" xmlns:operNS="http://model" soapAction="" >
-        <parameter qname="pns:nom" xmlns:pns="http://model" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-      </operation>
-      <operation name="getNom" qname="operNS:getNom" xmlns:operNS="http://model" returnQName="retNS:getNomReturn" xmlns:retNS="http://model" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
-      </operation>
-      <operation name="getPrenom" qname="operNS:getPrenom" xmlns:operNS="http://model" returnQName="retNS:getPrenomReturn" xmlns:retNS="http://model" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
-      </operation>
-      <operation name="voirUser" qname="operNS:voirUser" xmlns:operNS="http://model" soapAction="" >
-      </operation>
-      <operation name="setPrenom" qname="operNS:setPrenom" xmlns:operNS="http://model" soapAction="" >
-        <parameter qname="pns:prenom" xmlns:pns="http://model" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-      </operation>
-      <operation name="idBypseudo" qname="operNS:idBypseudo" xmlns:operNS="http://model" returnQName="retNS:idBypseudoReturn" xmlns:retNS="http://model" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
-        <parameter qname="pns:pseudo" xmlns:pns="http://model" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-      </operation>
-      <operation name="addUserToGroup" qname="operNS:addUserToGroup" xmlns:operNS="http://model" returnQName="retNS:addUserToGroupReturn" xmlns:retNS="http://model" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
-        <parameter qname="pns:pseudo" xmlns:pns="http://model" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-        <parameter qname="pns:idgroup" xmlns:pns="http://model" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
       <operation name="liremessage" qname="operNS:liremessage" xmlns:operNS="http://model" returnQName="retNS:liremessageReturn" xmlns:retNS="http://model" returnType="rtns:Message" xmlns:rtns="http://model" soapAction="" >
         <parameter qname="pns:idFriends" xmlns:pns="http://model" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
       <operation name="getFriendList" qname="operNS:getFriendList" xmlns:operNS="http://model" returnQName="retNS:getFriendListReturn" xmlns:retNS="http://model" returnType="rtns:Friend" xmlns:rtns="http://model" soapAction="" >
       </operation>
-      <operation name="getIdGroupByName" qname="operNS:getIdGroupByName" xmlns:operNS="http://model" returnQName="retNS:getIdGroupByNameReturn" xmlns:retNS="http://model" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
-        <parameter qname="pns:name" xmlns:pns="http://model" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      <operation name="sendmessage" qname="operNS:sendmessage" xmlns:operNS="http://model" returnQName="retNS:sendmessageReturn" xmlns:retNS="http://model" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:message" xmlns:pns="http://model" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:idfriends" xmlns:pns="http://model" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
-      <operation name="addAdmin" qname="operNS:addAdmin" xmlns:operNS="http://model" returnQName="retNS:addAdminReturn" xmlns:retNS="http://model" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
-        <parameter qname="pns:groupname" xmlns:pns="http://model" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      <operation name="getId" qname="operNS:getId" xmlns:operNS="http://model" returnQName="retNS:getIdReturn" xmlns:retNS="http://model" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
       </operation>
-      <operation name="addgroup" qname="operNS:addgroup" xmlns:operNS="http://model" returnQName="retNS:addgroupReturn" xmlns:retNS="http://model" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
-        <parameter qname="pns:groupname" xmlns:pns="http://model" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-        <parameter qname="pns:description" xmlns:pns="http://model" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-      </operation>
-      <parameter name="allowedMethods" value="addUtilisateurs sendmessage addFriend liaisonFriends liremessage connecUsers addAdmin setNom getId setPrenom idBypseudo getPseudo setPseudo getIdGroupByName getPrenom voirUser addgroup setId addUserToGroup getFriendList verifriends getNom"/>
+      <parameter name="allowedMethods" value="addUtilisateurs sendmessage liaisonFriends addFriend liremessage connecUsers setNom setPrenom getId getMdp getPseudo setPseudo getPrenom setMdp voirUser setId getFriendList verifriends getNom"/>
 
       <typeMapping
         xmlns:ns="http://model"

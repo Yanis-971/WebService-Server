@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-   <!-- <link rel="icon" href="../../../../favicon.ico">  --> 
+  <!--   <link rel="icon" href="../../../../favicon.ico"> -->
 
     <title>Int App Client</title>
 
@@ -23,21 +24,23 @@
       <header class="masthead mb-auto">
         <div class="inner">
           
-        
         </div>
       </header>
 
       <main role="main" class="inner cover">
-        <h1 class="cover-heading">IntApp Client</h1>
-            <p class="lead">
+        <h1 class="cover-heading">Int APP Client</h1>
+        <p class="lead">Projet Web-Service</p>
+        <p class="lead">
           <a href="/IntAppClient/Connexion" class="btn btn-lg btn-secondary">Start</a>
+        </p>
+        <p class="lead">
+          <a href="/IntAppClient/Inscription" class="btn btn-lg btn-warning">Join</a>
         </p>
       </main>
 
       <footer class="mastfoot mt-auto">
         <div class="inner">
-          <p>Groupe 1: Ritchie NARANIN, Frédérick GROS-DESIR, Quentin BEAUCHENE, Yanis BENIN </p>
-        </div>
+          <p>Groupe 1 : Ritchie NARANIN, Frédérick GROS-DESIR, Quentin BEAUCHENE & Yanis BENIN
       </footer>
     </div>
 

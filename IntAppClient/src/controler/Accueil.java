@@ -6,6 +6,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import model.Utilisateur;
+import model.UtilisateurProxy;
 
 /**
  * Servlet implementation class Accueil
@@ -27,7 +31,11 @@ public class Accueil extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		this.getServletContext().getRequestDispatcher("/WEB-INF/home.jsp").forward(request, response);
+		HttpSession session = request.getSession();
+		Utilisateur user = new UtilisateurProxy();
+		//user =(UtilisateurProxy) session.getAttribute("User");
+	
 	}
 
 	/**
