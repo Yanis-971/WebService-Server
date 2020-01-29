@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import beans.User;
 import model.Utilisateur;
 import model.UtilisateurProxy;
 
@@ -46,19 +45,14 @@ public class Connexion extends HttpServlet {
 		
 		boolean connect;
 		
-		
-		
 		Utilisateur user = new UtilisateurProxy();
-		user.getClass();
-		
-		connect = user.connecUsers(pseudo,pswd);
+		connect = user.connecUsers(pseudo, pswd);
 		if (connect) { 
 			user.setPseudo(pseudo);
-			System.out.println("id de l'user " + user.getClass());
+			user.setMdp(pswd);
 			HttpSession session = request.getSession();
 			session.setAttribute("User", user);
 			response.sendRedirect("/IntAppClient/Accueil");
-			 
 		}
 	   else 
 		   doGet(request, response);

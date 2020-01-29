@@ -3,7 +3,8 @@ package model;
 public class UtilisateurProxy implements model.Utilisateur {
   private String _endpoint = null;
   private model.Utilisateur utilisateur = null;
-public UtilisateurProxy() {
+  
+  public UtilisateurProxy() {
     _initUtilisateurProxy();
   }
   
