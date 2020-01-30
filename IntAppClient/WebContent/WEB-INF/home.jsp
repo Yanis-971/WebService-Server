@@ -29,10 +29,10 @@
     
     <div class="nav-scroller bg-white box-shadow">
       <nav class="nav nav-underline">
-        <a class="nav-link active" href="#">${sessionScope.User.getId()}</a>
+        <a class="nav-link active" href="#">Your ID: ${sessionScope.User.getId()}</a>
         <a class="nav-link" href="#">
           Friends
-          <span class="badge badge-pill bg-light align-text-bottom">27</span>
+          <span class="badge badge-pill bg-light align-text-bottom"><c:out value="${ nbf }" /></span>
         </a>
         <a class="nav-link" href="#">Link</a>
       </nav>
@@ -44,26 +44,33 @@
     <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-warning rounded box-shadow">
         <div class="lh-100">
           <h6 class="mb-0 text-white lh-100">${sessionScope.User.pseudo}</h6>
-          <small>${sessionScope.User.id}</small>
+          <small>ID : ${sessionScope.User.id}</small>
         </div>
       </div>
 
       <div class="my-3 p-3 bg-white rounded box-shadow">
         <h6 class="border-bottom border-gray pb-2 mb-0">Amis</h6>
+        
+        <!-- Liste d'amis -->
+        
+        <c:forEach var="tab" items="${ tabs }">
+        
         <div class="media text-muted pt-3">
           <!-- <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded"> -->
-           <c:forEach var="tab" items="${ tabs }">
+           
           <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
         
-            <strong class="d-block text-gray-dark"><c:out value="${ tab }" /></strong>
+            <strong class="d-block text-gray-dark"> @<c:out value="${ tab }" /></strong>
             </p>
+            </div>
+            
            </c:forEach>
            
-           
+           <!-- Fin Liste d'amis  -->
           
            
           
-        </div>
+        
         
         <small class="d-block text-right mt-3">
           <a href="#">Friend Request</a>
@@ -88,6 +95,22 @@
           <a href="#">Group Up</a>
         </small>
       </div>
+      
+      
+      <!-- Partie Discussion -->
+      <div class="card text-white bg-dark shadow" style="height: 350px">
+				<h5 class="card-header text-center">Discussion</h5>
+				<div class="card-body overflow-auto">
+					
+
+				</div>
+
+				<div class="card-footer">
+					<input >
+					<button > Envoyer Message </button>
+				</div>
+			</div>
+      
     </main>
 
     <!-- Bootstrap core JavaScript

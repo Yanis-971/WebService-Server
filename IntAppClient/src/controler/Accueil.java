@@ -34,7 +34,7 @@ public class Accueil extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		this.getServletContext().getRequestDispatcher("/WEB-INF/home.jsp").forward(request, response);
+		
 		HttpSession session = request.getSession();
 		
 		User u = new User();
@@ -45,15 +45,16 @@ public class Accueil extends HttpServlet {
 		String[] tabs;
 		tabs =user.getFriendList(u.getId());
 		
+		int j;
 		
-		for (int j = 0; j < tabs.length; j++) {
+		for ( j = 0; j < tabs.length; j++) {
 			System.out.println(tabs[j]);
 		}
 		
 		request.setAttribute("tabs", tabs);
-		
-		//user =(UtilisateurProxy) session.getAttribute("User");
-	
+		request.setAttribute("nbf", j);
+
+		this.getServletContext().getRequestDispatcher("/WEB-INF/home.jsp").forward(request, response);
 	}
 
 	/**
