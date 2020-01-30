@@ -62,6 +62,9 @@ body {
   color: var(--blue);
 }
 
+/*  added */
+
+
 .nav-underline .active {
   font-weight: 500;
   color: var(--gray-dark);
