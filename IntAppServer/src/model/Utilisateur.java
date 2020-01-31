@@ -103,7 +103,7 @@ public class Utilisateur {
 	
 	///// Méthodes
 	
-	public void voirUser() throws ClassNotFoundException, SQLException {
+public void voirUser() throws ClassNotFoundException, SQLException {
 		Connec con = new Connec ();
 		String req = "select * from Users";
 		ResultSet rslt =con.conE(req) ;
@@ -136,6 +136,7 @@ public class Utilisateur {
 			
         return false;
 		
+		
 	}
 	
 	public boolean connecUsers(String pseudo,String mdp) throws ClassNotFoundException, SQLException {
@@ -162,9 +163,9 @@ public class Utilisateur {
 	}
 	
 	
-	public boolean liaisonFriends(int idfriend) throws ClassNotFoundException {
+	public boolean liaisonFriends(int idu,int idfriend) throws ClassNotFoundException {
 		Connec con4 = new Connec();
-		String req = "INSERT INTO Friends (id_friend1,id_friend2) values ('"+this.id+"','"+idfriend+"')";
+		String req = "INSERT INTO Friends (id_friend1,id_friend2) values ('"+idu+"','"+idfriend+"')";
 		System.out.println(req);
 		try { 
 			con4.conU(req);
@@ -181,10 +182,10 @@ public class Utilisateur {
 	}
 	
 	
-	public boolean verifriends(int idFriends) {
+	public boolean verifriends(int idu,int idFriends) {
 		//Fonction qui retourne faux si l'ami à déjà été ajouté
 		Connec con2 = new Connec();
-		String req2 = "select * from Friends where id_friend1 = '" +this.id+ "'and id_friend2='" +idFriends+"'"  ;
+		String req2 = "select * from Friends where id_friend1 = '" +idu+ "'and id_friend2='" +idFriends+"'"  ;
 		
 		try {
 			if (con2.conE(req2).next()) {
@@ -206,7 +207,7 @@ public class Utilisateur {
 	}
 	
 	
-	public boolean addFriend(String pseudo) throws ClassNotFoundException, SQLException {
+	public boolean addFriend(int idu ,String pseudo) throws ClassNotFoundException, SQLException {
 	    Connec con2 = new Connec();
 
 		String req2 = "select * from Users where pseudo = '" +pseudo+"'";
@@ -216,10 +217,10 @@ public class Utilisateur {
 		if (rslt.next()) {
 			System.out.println("ami trouvé");
 			int idfriend = rslt.getInt("id");
-			verif =verifriends(idfriend);
+			verif =verifriends(idu, idfriend);
 			System.out.println(idfriend);
 			if (verif)
-			liaisonFriends(idfriend);
+			liaisonFriends(idu, idfriend);
 			return true;
 		}
 		else {
@@ -230,9 +231,9 @@ public class Utilisateur {
 	}
 	
 	
-     public boolean sendmessage (String message , int idfriends) {
+     public boolean sendmessage ( int idu ,String message , int idfriends) {
     	 Connec con = new Connec();
-    	 String req ="INSERT INTO Privatemessages (authorid , receiverid , message ,  date ) values ('"+this.id+"', '"+idfriends+"','"+message+"',NULL ) ";
+    	 String req ="INSERT INTO Privatemessages (authorid , receiverid , message ,  date ) values ('"+idu+"', '"+idfriends+"','"+message+"',NULL ) ";
     	 System.out.println(req);
     	 
     	 try {
@@ -249,8 +250,8 @@ public class Utilisateur {
      }
 
 
-     public Message[] liremessage(int idFriends) throws ClassNotFoundException, SQLException {
-    	 Message [] buff = new Message[500] ;
+     public String[] liremessage(int idu ,int idFriends) throws ClassNotFoundException, SQLException {
+    	 String [] buff = new String[10] ;
     	 
     	 Connec con2 = new Connec();
     	
@@ -258,45 +259,42 @@ public class Utilisateur {
     	 
     	 int i = 0;
     	 
-    	 String req = "select * from Privatemessages where (authorid = '" +this.id+ "'and receiverid='" +idFriends+"') or (authorid='"+idFriends+"' and receiverid= '"+this.id+"')";
+    	 String req = "select * from Privatemessages where (authorid = '" +idu+ "'and receiverid='" +idFriends+"') or (authorid='"+idFriends+"' and receiverid= '"+idu+"')";
     	 System.out.println(req);
     	 ResultSet rslt =con2.conE(req) ;
     	 while (rslt.next()) {
     		 idtmp = rslt.getInt("authorid");
     		 msgtmp = rslt.getString("message");
-    		 buff[i] = new Message (idtmp,msgtmp);
+    		 buff[i] = new String(msgtmp);
     		 i++;
     	 }
     	 
-    	 for (int j = 0; j < buff.length; j++) {
-			System.out.println(buff[j].contenu);
-		}
+//    	 for (int j = 0; j < buff.length; j++) {
+//			System.out.println(buff[j].contenu);
+//		}
 		return buff; 
      }
 	
 
-     public String [] getFriendList(int idu) throws ClassNotFoundException, SQLException{
-    	 	Connec con2 = new Connec();
-    	   String [] friend = new String [20];
- 		String req2 = "select * from Friends join Users on Friends.id_friend2 = Users.id where Friends.id_friend1 = '" +idu+"'";
-    	 	System.out.println(req2);
-    	 	ResultSet rslt =con2.conE(req2) ;
-    	 	int i =0;
- 	   	 while (rslt.next()) {
- 			friend[i]=new String(rslt.getString("pseudo"));
- 			i++;
- 		 }
- 	   	 
- 	   	 for (int j = 0; j < friend.length; j++) {
- 			System.out.println(friend[j]);
- 		}
- 		
- 		return friend;
- 		
- 	}
-
-
-	
+	public String [] getFriendList(int idu) throws ClassNotFoundException, SQLException{
+   	 	Connec con2 = new Connec();
+   	   String [] friend = new String[5];
+		String req2 = "select * from Friends join Users on Friends.id_friend2 = Users.id where Friends.id_friend1 = '" +idu+"'";
+   	 	System.out.println(req2);
+   	 	ResultSet rslt =con2.conE(req2) ;
+   	 	int i =0;
+	   	 while (rslt.next()) {
+			friend[i]=new String(rslt.getString("pseudo"));
+			i++;
+		 }
+	   	 
+	   	 for (int j = 0; j < friend.length; j++) {
+			System.out.println(friend[j]);
+		}
+		
+		return friend;
+		
+	}
 	
 	
 	
@@ -334,22 +332,22 @@ public class Utilisateur {
 	}
 	
 	
-	public boolean addAdmin(String groupname) throws ClassNotFoundException, SQLException {
+	public boolean addAdmin(int idu,String groupname) throws ClassNotFoundException, SQLException {
 		Connec con = new Connec();
-		String req2 = "insert into GroupUserList (  id_groupe	, id_user  ) values ('"+getIdGroupByName(groupname)+"','"+this.id+"')";
+		String req2 = "insert into GroupUserList (  id_groupe	, id_user  ) values ('"+getIdGroupByName(groupname)+"','"+idu+"')";
 		System.out.println(req2);
 		con.conU(req2) ;
 		return false;
 	}
 	
-	public boolean addgroup(String groupname,String description) throws SQLException, InterruptedException {
+	public boolean addgroup(int idu,String groupname,String description) throws SQLException, InterruptedException {
 		
 		String req2 = "INSERT into `Group`( name , description ) values ('"+groupname+"','"+description+"')";
    	 	System.out.println(req2);
    	 	
 			try {
 				con2.conU(req2) ;
-				addAdmin(groupname);
+				addAdmin(idu,groupname);
 				System.out.println("ajout du groupe");
 			} catch (ClassNotFoundException e) {
 				// TODO Auto-generated catch block
@@ -371,8 +369,24 @@ public class Utilisateur {
 		return -1;
 	}
 	
-	public boolean addUserToGroup(String pseudo,int idgroup) {
-		String req2 = "select * from GroupUserList where id_groupe ='"+idgroup+"'and id_user ='"+this.id+"' and isAdmin = True" ;
+	public String pseudoById(int id) throws ClassNotFoundException, SQLException {
+		String req2 = "select * from Users where id = '" +id+ "'";
+		System.out.println(req2);
+		String ps="users";
+		ResultSet rslt = con2.conE(req2) ;
+		if(rslt.next()) {
+			ps= rslt.getString("pseudo");
+			
+			return ps;
+				
+		}
+		return ps;
+	}
+	
+	
+	
+	public boolean addUserToGroup(int idu,String pseudo,int idgroup) {
+		String req2 = "select * from GroupUserList where id_groupe ='"+idgroup+"'and id_user ='"+idu+"' and isAdmin = True" ;
    	 	System.out.println(req2);
    	 try {
 		ResultSet rslt =con2.conE(req2) ;
@@ -383,7 +397,7 @@ public class Utilisateur {
 		   	 	System.out.println(req2);
 				con2.conU(req2);
 			}
-			
+			 
 		}
 	} catch (ClassNotFoundException | SQLException e) {
 		// TODO Auto-generated catch block
@@ -392,17 +406,4 @@ public class Utilisateur {
 		return false;
 
 	}
-	
-	
-	public String pseudoById(int id) throws ClassNotFoundException, SQLException {
-		String req2 = "select * from Users where id = '" +id+ "'";
-		System.out.println(req2);
-		ResultSet rslt = con2.conE(req2) ;
-		if(rslt.next()) {
-			return rslt.getString("pseudo");
-		}
-		return null;
-	}
-	
-
 }

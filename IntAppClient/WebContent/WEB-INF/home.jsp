@@ -67,15 +67,26 @@
 						<h6 class="border-bottom border-gray pb-2 mb-0">Amis</h6>
 
 						<c:forEach var="tab" items="${ tabs }">
+							<c:choose>
 
-							<div class="media text-muted pt-3">
-								<!-- <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded"> -->
-								<p
-									class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-									<strong class="d-block text-gray-dark"> @<c:out
-											value="${ tab }" /></strong>
-								</p>
-							</div>
+
+								<c:when test="${ tab != null }">
+
+									<div class="media text-muted pt-3">
+										<!-- <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded"> -->
+										<p
+											class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+											<strong class="d-block text-gray-dark"> <a
+												href="/IntAppClient/Accueil?fpseudo=<c:out value="${ tab }" />">@<c:out
+														value="${ tab }" />
+											</a>
+											</strong>
+										</p>
+									</div>
+
+								</c:when>
+								<c:otherwise></c:otherwise>
+							</c:choose>
 
 						</c:forEach>
 
@@ -117,7 +128,21 @@
 			<div class="card text-white bg-dark shadow col-md-9 my-3"
 				style="height: 350px">
 				<h5 class="card-header text-center">Discussion</h5>
-				<div class="card-body overflow-auto"></div>
+				<div class="card-body overflow-auto">
+				
+				<c:forEach var="msg" items="${ msgs }">
+							<c:choose>
+
+
+								<c:when test="${ msg != null }">
+									<p><c:out value="${ msg }" /></p>
+								</c:when>
+								<c:otherwise></c:otherwise>
+							</c:choose>
+
+						</c:forEach>
+				</div>
+				</div>
 
 				<div class="card-footer">
 					<input>
