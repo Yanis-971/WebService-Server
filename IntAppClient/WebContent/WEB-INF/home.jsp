@@ -13,10 +13,7 @@
 <title>Home</title>
 
 <!-- Bootstrap core CSS -->
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-	crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <!-- Custom styles for this template -->
 <link href="CSS/offcanvas.css" rel="stylesheet">
 </head>
@@ -34,11 +31,11 @@
 
 	<div class="nav-scroller bg-white box-shadow">
 		<nav class="nav nav-underline">
-			<a class="nav-link active" href="#">Your ID:
-				${sessionScope.User.getId()}</a> <a class="nav-link" href="#">
+			<p>Your ID:
+				${sessionScope.User.getId()}</p> <p>
 				Friends <span class="badge badge-pill bg-light align-text-bottom"><c:out
 						value="${ nbf }" /></span>
-			</a> <a class="nav-link" href="#">Link</a>
+			</p> 
 		</nav>
 	</div>
 
@@ -132,8 +129,6 @@
 				
 				<c:forEach var="msg" items="${ msgs }">
 							<c:choose>
-
-
 								<c:when test="${ msg != null }">
 									<p><c:out value="${ msg }" /></p>
 								</c:when>
@@ -142,13 +137,19 @@
 
 						</c:forEach>
 				</div>
-				</div>
-
+				
 				<div class="card-footer">
-					<input>
-					<button>Envoyer Message</button>
+					<div class="input-group mb-3">
+  						<input type="text" class="form-control" placeholder="Write a Message" aria-label="Write" aria-describedby="basic-addon2">
+  						<div class="input-group-append">
+    						<button class="btn btn-outline-secondary" type="button">Send Message</button>
+  						</div>
+					</div>
 				</div>
 			</div>
+		
+
+				
 			<!--------------- Fin Partie Discussion ----------------->
 
 

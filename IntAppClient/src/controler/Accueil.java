@@ -54,12 +54,15 @@ public class Accueil extends HttpServlet {
 		String[] friendlist;
 		friendlist =user.getFriendList(u.getId());
 		
-		int j;
-		for ( j = 0; j < friendlist.length; j++) {
+		int nb=0;
+		for (int  j = 0; j < friendlist.length; j++) {
+			if (friendlist[j]!=null)
+				nb++;
 			System.out.println(friendlist[j]);
 		}
+		
 		request.setAttribute("tabs", friendlist);
-		request.setAttribute("nbf", j);
+		request.setAttribute("nbf", nb);
 		//////////////////////////////////////////
 		
 		//Liste Messages ////

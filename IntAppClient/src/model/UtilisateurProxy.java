@@ -50,16 +50,22 @@ public class UtilisateurProxy implements model.Utilisateur {
     utilisateur.setId(id);
   }
   
-  public java.lang.String getPseudo() throws java.rmi.RemoteException{
+  public java.lang.String getPrenom() throws java.rmi.RemoteException{
     if (utilisateur == null)
       _initUtilisateurProxy();
-    return utilisateur.getPseudo();
+    return utilisateur.getPrenom();
   }
   
-  public void setPseudo(java.lang.String pseudo) throws java.rmi.RemoteException{
+  public void setPrenom(java.lang.String prenom) throws java.rmi.RemoteException{
     if (utilisateur == null)
       _initUtilisateurProxy();
-    utilisateur.setPseudo(pseudo);
+    utilisateur.setPrenom(prenom);
+  }
+  
+  public void voirUser() throws java.rmi.RemoteException{
+    if (utilisateur == null)
+      _initUtilisateurProxy();
+    utilisateur.voirUser();
   }
   
   public java.lang.String getNom() throws java.rmi.RemoteException{
@@ -74,10 +80,16 @@ public class UtilisateurProxy implements model.Utilisateur {
     utilisateur.setNom(nom);
   }
   
-  public void voirUser() throws java.rmi.RemoteException{
+  public java.lang.String getPseudo() throws java.rmi.RemoteException{
     if (utilisateur == null)
       _initUtilisateurProxy();
-    utilisateur.voirUser();
+    return utilisateur.getPseudo();
+  }
+  
+  public void setPseudo(java.lang.String pseudo) throws java.rmi.RemoteException{
+    if (utilisateur == null)
+      _initUtilisateurProxy();
+    utilisateur.setPseudo(pseudo);
   }
   
   public java.lang.String getMdp() throws java.rmi.RemoteException{
@@ -86,34 +98,16 @@ public class UtilisateurProxy implements model.Utilisateur {
     return utilisateur.getMdp();
   }
   
-  public void setPrenom(java.lang.String prenom) throws java.rmi.RemoteException{
-    if (utilisateur == null)
-      _initUtilisateurProxy();
-    utilisateur.setPrenom(prenom);
-  }
-  
-  public java.lang.String getPrenom() throws java.rmi.RemoteException{
-    if (utilisateur == null)
-      _initUtilisateurProxy();
-    return utilisateur.getPrenom();
-  }
-  
-  public boolean connecUsers(java.lang.String pseudo, java.lang.String mdp) throws java.rmi.RemoteException{
-    if (utilisateur == null)
-      _initUtilisateurProxy();
-    return utilisateur.connecUsers(pseudo, mdp);
-  }
-  
   public void setMdp(java.lang.String mdp) throws java.rmi.RemoteException{
     if (utilisateur == null)
       _initUtilisateurProxy();
     utilisateur.setMdp(mdp);
   }
   
-  public boolean liaisonFriends(int idu, int idfriend) throws java.rmi.RemoteException{
+  public boolean connecUsers(java.lang.String pseudo, java.lang.String mdp) throws java.rmi.RemoteException{
     if (utilisateur == null)
       _initUtilisateurProxy();
-    return utilisateur.liaisonFriends(idu, idfriend);
+    return utilisateur.connecUsers(pseudo, mdp);
   }
   
   public boolean addUtilisateurs(java.lang.String mdp, java.lang.String nom, java.lang.String prenom, java.lang.String pseudo) throws java.rmi.RemoteException{
@@ -128,10 +122,10 @@ public class UtilisateurProxy implements model.Utilisateur {
     return utilisateur.verifriends(idu, idFriends);
   }
   
-  public java.lang.String[] liremessage(int idu, int idFriends) throws java.rmi.RemoteException{
+  public boolean sendmessage(int idu, java.lang.String message, int idfriends) throws java.rmi.RemoteException{
     if (utilisateur == null)
       _initUtilisateurProxy();
-    return utilisateur.liremessage(idu, idFriends);
+    return utilisateur.sendmessage(idu, message, idfriends);
   }
   
   public boolean addFriend(int idu, java.lang.String pseudo) throws java.rmi.RemoteException{
@@ -140,28 +134,10 @@ public class UtilisateurProxy implements model.Utilisateur {
     return utilisateur.addFriend(idu, pseudo);
   }
   
-  public boolean sendmessage(int idu, java.lang.String message, int idfriends) throws java.rmi.RemoteException{
+  public boolean liaisonFriends(int idu, int idfriend) throws java.rmi.RemoteException{
     if (utilisateur == null)
       _initUtilisateurProxy();
-    return utilisateur.sendmessage(idu, message, idfriends);
-  }
-  
-  public int getIdGroupByName(java.lang.String name) throws java.rmi.RemoteException{
-    if (utilisateur == null)
-      _initUtilisateurProxy();
-    return utilisateur.getIdGroupByName(name);
-  }
-  
-  public boolean addAdmin(int idu, java.lang.String groupname) throws java.rmi.RemoteException{
-    if (utilisateur == null)
-      _initUtilisateurProxy();
-    return utilisateur.addAdmin(idu, groupname);
-  }
-  
-  public boolean addgroup(int idu, java.lang.String groupname, java.lang.String description) throws java.rmi.RemoteException{
-    if (utilisateur == null)
-      _initUtilisateurProxy();
-    return utilisateur.addgroup(idu, groupname, description);
+    return utilisateur.liaisonFriends(idu, idfriend);
   }
   
   public int idBypseudo(java.lang.String pseudo) throws java.rmi.RemoteException{
@@ -170,10 +146,28 @@ public class UtilisateurProxy implements model.Utilisateur {
     return utilisateur.idBypseudo(pseudo);
   }
   
-  public java.lang.String pseudoById(int id) throws java.rmi.RemoteException{
+  public int getIdGroupByName(java.lang.String name) throws java.rmi.RemoteException{
     if (utilisateur == null)
       _initUtilisateurProxy();
-    return utilisateur.pseudoById(id);
+    return utilisateur.getIdGroupByName(name);
+  }
+  
+  public java.lang.String[] liremessage(int idu, int idFriends) throws java.rmi.RemoteException{
+    if (utilisateur == null)
+      _initUtilisateurProxy();
+    return utilisateur.liremessage(idu, idFriends);
+  }
+  
+  public boolean addUserToGroup(int idu, java.lang.String pseudo, int idgroup) throws java.rmi.RemoteException{
+    if (utilisateur == null)
+      _initUtilisateurProxy();
+    return utilisateur.addUserToGroup(idu, pseudo, idgroup);
+  }
+  
+  public boolean addAdmin(int idu, java.lang.String groupname) throws java.rmi.RemoteException{
+    if (utilisateur == null)
+      _initUtilisateurProxy();
+    return utilisateur.addAdmin(idu, groupname);
   }
   
   public java.lang.String[] getFriendList(int idu) throws java.rmi.RemoteException{
@@ -182,10 +176,16 @@ public class UtilisateurProxy implements model.Utilisateur {
     return utilisateur.getFriendList(idu);
   }
   
-  public boolean addUserToGroup(int idu, java.lang.String pseudo, int idgroup) throws java.rmi.RemoteException{
+  public boolean addgroup(int idu, java.lang.String groupname, java.lang.String description) throws java.rmi.RemoteException{
     if (utilisateur == null)
       _initUtilisateurProxy();
-    return utilisateur.addUserToGroup(idu, pseudo, idgroup);
+    return utilisateur.addgroup(idu, groupname, description);
+  }
+  
+  public java.lang.String pseudoById(int id) throws java.rmi.RemoteException{
+    if (utilisateur == null)
+      _initUtilisateurProxy();
+    return utilisateur.pseudoById(id);
   }
   
   public int getId() throws java.rmi.RemoteException{
