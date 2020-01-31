@@ -32,7 +32,8 @@
 	<div class="nav-scroller bg-white box-shadow">
 		<nav class="nav nav-underline">
 			<p class="nav nav-link">Your ID:
-				${sessionScope.User.getId()}</p> <p>
+				${sessionScope.User.getId()}</p> 
+				<p class="nav nav-link">
 				Friends <span class="badge badge-pill bg-light align-text-bottom"><c:out
 						value="${ nbf }" /></span>
 			</p> 
@@ -86,7 +87,7 @@
 						</c:forEach>
 
 
-						<small class="d-block text-right mt-3"> <a href="#">Friend
+						<small class="d-block text-right mt-3"> <a href="/IntAppClient/Adding">Friend
 								Request</a>
 						</small>
 					</div>
@@ -135,9 +136,9 @@
 
 			<!------------------------------------------------------- Fin Partie Gauche  -------------------------------->
 
-			<!--------------- Partie Discussion ----------------->
+			<!--------------- Partie Discussion ---------------------------------------------------------------->
 			<div class="card text-white bg-dark shadow col-md-9 my-3"
-				style="height: 350px">
+				style="height: 100%">
 				<h5 class="card-header text-center">Discussion</h5>
 				<div class="card-body overflow-auto">
 				
@@ -153,11 +154,13 @@
 				</div>
 				
 				<div class="card-footer">
-					<div class="input-group mb-3">
-  						<input type="text" class="form-control" placeholder="Write a Message" aria-label="Write" aria-describedby="basic-addon2">
-  						<div class="input-group-append">
-    						<button class="btn btn-outline-secondary" type="button">Send Message</button>
+					<div class="input-group mb-3" >
+					<form action="Accueil" method="post">
+  						<input type="text" class="form-control" placeholder="Write a Message" aria-label="Write" aria-describedby="basic-addon2" id="input" name="input">
+  						<div class="input-group-append" >
+    						<button class="btn btn-outline-secondary" type="submit">Send Message</button>
   						</div>
+  				</form>
 					</div>
 				</div>
 			</div>

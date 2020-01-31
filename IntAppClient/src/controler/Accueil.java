@@ -94,6 +94,20 @@ public class Accueil extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		String input = request.getParameter("input");
+		HttpSession session = request.getSession();
+		User u = new User();
+		u=(User) session.getAttribute("User");
+		Utilisateur user = new UtilisateurProxy();
+		
+		String pseudofriend = request.getParameter("fpseudo");
+		int idfriend = user.idBypseudo(pseudofriend);
+		
+		user.sendmessage(u.id, input, idfriend);
+		
+		
+		
+		
 		doGet(request, response);
 	}
 

@@ -59,6 +59,15 @@
     <url-pattern>/Home</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+    <servlet-name>Adding</servlet-name>
+    <servlet-class>controler.Adding</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Adding</servlet-name>
+    <url-pattern>/Addfriends</url-pattern>
+  </servlet-mapping>
+  
   
   <jsp-config>
         <jsp-property-group>
