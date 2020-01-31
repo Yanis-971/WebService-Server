@@ -288,9 +288,9 @@ public void voirUser() throws ClassNotFoundException, SQLException {
 			i++;
 		 }
 	   	 
-	   	 for (int j = 0; j < friend.length; j++) {
-			System.out.println(friend[j]);
-		}
+//	   	 for (int j = 0; j < friend.length; j++) {
+//			System.out.println(friend[j]);
+//		}
 		
 		return friend;
 		
@@ -317,9 +317,9 @@ public void voirUser() throws ClassNotFoundException, SQLException {
 		 i++;
 	 }
    	 
-   	 for (int j = 0; j < buff.length; j++) {
-		System.out.println(buff[j]);
-	}
+//   	 for (int j = 0; j < buff.length; j++) {
+//		System.out.println(buff[j]);
+//	}
    	 		
 		return buff;
 

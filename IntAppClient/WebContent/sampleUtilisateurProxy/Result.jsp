@@ -132,13 +132,13 @@ case 23:
 break;
 case 28:
         gotMethod = true;
-        java.lang.String getPrenom28mtemp = sampleUtilisateurProxyid.getPrenom();
-if(getPrenom28mtemp == null){
+        java.lang.String getPseudo28mtemp = sampleUtilisateurProxyid.getPseudo();
+if(getPseudo28mtemp == null){
 %>
-<%=getPrenom28mtemp %>
+<%=getPseudo28mtemp %>
 <%
 }else{
-        String tempResultreturnp29 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(getPrenom28mtemp));
+        String tempResultreturnp29 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(getPseudo28mtemp));
         %>
         <%= tempResultreturnp29 %>
         <%
@@ -146,252 +146,280 @@ if(getPrenom28mtemp == null){
 break;
 case 31:
         gotMethod = true;
-        String prenom_2id=  request.getParameter("prenom34");
-            java.lang.String prenom_2idTemp = null;
-        if(!prenom_2id.equals("")){
-         prenom_2idTemp  = prenom_2id;
+        String pseudo_2id=  request.getParameter("pseudo34");
+            java.lang.String pseudo_2idTemp = null;
+        if(!pseudo_2id.equals("")){
+         pseudo_2idTemp  = pseudo_2id;
         }
-        sampleUtilisateurProxyid.setPrenom(prenom_2idTemp);
+        sampleUtilisateurProxyid.setPseudo(pseudo_2idTemp);
 break;
 case 36:
         gotMethod = true;
-        sampleUtilisateurProxyid.voirUser();
+        java.lang.String getPrenom36mtemp = sampleUtilisateurProxyid.getPrenom();
+if(getPrenom36mtemp == null){
+%>
+<%=getPrenom36mtemp %>
+<%
+}else{
+        String tempResultreturnp37 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(getPrenom36mtemp));
+        %>
+        <%= tempResultreturnp37 %>
+        <%
+}
 break;
 case 39:
         gotMethod = true;
-        java.lang.String getNom39mtemp = sampleUtilisateurProxyid.getNom();
-if(getNom39mtemp == null){
+        String prenom_3id=  request.getParameter("prenom42");
+            java.lang.String prenom_3idTemp = null;
+        if(!prenom_3id.equals("")){
+         prenom_3idTemp  = prenom_3id;
+        }
+        sampleUtilisateurProxyid.setPrenom(prenom_3idTemp);
+break;
+case 44:
+        gotMethod = true;
+        String nom_4id=  request.getParameter("nom47");
+            java.lang.String nom_4idTemp = null;
+        if(!nom_4id.equals("")){
+         nom_4idTemp  = nom_4id;
+        }
+        sampleUtilisateurProxyid.setNom(nom_4idTemp);
+break;
+case 49:
+        gotMethod = true;
+        java.lang.String getNom49mtemp = sampleUtilisateurProxyid.getNom();
+if(getNom49mtemp == null){
 %>
-<%=getNom39mtemp %>
+<%=getNom49mtemp %>
 <%
 }else{
-        String tempResultreturnp40 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(getNom39mtemp));
+        String tempResultreturnp50 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(getNom49mtemp));
         %>
-        <%= tempResultreturnp40 %>
+        <%= tempResultreturnp50 %>
         <%
 }
 break;
-case 42:
+case 52:
         gotMethod = true;
-        String nom_3id=  request.getParameter("nom45");
-            java.lang.String nom_3idTemp = null;
-        if(!nom_3id.equals("")){
-         nom_3idTemp  = nom_3id;
-        }
-        sampleUtilisateurProxyid.setNom(nom_3idTemp);
-break;
-case 47:
-        gotMethod = true;
-        java.lang.String getPseudo47mtemp = sampleUtilisateurProxyid.getPseudo();
-if(getPseudo47mtemp == null){
+        java.lang.String getMdp52mtemp = sampleUtilisateurProxyid.getMdp();
+if(getMdp52mtemp == null){
 %>
-<%=getPseudo47mtemp %>
+<%=getMdp52mtemp %>
 <%
 }else{
-        String tempResultreturnp48 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(getPseudo47mtemp));
+        String tempResultreturnp53 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(getMdp52mtemp));
         %>
-        <%= tempResultreturnp48 %>
+        <%= tempResultreturnp53 %>
         <%
 }
-break;
-case 50:
-        gotMethod = true;
-        String pseudo_4id=  request.getParameter("pseudo53");
-            java.lang.String pseudo_4idTemp = null;
-        if(!pseudo_4id.equals("")){
-         pseudo_4idTemp  = pseudo_4id;
-        }
-        sampleUtilisateurProxyid.setPseudo(pseudo_4idTemp);
 break;
 case 55:
         gotMethod = true;
-        java.lang.String getMdp55mtemp = sampleUtilisateurProxyid.getMdp();
-if(getMdp55mtemp == null){
-%>
-<%=getMdp55mtemp %>
-<%
-}else{
-        String tempResultreturnp56 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(getMdp55mtemp));
+        String pseudo_5id=  request.getParameter("pseudo58");
+            java.lang.String pseudo_5idTemp = null;
+        if(!pseudo_5id.equals("")){
+         pseudo_5idTemp  = pseudo_5id;
+        }
+        String mdp_6id=  request.getParameter("mdp60");
+            java.lang.String mdp_6idTemp = null;
+        if(!mdp_6id.equals("")){
+         mdp_6idTemp  = mdp_6id;
+        }
+        boolean connecUsers55mtemp = sampleUtilisateurProxyid.connecUsers(pseudo_5idTemp,mdp_6idTemp);
+        String tempResultreturnp56 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(connecUsers55mtemp));
         %>
         <%= tempResultreturnp56 %>
         <%
-}
 break;
-case 58:
+case 62:
         gotMethod = true;
-        String mdp_5id=  request.getParameter("mdp61");
-            java.lang.String mdp_5idTemp = null;
-        if(!mdp_5id.equals("")){
-         mdp_5idTemp  = mdp_5id;
+        String idu_7id=  request.getParameter("idu65");
+        int idu_7idTemp  = Integer.parseInt(idu_7id);
+        String pseudo_8id=  request.getParameter("pseudo67");
+            java.lang.String pseudo_8idTemp = null;
+        if(!pseudo_8id.equals("")){
+         pseudo_8idTemp  = pseudo_8id;
         }
-        sampleUtilisateurProxyid.setMdp(mdp_5idTemp);
-break;
-case 63:
-        gotMethod = true;
-        String pseudo_6id=  request.getParameter("pseudo66");
-            java.lang.String pseudo_6idTemp = null;
-        if(!pseudo_6id.equals("")){
-         pseudo_6idTemp  = pseudo_6id;
-        }
-        String mdp_7id=  request.getParameter("mdp68");
-            java.lang.String mdp_7idTemp = null;
-        if(!mdp_7id.equals("")){
-         mdp_7idTemp  = mdp_7id;
-        }
-        boolean connecUsers63mtemp = sampleUtilisateurProxyid.connecUsers(pseudo_6idTemp,mdp_7idTemp);
-        String tempResultreturnp64 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(connecUsers63mtemp));
+        boolean addFriend62mtemp = sampleUtilisateurProxyid.addFriend(idu_7idTemp,pseudo_8idTemp);
+        String tempResultreturnp63 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(addFriend62mtemp));
         %>
-        <%= tempResultreturnp64 %>
+        <%= tempResultreturnp63 %>
         <%
 break;
-case 70:
+case 69:
         gotMethod = true;
-        String mdp_8id=  request.getParameter("mdp73");
-            java.lang.String mdp_8idTemp = null;
-        if(!mdp_8id.equals("")){
-         mdp_8idTemp  = mdp_8id;
-        }
-        String nom_9id=  request.getParameter("nom75");
-            java.lang.String nom_9idTemp = null;
-        if(!nom_9id.equals("")){
-         nom_9idTemp  = nom_9id;
-        }
-        String prenom_10id=  request.getParameter("prenom77");
-            java.lang.String prenom_10idTemp = null;
-        if(!prenom_10id.equals("")){
-         prenom_10idTemp  = prenom_10id;
-        }
-        String pseudo_11id=  request.getParameter("pseudo79");
-            java.lang.String pseudo_11idTemp = null;
-        if(!pseudo_11id.equals("")){
-         pseudo_11idTemp  = pseudo_11id;
-        }
-        boolean addUtilisateurs70mtemp = sampleUtilisateurProxyid.addUtilisateurs(mdp_8idTemp,nom_9idTemp,prenom_10idTemp,pseudo_11idTemp);
-        String tempResultreturnp71 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(addUtilisateurs70mtemp));
+        String idu_9id=  request.getParameter("idu72");
+        int idu_9idTemp  = Integer.parseInt(idu_9id);
+        String idFriends_10id=  request.getParameter("idFriends74");
+        int idFriends_10idTemp  = Integer.parseInt(idFriends_10id);
+        boolean verifriends69mtemp = sampleUtilisateurProxyid.verifriends(idu_9idTemp,idFriends_10idTemp);
+        String tempResultreturnp70 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(verifriends69mtemp));
         %>
-        <%= tempResultreturnp71 %>
+        <%= tempResultreturnp70 %>
         <%
 break;
-case 81:
+case 76:
         gotMethod = true;
-        String idu_12id=  request.getParameter("idu84");
-        int idu_12idTemp  = Integer.parseInt(idu_12id);
-        String idFriends_13id=  request.getParameter("idFriends86");
-        int idFriends_13idTemp  = Integer.parseInt(idFriends_13id);
-        boolean verifriends81mtemp = sampleUtilisateurProxyid.verifriends(idu_12idTemp,idFriends_13idTemp);
-        String tempResultreturnp82 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(verifriends81mtemp));
+        String idu_11id=  request.getParameter("idu79");
+        int idu_11idTemp  = Integer.parseInt(idu_11id);
+        String idfriend_12id=  request.getParameter("idfriend81");
+        int idfriend_12idTemp  = Integer.parseInt(idfriend_12id);
+        boolean liaisonFriends76mtemp = sampleUtilisateurProxyid.liaisonFriends(idu_11idTemp,idfriend_12idTemp);
+        String tempResultreturnp77 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(liaisonFriends76mtemp));
         %>
-        <%= tempResultreturnp82 %>
+        <%= tempResultreturnp77 %>
         <%
 break;
-case 88:
+case 83:
         gotMethod = true;
-        String idu_14id=  request.getParameter("idu91");
-        int idu_14idTemp  = Integer.parseInt(idu_14id);
-        String message_15id=  request.getParameter("message93");
-            java.lang.String message_15idTemp = null;
-        if(!message_15id.equals("")){
-         message_15idTemp  = message_15id;
+        String mdp_13id=  request.getParameter("mdp86");
+            java.lang.String mdp_13idTemp = null;
+        if(!mdp_13id.equals("")){
+         mdp_13idTemp  = mdp_13id;
         }
-        String idfriends_16id=  request.getParameter("idfriends95");
-        int idfriends_16idTemp  = Integer.parseInt(idfriends_16id);
-        boolean sendmessage88mtemp = sampleUtilisateurProxyid.sendmessage(idu_14idTemp,message_15idTemp,idfriends_16idTemp);
-        String tempResultreturnp89 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(sendmessage88mtemp));
+        String nom_14id=  request.getParameter("nom88");
+            java.lang.String nom_14idTemp = null;
+        if(!nom_14id.equals("")){
+         nom_14idTemp  = nom_14id;
+        }
+        String prenom_15id=  request.getParameter("prenom90");
+            java.lang.String prenom_15idTemp = null;
+        if(!prenom_15id.equals("")){
+         prenom_15idTemp  = prenom_15id;
+        }
+        String pseudo_16id=  request.getParameter("pseudo92");
+            java.lang.String pseudo_16idTemp = null;
+        if(!pseudo_16id.equals("")){
+         pseudo_16idTemp  = pseudo_16id;
+        }
+        boolean addUtilisateurs83mtemp = sampleUtilisateurProxyid.addUtilisateurs(mdp_13idTemp,nom_14idTemp,prenom_15idTemp,pseudo_16idTemp);
+        String tempResultreturnp84 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(addUtilisateurs83mtemp));
         %>
-        <%= tempResultreturnp89 %>
+        <%= tempResultreturnp84 %>
         <%
 break;
-case 97:
+case 94:
         gotMethod = true;
-        String idu_17id=  request.getParameter("idu100");
+        String idu_17id=  request.getParameter("idu97");
         int idu_17idTemp  = Integer.parseInt(idu_17id);
-        String pseudo_18id=  request.getParameter("pseudo102");
-            java.lang.String pseudo_18idTemp = null;
-        if(!pseudo_18id.equals("")){
-         pseudo_18idTemp  = pseudo_18id;
+        String message_18id=  request.getParameter("message99");
+            java.lang.String message_18idTemp = null;
+        if(!message_18id.equals("")){
+         message_18idTemp  = message_18id;
         }
-        boolean addFriend97mtemp = sampleUtilisateurProxyid.addFriend(idu_17idTemp,pseudo_18idTemp);
-        String tempResultreturnp98 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(addFriend97mtemp));
+        String idfriends_19id=  request.getParameter("idfriends101");
+        int idfriends_19idTemp  = Integer.parseInt(idfriends_19id);
+        boolean sendmessage94mtemp = sampleUtilisateurProxyid.sendmessage(idu_17idTemp,message_18idTemp,idfriends_19idTemp);
+        String tempResultreturnp95 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(sendmessage94mtemp));
         %>
-        <%= tempResultreturnp98 %>
+        <%= tempResultreturnp95 %>
         <%
 break;
-case 104:
+case 103:
         gotMethod = true;
-        String idu_19id=  request.getParameter("idu107");
-        int idu_19idTemp  = Integer.parseInt(idu_19id);
-        String idfriend_20id=  request.getParameter("idfriend109");
-        int idfriend_20idTemp  = Integer.parseInt(idfriend_20id);
-        boolean liaisonFriends104mtemp = sampleUtilisateurProxyid.liaisonFriends(idu_19idTemp,idfriend_20idTemp);
-        String tempResultreturnp105 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(liaisonFriends104mtemp));
-        %>
-        <%= tempResultreturnp105 %>
-        <%
-break;
-case 111:
-        gotMethod = true;
-        String pseudo_21id=  request.getParameter("pseudo114");
-            java.lang.String pseudo_21idTemp = null;
-        if(!pseudo_21id.equals("")){
-         pseudo_21idTemp  = pseudo_21id;
-        }
-        int idBypseudo111mtemp = sampleUtilisateurProxyid.idBypseudo(pseudo_21idTemp);
-        String tempResultreturnp112 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(idBypseudo111mtemp));
-        %>
-        <%= tempResultreturnp112 %>
-        <%
-break;
-case 116:
-        gotMethod = true;
-        String name_22id=  request.getParameter("name119");
-            java.lang.String name_22idTemp = null;
-        if(!name_22id.equals("")){
-         name_22idTemp  = name_22id;
-        }
-        int getIdGroupByName116mtemp = sampleUtilisateurProxyid.getIdGroupByName(name_22idTemp);
-        String tempResultreturnp117 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(getIdGroupByName116mtemp));
-        %>
-        <%= tempResultreturnp117 %>
-        <%
-break;
-case 121:
-        gotMethod = true;
-        String idu_23id=  request.getParameter("idu124");
-        int idu_23idTemp  = Integer.parseInt(idu_23id);
-        String idFriends_24id=  request.getParameter("idFriends126");
-        int idFriends_24idTemp  = Integer.parseInt(idFriends_24id);
-        java.lang.String[] liremessage121mtemp = sampleUtilisateurProxyid.liremessage(idu_23idTemp,idFriends_24idTemp);
-if(liremessage121mtemp == null){
+        String idu_20id=  request.getParameter("idu106");
+        int idu_20idTemp  = Integer.parseInt(idu_20id);
+        java.lang.String[] getFriendList103mtemp = sampleUtilisateurProxyid.getFriendList(idu_20idTemp);
+if(getFriendList103mtemp == null){
 %>
-<%=liremessage121mtemp %>
+<%=getFriendList103mtemp %>
 <%
 }else{
-        String tempreturnp122 = null;
-        if(liremessage121mtemp != null){
-        java.util.List listreturnp122= java.util.Arrays.asList(liremessage121mtemp);
-        tempreturnp122 = listreturnp122.toString();
+        String tempreturnp104 = null;
+        if(getFriendList103mtemp != null){
+        java.util.List listreturnp104= java.util.Arrays.asList(getFriendList103mtemp);
+        tempreturnp104 = listreturnp104.toString();
         }
         %>
-        <%=tempreturnp122%>
+        <%=tempreturnp104%>
         <%
 }
 break;
-case 128:
+case 108:
         gotMethod = true;
-        String idu_25id=  request.getParameter("idu131");
-        int idu_25idTemp  = Integer.parseInt(idu_25id);
-        String pseudo_26id=  request.getParameter("pseudo133");
-            java.lang.String pseudo_26idTemp = null;
-        if(!pseudo_26id.equals("")){
-         pseudo_26idTemp  = pseudo_26id;
+        String idu_21id=  request.getParameter("idu111");
+        int idu_21idTemp  = Integer.parseInt(idu_21id);
+        String idFriends_22id=  request.getParameter("idFriends113");
+        int idFriends_22idTemp  = Integer.parseInt(idFriends_22id);
+        java.lang.String[] liremessage108mtemp = sampleUtilisateurProxyid.liremessage(idu_21idTemp,idFriends_22idTemp);
+if(liremessage108mtemp == null){
+%>
+<%=liremessage108mtemp %>
+<%
+}else{
+        String tempreturnp109 = null;
+        if(liremessage108mtemp != null){
+        java.util.List listreturnp109= java.util.Arrays.asList(liremessage108mtemp);
+        tempreturnp109 = listreturnp109.toString();
         }
-        String idgroup_27id=  request.getParameter("idgroup135");
-        int idgroup_27idTemp  = Integer.parseInt(idgroup_27id);
-        boolean addUserToGroup128mtemp = sampleUtilisateurProxyid.addUserToGroup(idu_25idTemp,pseudo_26idTemp,idgroup_27idTemp);
-        String tempResultreturnp129 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(addUserToGroup128mtemp));
         %>
-        <%= tempResultreturnp129 %>
+        <%=tempreturnp109%>
         <%
+}
+break;
+case 115:
+        gotMethod = true;
+        String name_23id=  request.getParameter("name118");
+            java.lang.String name_23idTemp = null;
+        if(!name_23id.equals("")){
+         name_23idTemp  = name_23id;
+        }
+        int getIdGroupByName115mtemp = sampleUtilisateurProxyid.getIdGroupByName(name_23idTemp);
+        String tempResultreturnp116 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(getIdGroupByName115mtemp));
+        %>
+        <%= tempResultreturnp116 %>
+        <%
+break;
+case 120:
+        gotMethod = true;
+        String idu_24id=  request.getParameter("idu123");
+        int idu_24idTemp  = Integer.parseInt(idu_24id);
+        String groupname_25id=  request.getParameter("groupname125");
+            java.lang.String groupname_25idTemp = null;
+        if(!groupname_25id.equals("")){
+         groupname_25idTemp  = groupname_25id;
+        }
+        boolean addAdmin120mtemp = sampleUtilisateurProxyid.addAdmin(idu_24idTemp,groupname_25idTemp);
+        String tempResultreturnp121 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(addAdmin120mtemp));
+        %>
+        <%= tempResultreturnp121 %>
+        <%
+break;
+case 127:
+        gotMethod = true;
+        String id_26id=  request.getParameter("id130");
+        int id_26idTemp  = Integer.parseInt(id_26id);
+        java.lang.String pseudoById127mtemp = sampleUtilisateurProxyid.pseudoById(id_26idTemp);
+if(pseudoById127mtemp == null){
+%>
+<%=pseudoById127mtemp %>
+<%
+}else{
+        String tempResultreturnp128 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(pseudoById127mtemp));
+        %>
+        <%= tempResultreturnp128 %>
+        <%
+}
+break;
+case 132:
+        gotMethod = true;
+        String idu_27id=  request.getParameter("idu135");
+        int idu_27idTemp  = Integer.parseInt(idu_27id);
+        java.lang.String[] getGrouplist132mtemp = sampleUtilisateurProxyid.getGrouplist(idu_27idTemp);
+if(getGrouplist132mtemp == null){
+%>
+<%=getGrouplist132mtemp %>
+<%
+}else{
+        String tempreturnp133 = null;
+        if(getGrouplist132mtemp != null){
+        java.util.List listreturnp133= java.util.Arrays.asList(getGrouplist132mtemp);
+        tempreturnp133 = listreturnp133.toString();
+        }
+        %>
+        <%=tempreturnp133%>
+        <%
+}
 break;
 case 137:
         gotMethod = true;
@@ -402,95 +430,67 @@ case 137:
         if(!groupname_29id.equals("")){
          groupname_29idTemp  = groupname_29id;
         }
-        boolean addAdmin137mtemp = sampleUtilisateurProxyid.addAdmin(idu_28idTemp,groupname_29idTemp);
-        String tempResultreturnp138 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(addAdmin137mtemp));
+        String description_30id=  request.getParameter("description144");
+            java.lang.String description_30idTemp = null;
+        if(!description_30id.equals("")){
+         description_30idTemp  = description_30id;
+        }
+        boolean addgroup137mtemp = sampleUtilisateurProxyid.addgroup(idu_28idTemp,groupname_29idTemp,description_30idTemp);
+        String tempResultreturnp138 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(addgroup137mtemp));
         %>
         <%= tempResultreturnp138 %>
         <%
 break;
-case 144:
+case 146:
         gotMethod = true;
-        String idu_30id=  request.getParameter("idu147");
-        int idu_30idTemp  = Integer.parseInt(idu_30id);
-        java.lang.String[] getFriendList144mtemp = sampleUtilisateurProxyid.getFriendList(idu_30idTemp);
-if(getFriendList144mtemp == null){
-%>
-<%=getFriendList144mtemp %>
-<%
-}else{
-        String tempreturnp145 = null;
-        if(getFriendList144mtemp != null){
-        java.util.List listreturnp145= java.util.Arrays.asList(getFriendList144mtemp);
-        tempreturnp145 = listreturnp145.toString();
+        String pseudo_31id=  request.getParameter("pseudo149");
+            java.lang.String pseudo_31idTemp = null;
+        if(!pseudo_31id.equals("")){
+         pseudo_31idTemp  = pseudo_31id;
         }
+        int idBypseudo146mtemp = sampleUtilisateurProxyid.idBypseudo(pseudo_31idTemp);
+        String tempResultreturnp147 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(idBypseudo146mtemp));
         %>
-        <%=tempreturnp145%>
-        <%
-}
-break;
-case 149:
-        gotMethod = true;
-        String idu_31id=  request.getParameter("idu152");
-        int idu_31idTemp  = Integer.parseInt(idu_31id);
-        String groupname_32id=  request.getParameter("groupname154");
-            java.lang.String groupname_32idTemp = null;
-        if(!groupname_32id.equals("")){
-         groupname_32idTemp  = groupname_32id;
-        }
-        String description_33id=  request.getParameter("description156");
-            java.lang.String description_33idTemp = null;
-        if(!description_33id.equals("")){
-         description_33idTemp  = description_33id;
-        }
-        boolean addgroup149mtemp = sampleUtilisateurProxyid.addgroup(idu_31idTemp,groupname_32idTemp,description_33idTemp);
-        String tempResultreturnp150 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(addgroup149mtemp));
-        %>
-        <%= tempResultreturnp150 %>
+        <%= tempResultreturnp147 %>
         <%
 break;
-case 158:
+case 151:
         gotMethod = true;
-        String id_34id=  request.getParameter("id161");
-        int id_34idTemp  = Integer.parseInt(id_34id);
-        java.lang.String pseudoById158mtemp = sampleUtilisateurProxyid.pseudoById(id_34idTemp);
-if(pseudoById158mtemp == null){
-%>
-<%=pseudoById158mtemp %>
-<%
-}else{
-        String tempResultreturnp159 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(pseudoById158mtemp));
-        %>
-        <%= tempResultreturnp159 %>
-        <%
-}
-break;
-case 163:
-        gotMethod = true;
-        int getId163mtemp = sampleUtilisateurProxyid.getId();
-        String tempResultreturnp164 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(getId163mtemp));
-        %>
-        <%= tempResultreturnp164 %>
-        <%
-break;
-case 166:
-        gotMethod = true;
-        String idu_35id=  request.getParameter("idu169");
-        int idu_35idTemp  = Integer.parseInt(idu_35id);
-        java.lang.String[] getGrouplist166mtemp = sampleUtilisateurProxyid.getGrouplist(idu_35idTemp);
-if(getGrouplist166mtemp == null){
-%>
-<%=getGrouplist166mtemp %>
-<%
-}else{
-        String tempreturnp167 = null;
-        if(getGrouplist166mtemp != null){
-        java.util.List listreturnp167= java.util.Arrays.asList(getGrouplist166mtemp);
-        tempreturnp167 = listreturnp167.toString();
+        String idu_32id=  request.getParameter("idu154");
+        int idu_32idTemp  = Integer.parseInt(idu_32id);
+        String pseudo_33id=  request.getParameter("pseudo156");
+            java.lang.String pseudo_33idTemp = null;
+        if(!pseudo_33id.equals("")){
+         pseudo_33idTemp  = pseudo_33id;
         }
+        String idgroup_34id=  request.getParameter("idgroup158");
+        int idgroup_34idTemp  = Integer.parseInt(idgroup_34id);
+        boolean addUserToGroup151mtemp = sampleUtilisateurProxyid.addUserToGroup(idu_32idTemp,pseudo_33idTemp,idgroup_34idTemp);
+        String tempResultreturnp152 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(addUserToGroup151mtemp));
         %>
-        <%=tempreturnp167%>
+        <%= tempResultreturnp152 %>
         <%
-}
+break;
+case 160:
+        gotMethod = true;
+        String mdp_35id=  request.getParameter("mdp163");
+            java.lang.String mdp_35idTemp = null;
+        if(!mdp_35id.equals("")){
+         mdp_35idTemp  = mdp_35id;
+        }
+        sampleUtilisateurProxyid.setMdp(mdp_35idTemp);
+break;
+case 165:
+        gotMethod = true;
+        sampleUtilisateurProxyid.voirUser();
+break;
+case 168:
+        gotMethod = true;
+        int getId168mtemp = sampleUtilisateurProxyid.getId();
+        String tempResultreturnp169 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(getId168mtemp));
+        %>
+        <%= tempResultreturnp169 %>
+        <%
 break;
 }
 } catch (Exception e) { 

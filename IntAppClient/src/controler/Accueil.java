@@ -30,9 +30,8 @@ public class Accueil extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+    String pseudofriend =null;
+    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
@@ -40,7 +39,7 @@ public class Accueil extends HttpServlet {
 		Utilisateur user = new UtilisateurProxy();
 		
 		//// Retour pseudo friend de l'Url ///	
-		String pseudofriend = request.getParameter("fpseudo");
+		pseudofriend = request.getParameter("fpseudo");
 		int idfriend = user.idBypseudo(pseudofriend);
 		/////////////////////////////////////////////
 		
@@ -100,15 +99,13 @@ public class Accueil extends HttpServlet {
 		u=(User) session.getAttribute("User");
 		Utilisateur user = new UtilisateurProxy();
 		
-		String pseudofriend = request.getParameter("fpseudo");
+		
 		int idfriend = user.idBypseudo(pseudofriend);
 		
 		user.sendmessage(u.id, input, idfriend);
 		
 		
-		
-		
-		doGet(request, response);
+		response.sendRedirect("/IntAppClient/Accueil?fpseudo="+ pseudofriend);
 	}
 
 }

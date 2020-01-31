@@ -14,52 +14,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
    <element name="setIdResponse">
     <complexType/>
    </element>
-   <element name="getPrenom">
-    <complexType/>
-   </element>
-   <element name="getPrenomResponse">
-    <complexType>
-     <sequence>
-      <element name="getPrenomReturn" type="xsd:string"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="setPrenom">
-    <complexType>
-     <sequence>
-      <element name="prenom" type="xsd:string"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="setPrenomResponse">
-    <complexType/>
-   </element>
-   <element name="voirUser">
-    <complexType/>
-   </element>
-   <element name="voirUserResponse">
-    <complexType/>
-   </element>
-   <element name="getNom">
-    <complexType/>
-   </element>
-   <element name="getNomResponse">
-    <complexType>
-     <sequence>
-      <element name="getNomReturn" type="xsd:string"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="setNom">
-    <complexType>
-     <sequence>
-      <element name="nom" type="xsd:string"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="setNomResponse">
-    <complexType/>
-   </element>
    <element name="getPseudo">
     <complexType/>
    </element>
@@ -80,6 +34,46 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
    <element name="setPseudoResponse">
     <complexType/>
    </element>
+   <element name="getPrenom">
+    <complexType/>
+   </element>
+   <element name="getPrenomResponse">
+    <complexType>
+     <sequence>
+      <element name="getPrenomReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setPrenom">
+    <complexType>
+     <sequence>
+      <element name="prenom" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setPrenomResponse">
+    <complexType/>
+   </element>
+   <element name="setNom">
+    <complexType>
+     <sequence>
+      <element name="nom" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setNomResponse">
+    <complexType/>
+   </element>
+   <element name="getNom">
+    <complexType/>
+   </element>
+   <element name="getNomResponse">
+    <complexType>
+     <sequence>
+      <element name="getNomReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
    <element name="getMdp">
     <complexType/>
    </element>
@@ -89,16 +83,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
       <element name="getMdpReturn" type="xsd:string"/>
      </sequence>
     </complexType>
-   </element>
-   <element name="setMdp">
-    <complexType>
-     <sequence>
-      <element name="mdp" type="xsd:string"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="setMdpResponse">
-    <complexType/>
    </element>
    <element name="connecUsers">
     <complexType>
@@ -112,6 +96,51 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
     <complexType>
      <sequence>
       <element name="connecUsersReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addFriend">
+    <complexType>
+     <sequence>
+      <element name="idu" type="xsd:int"/>
+      <element name="pseudo" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addFriendResponse">
+    <complexType>
+     <sequence>
+      <element name="addFriendReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="verifriends">
+    <complexType>
+     <sequence>
+      <element name="idu" type="xsd:int"/>
+      <element name="idFriends" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="verifriendsResponse">
+    <complexType>
+     <sequence>
+      <element name="verifriendsReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="liaisonFriends">
+    <complexType>
+     <sequence>
+      <element name="idu" type="xsd:int"/>
+      <element name="idfriend" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="liaisonFriendsResponse">
+    <complexType>
+     <sequence>
+      <element name="liaisonFriendsReturn" type="xsd:boolean"/>
      </sequence>
     </complexType>
    </element>
@@ -132,21 +161,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      </sequence>
     </complexType>
    </element>
-   <element name="verifriends">
-    <complexType>
-     <sequence>
-      <element name="idu" type="xsd:int"/>
-      <element name="idFriends" type="xsd:int"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="verifriendsResponse">
-    <complexType>
-     <sequence>
-      <element name="verifriendsReturn" type="xsd:boolean"/>
-     </sequence>
-    </complexType>
-   </element>
    <element name="sendmessage">
     <complexType>
      <sequence>
@@ -163,61 +177,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      </sequence>
     </complexType>
    </element>
-   <element name="addFriend">
+   <element name="getFriendList">
     <complexType>
      <sequence>
       <element name="idu" type="xsd:int"/>
-      <element name="pseudo" type="xsd:string"/>
      </sequence>
     </complexType>
    </element>
-   <element name="addFriendResponse">
+   <element name="getFriendListResponse">
     <complexType>
      <sequence>
-      <element name="addFriendReturn" type="xsd:boolean"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="liaisonFriends">
-    <complexType>
-     <sequence>
-      <element name="idu" type="xsd:int"/>
-      <element name="idfriend" type="xsd:int"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="liaisonFriendsResponse">
-    <complexType>
-     <sequence>
-      <element name="liaisonFriendsReturn" type="xsd:boolean"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="idBypseudo">
-    <complexType>
-     <sequence>
-      <element name="pseudo" type="xsd:string"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="idBypseudoResponse">
-    <complexType>
-     <sequence>
-      <element name="idBypseudoReturn" type="xsd:int"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="getIdGroupByName">
-    <complexType>
-     <sequence>
-      <element name="name" type="xsd:string"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="getIdGroupByNameResponse">
-    <complexType>
-     <sequence>
-      <element name="getIdGroupByNameReturn" type="xsd:int"/>
+      <element maxOccurs="unbounded" name="getFriendListReturn" type="xsd:string"/>
      </sequence>
     </complexType>
    </element>
@@ -236,19 +206,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      </sequence>
     </complexType>
    </element>
-   <element name="addUserToGroup">
+   <element name="getIdGroupByName">
     <complexType>
      <sequence>
-      <element name="idu" type="xsd:int"/>
-      <element name="pseudo" type="xsd:string"/>
-      <element name="idgroup" type="xsd:int"/>
+      <element name="name" type="xsd:string"/>
      </sequence>
     </complexType>
    </element>
-   <element name="addUserToGroupResponse">
+   <element name="getIdGroupByNameResponse">
     <complexType>
      <sequence>
-      <element name="addUserToGroupReturn" type="xsd:boolean"/>
+      <element name="getIdGroupByNameReturn" type="xsd:int"/>
      </sequence>
     </complexType>
    </element>
@@ -264,36 +232,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
     <complexType>
      <sequence>
       <element name="addAdminReturn" type="xsd:boolean"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="getFriendList">
-    <complexType>
-     <sequence>
-      <element name="idu" type="xsd:int"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="getFriendListResponse">
-    <complexType>
-     <sequence>
-      <element maxOccurs="unbounded" name="getFriendListReturn" type="xsd:string"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="addgroup">
-    <complexType>
-     <sequence>
-      <element name="idu" type="xsd:int"/>
-      <element name="groupname" type="xsd:string"/>
-      <element name="description" type="xsd:string"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="addgroupResponse">
-    <complexType>
-     <sequence>
-      <element name="addgroupReturn" type="xsd:boolean"/>
      </sequence>
     </complexType>
    </element>
@@ -324,6 +262,68 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
       <element maxOccurs="unbounded" name="getGrouplistReturn" type="xsd:string"/>
      </sequence>
     </complexType>
+   </element>
+   <element name="addgroup">
+    <complexType>
+     <sequence>
+      <element name="idu" type="xsd:int"/>
+      <element name="groupname" type="xsd:string"/>
+      <element name="description" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addgroupResponse">
+    <complexType>
+     <sequence>
+      <element name="addgroupReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="idBypseudo">
+    <complexType>
+     <sequence>
+      <element name="pseudo" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="idBypseudoResponse">
+    <complexType>
+     <sequence>
+      <element name="idBypseudoReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addUserToGroup">
+    <complexType>
+     <sequence>
+      <element name="idu" type="xsd:int"/>
+      <element name="pseudo" type="xsd:string"/>
+      <element name="idgroup" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addUserToGroupResponse">
+    <complexType>
+     <sequence>
+      <element name="addUserToGroupReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setMdp">
+    <complexType>
+     <sequence>
+      <element name="mdp" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setMdpResponse">
+    <complexType/>
+   </element>
+   <element name="voirUser">
+    <complexType/>
+   </element>
+   <element name="voirUserResponse">
+    <complexType/>
    </element>
    <element name="getId">
     <complexType/>
@@ -474,17 +474,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
-   <wsdl:message name="verifriendsResponse">
+   <wsdl:message name="addFriendRequest">
 
-      <wsdl:part element="impl:verifriendsResponse" name="parameters">
+      <wsdl:part element="impl:addFriend" name="parameters">
 
       </wsdl:part>
 
    </wsdl:message>
 
-   <wsdl:message name="addFriendRequest">
+   <wsdl:message name="verifriendsResponse">
 
-      <wsdl:part element="impl:addFriend" name="parameters">
+      <wsdl:part element="impl:verifriendsResponse" name="parameters">
 
       </wsdl:part>
 
@@ -626,17 +626,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
-   <wsdl:message name="voirUserResponse">
+   <wsdl:message name="idBypseudoRequest">
 
-      <wsdl:part element="impl:voirUserResponse" name="parameters">
+      <wsdl:part element="impl:idBypseudo" name="parameters">
 
       </wsdl:part>
 
    </wsdl:message>
 
-   <wsdl:message name="idBypseudoRequest">
+   <wsdl:message name="voirUserResponse">
 
-      <wsdl:part element="impl:idBypseudo" name="parameters">
+      <wsdl:part element="impl:voirUserResponse" name="parameters">
 
       </wsdl:part>
 
@@ -768,66 +768,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="getPrenom">
-
-         <wsdl:input message="impl:getPrenomRequest" name="getPrenomRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:getPrenomResponse" name="getPrenomResponse">
-
-       </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="setPrenom">
-
-         <wsdl:input message="impl:setPrenomRequest" name="setPrenomRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:setPrenomResponse" name="setPrenomResponse">
-
-       </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="voirUser">
-
-         <wsdl:input message="impl:voirUserRequest" name="voirUserRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:voirUserResponse" name="voirUserResponse">
-
-       </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="getNom">
-
-         <wsdl:input message="impl:getNomRequest" name="getNomRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:getNomResponse" name="getNomResponse">
-
-       </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="setNom">
-
-         <wsdl:input message="impl:setNomRequest" name="setNomRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:setNomResponse" name="setNomResponse">
-
-       </wsdl:output>
-
-      </wsdl:operation>
-
       <wsdl:operation name="getPseudo">
 
          <wsdl:input message="impl:getPseudoRequest" name="getPseudoRequest">
@@ -852,6 +792,54 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
+      <wsdl:operation name="getPrenom">
+
+         <wsdl:input message="impl:getPrenomRequest" name="getPrenomRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getPrenomResponse" name="getPrenomResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setPrenom">
+
+         <wsdl:input message="impl:setPrenomRequest" name="setPrenomRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setPrenomResponse" name="setPrenomResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setNom">
+
+         <wsdl:input message="impl:setNomRequest" name="setNomRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setNomResponse" name="setNomResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getNom">
+
+         <wsdl:input message="impl:getNomRequest" name="getNomRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getNomResponse" name="getNomResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
       <wsdl:operation name="getMdp">
 
          <wsdl:input message="impl:getMdpRequest" name="getMdpRequest">
@@ -859,18 +847,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
        </wsdl:input>
 
          <wsdl:output message="impl:getMdpResponse" name="getMdpResponse">
-
-       </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="setMdp">
-
-         <wsdl:input message="impl:setMdpRequest" name="setMdpRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:setMdpResponse" name="setMdpResponse">
 
        </wsdl:output>
 
@@ -888,13 +864,13 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="addUtilisateurs">
+      <wsdl:operation name="addFriend">
 
-         <wsdl:input message="impl:addUtilisateursRequest" name="addUtilisateursRequest">
+         <wsdl:input message="impl:addFriendRequest" name="addFriendRequest">
 
        </wsdl:input>
 
-         <wsdl:output message="impl:addUtilisateursResponse" name="addUtilisateursResponse">
+         <wsdl:output message="impl:addFriendResponse" name="addFriendResponse">
 
        </wsdl:output>
 
@@ -912,30 +888,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="sendmessage">
-
-         <wsdl:input message="impl:sendmessageRequest" name="sendmessageRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:sendmessageResponse" name="sendmessageResponse">
-
-       </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="addFriend">
-
-         <wsdl:input message="impl:addFriendRequest" name="addFriendRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:addFriendResponse" name="addFriendResponse">
-
-       </wsdl:output>
-
-      </wsdl:operation>
-
       <wsdl:operation name="liaisonFriends">
 
          <wsdl:input message="impl:liaisonFriendsRequest" name="liaisonFriendsRequest">
@@ -948,61 +900,25 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="idBypseudo">
+      <wsdl:operation name="addUtilisateurs">
 
-         <wsdl:input message="impl:idBypseudoRequest" name="idBypseudoRequest">
+         <wsdl:input message="impl:addUtilisateursRequest" name="addUtilisateursRequest">
 
        </wsdl:input>
 
-         <wsdl:output message="impl:idBypseudoResponse" name="idBypseudoResponse">
+         <wsdl:output message="impl:addUtilisateursResponse" name="addUtilisateursResponse">
 
        </wsdl:output>
 
       </wsdl:operation>
 
-      <wsdl:operation name="getIdGroupByName">
+      <wsdl:operation name="sendmessage">
 
-         <wsdl:input message="impl:getIdGroupByNameRequest" name="getIdGroupByNameRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:getIdGroupByNameResponse" name="getIdGroupByNameResponse">
-
-       </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="liremessage">
-
-         <wsdl:input message="impl:liremessageRequest" name="liremessageRequest">
+         <wsdl:input message="impl:sendmessageRequest" name="sendmessageRequest">
 
        </wsdl:input>
 
-         <wsdl:output message="impl:liremessageResponse" name="liremessageResponse">
-
-       </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="addUserToGroup">
-
-         <wsdl:input message="impl:addUserToGroupRequest" name="addUserToGroupRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:addUserToGroupResponse" name="addUserToGroupResponse">
-
-       </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="addAdmin">
-
-         <wsdl:input message="impl:addAdminRequest" name="addAdminRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:addAdminResponse" name="addAdminResponse">
+         <wsdl:output message="impl:sendmessageResponse" name="sendmessageResponse">
 
        </wsdl:output>
 
@@ -1020,13 +936,37 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="addgroup">
+      <wsdl:operation name="liremessage">
 
-         <wsdl:input message="impl:addgroupRequest" name="addgroupRequest">
+         <wsdl:input message="impl:liremessageRequest" name="liremessageRequest">
 
        </wsdl:input>
 
-         <wsdl:output message="impl:addgroupResponse" name="addgroupResponse">
+         <wsdl:output message="impl:liremessageResponse" name="liremessageResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getIdGroupByName">
+
+         <wsdl:input message="impl:getIdGroupByNameRequest" name="getIdGroupByNameRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getIdGroupByNameResponse" name="getIdGroupByNameResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addAdmin">
+
+         <wsdl:input message="impl:addAdminRequest" name="addAdminRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addAdminResponse" name="addAdminResponse">
 
        </wsdl:output>
 
@@ -1051,6 +991,66 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
        </wsdl:input>
 
          <wsdl:output message="impl:getGrouplistResponse" name="getGrouplistResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addgroup">
+
+         <wsdl:input message="impl:addgroupRequest" name="addgroupRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addgroupResponse" name="addgroupResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="idBypseudo">
+
+         <wsdl:input message="impl:idBypseudoRequest" name="idBypseudoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:idBypseudoResponse" name="idBypseudoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addUserToGroup">
+
+         <wsdl:input message="impl:addUserToGroupRequest" name="addUserToGroupRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addUserToGroupResponse" name="addUserToGroupResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setMdp">
+
+         <wsdl:input message="impl:setMdpRequest" name="setMdpRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setMdpResponse" name="setMdpResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="voirUser">
+
+         <wsdl:input message="impl:voirUserRequest" name="voirUserRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:voirUserResponse" name="voirUserResponse">
 
        </wsdl:output>
 
@@ -1085,96 +1085,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
          </wsdl:input>
 
          <wsdl:output name="setIdResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="getPrenom">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="getPrenomRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="getPrenomResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="setPrenom">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="setPrenomRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="setPrenomResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="voirUser">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="voirUserRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="voirUserResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="getNom">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="getNomRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="getNomResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="setNom">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="setNomRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="setNomResponse">
 
             <wsdlsoap:body use="literal"/>
 
@@ -1218,6 +1128,78 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
+      <wsdl:operation name="getPrenom">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getPrenomRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getPrenomResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setPrenom">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setPrenomRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setPrenomResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setNom">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setNomRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setNomResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getNom">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getNomRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getNomResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
       <wsdl:operation name="getMdp">
 
          <wsdlsoap:operation soapAction=""/>
@@ -1229,24 +1211,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
          </wsdl:input>
 
          <wsdl:output name="getMdpResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="setMdp">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="setMdpRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="setMdpResponse">
 
             <wsdlsoap:body use="literal"/>
 
@@ -1272,17 +1236,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="addUtilisateurs">
+      <wsdl:operation name="addFriend">
 
          <wsdlsoap:operation soapAction=""/>
 
-         <wsdl:input name="addUtilisateursRequest">
+         <wsdl:input name="addFriendRequest">
 
             <wsdlsoap:body use="literal"/>
 
          </wsdl:input>
 
-         <wsdl:output name="addUtilisateursResponse">
+         <wsdl:output name="addFriendResponse">
 
             <wsdlsoap:body use="literal"/>
 
@@ -1308,42 +1272,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="sendmessage">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="sendmessageRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="sendmessageResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="addFriend">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="addFriendRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="addFriendResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-      </wsdl:operation>
-
       <wsdl:operation name="liaisonFriends">
 
          <wsdlsoap:operation soapAction=""/>
@@ -1362,17 +1290,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="idBypseudo">
+      <wsdl:operation name="addUtilisateurs">
 
          <wsdlsoap:operation soapAction=""/>
 
-         <wsdl:input name="idBypseudoRequest">
+         <wsdl:input name="addUtilisateursRequest">
 
             <wsdlsoap:body use="literal"/>
 
          </wsdl:input>
 
-         <wsdl:output name="idBypseudoResponse">
+         <wsdl:output name="addUtilisateursResponse">
 
             <wsdlsoap:body use="literal"/>
 
@@ -1380,71 +1308,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="getIdGroupByName">
+      <wsdl:operation name="sendmessage">
 
          <wsdlsoap:operation soapAction=""/>
 
-         <wsdl:input name="getIdGroupByNameRequest">
+         <wsdl:input name="sendmessageRequest">
 
             <wsdlsoap:body use="literal"/>
 
          </wsdl:input>
 
-         <wsdl:output name="getIdGroupByNameResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="liremessage">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="liremessageRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="liremessageResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="addUserToGroup">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="addUserToGroupRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="addUserToGroupResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="addAdmin">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="addAdminRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="addAdminResponse">
+         <wsdl:output name="sendmessageResponse">
 
             <wsdlsoap:body use="literal"/>
 
@@ -1470,17 +1344,53 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="addgroup">
+      <wsdl:operation name="liremessage">
 
          <wsdlsoap:operation soapAction=""/>
 
-         <wsdl:input name="addgroupRequest">
+         <wsdl:input name="liremessageRequest">
 
             <wsdlsoap:body use="literal"/>
 
          </wsdl:input>
 
-         <wsdl:output name="addgroupResponse">
+         <wsdl:output name="liremessageResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getIdGroupByName">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getIdGroupByNameRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getIdGroupByNameResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addAdmin">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addAdminRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addAdminResponse">
 
             <wsdlsoap:body use="literal"/>
 
@@ -1517,6 +1427,96 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
          </wsdl:input>
 
          <wsdl:output name="getGrouplistResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addgroup">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addgroupRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addgroupResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="idBypseudo">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="idBypseudoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="idBypseudoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addUserToGroup">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addUserToGroupRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addUserToGroupResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setMdp">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setMdpRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setMdpResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="voirUser">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="voirUserRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="voirUserResponse">
 
             <wsdlsoap:body use="literal"/>
 

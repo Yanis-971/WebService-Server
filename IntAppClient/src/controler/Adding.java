@@ -49,7 +49,7 @@ public class Adding extends HttpServlet {
 		Utilisateur user = new UtilisateurProxy();
 		user.addFriend(u.id, pseudo);
 		 
-		this.getServletContext().getRequestDispatcher("/WEB-INF/home.jsp").forward(request, response);
+		response.sendRedirect("/IntAppClient/Accueil");
 	}
 
 }
