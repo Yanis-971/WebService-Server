@@ -92,9 +92,12 @@
       <operation xmlns:operNS="http://model" xmlns:retNS="http://model" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="pseudoById" qname="operNS:pseudoById" returnQName="retNS:pseudoByIdReturn" returnType="rtns:string" soapAction="">
         <parameter xmlns:pns="http://model" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:int"/>
       </operation>
+      <operation xmlns:operNS="http://model" xmlns:retNS="http://model" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getGrouplist" qname="operNS:getGrouplist" returnQName="retNS:getGrouplistReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://model" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:idu" type="tns:int"/>
+      </operation>
       <operation xmlns:operNS="http://model" xmlns:retNS="http://model" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getId" qname="operNS:getId" returnQName="retNS:getIdReturn" returnType="rtns:int" soapAction="">
       </operation>
-      <parameter name="allowedMethods" value="sendmessage liaisonFriends liremessage connecUsers addAdmin setNom getId getMdp idBypseudo getPseudo getPrenom setId getFriendList verifriends getNom addUtilisateurs addFriend setPrenom setPseudo getIdGroupByName setMdp voirUser addgroup addUserToGroup pseudoById"/>
+      <parameter name="allowedMethods" value="sendmessage liaisonFriends liremessage connecUsers addAdmin setNom getId getMdp idBypseudo getPseudo getPrenom setId getFriendList verifriends getNom addUtilisateurs addFriend setPrenom setPseudo getIdGroupByName getGrouplist setMdp voirUser addgroup addUserToGroup pseudoById"/>
 
   </service>
 </deployment>

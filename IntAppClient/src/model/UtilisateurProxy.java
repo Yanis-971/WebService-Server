@@ -194,5 +194,11 @@ public class UtilisateurProxy implements model.Utilisateur {
     return utilisateur.getId();
   }
   
+  public java.lang.String[] getGrouplist(int idu) throws java.rmi.RemoteException{
+    if (utilisateur == null)
+      _initUtilisateurProxy();
+    return utilisateur.getGrouplist(idu);
+  }
+  
   
 }

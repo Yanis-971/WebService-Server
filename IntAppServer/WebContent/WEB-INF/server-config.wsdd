@@ -171,8 +171,11 @@
   <ns1:operation name="pseudoById" qname="ns39:pseudoById" returnQName="ns39:pseudoByIdReturn" returnType="xsd:string" soapAction="" xmlns:ns39="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
    <ns1:parameter qname="ns39:id" type="xsd:int"/>
   </ns1:operation>
-  <ns1:operation name="getId" qname="ns40:getId" returnQName="ns40:getIdReturn" returnType="xsd:int" soapAction="" xmlns:ns40="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
-  <ns1:parameter name="allowedMethods" value="sendmessage liaisonFriends liremessage connecUsers addAdmin setNom getId getMdp idBypseudo getPseudo getPrenom setId getFriendList verifriends getNom addUtilisateurs addFriend setPrenom setPseudo getIdGroupByName setMdp voirUser addgroup addUserToGroup pseudoById"/>
+  <ns1:operation name="getGrouplist" qname="ns40:getGrouplist" returnQName="ns40:getGrouplistReturn" returnType="xsd:string" soapAction="" xmlns:ns40="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns40:idu" type="xsd:int"/>
+  </ns1:operation>
+  <ns1:operation name="getId" qname="ns41:getId" returnQName="ns41:getIdReturn" returnType="xsd:int" soapAction="" xmlns:ns41="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:parameter name="allowedMethods" value="sendmessage liaisonFriends liremessage connecUsers addAdmin setNom getId getMdp idBypseudo getPseudo getPrenom setId getFriendList verifriends getNom addUtilisateurs addFriend setPrenom setPseudo getIdGroupByName getGrouplist setMdp voirUser addgroup addUserToGroup pseudoById"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="Utilisateur"/>
   <ns1:parameter name="className" value="model.Utilisateur"/>

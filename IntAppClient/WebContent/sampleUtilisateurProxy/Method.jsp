@@ -33,6 +33,7 @@
 <LI><A HREF="Input.jsp?method=149" TARGET="inputs"> addgroup(int,java.lang.String,java.lang.String)</A></LI>
 <LI><A HREF="Input.jsp?method=158" TARGET="inputs"> pseudoById(int)</A></LI>
 <LI><A HREF="Input.jsp?method=163" TARGET="inputs"> getId()</A></LI>
+<LI><A HREF="Input.jsp?method=166" TARGET="inputs"> getGrouplist(int)</A></LI>
 </UL>
 </BODY>
 </HTML>

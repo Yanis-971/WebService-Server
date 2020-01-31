@@ -297,29 +297,33 @@ public void voirUser() throws ClassNotFoundException, SQLException {
 	}
 	
 	
-	
-//	public Group [] getGrouplist() {
-//		Connec con2 = new Connec();
-//		Group [] buff = new Group[50];
-//		String req2 = "select * from Friends join Users on Friends.id_friend2 = Users.id where Friends.id_friend1 = '" +this.id+"'";
-//   	 	System.out.println(req2);
-//   	 	ResultSet rslt =con2.conE(req2) ;
-//   	 	
-//   	 int i =0;
-//   	 while (rslt.next()) {
-//   		 
-//   		 
-//		buff[i]=new Group(rslt.getInt("id"), rslt.getString("nom"), rslt.getString("prenom"));
-//		i++;
-//	 }
-//   	 
-//   	 for (int j = 0; j < friend.length; j++) {
-//		System.out.println(friend[j].pseudo);
-//	}
-//   	 		
-//		return buff;
-//
-//	}
+	public String [] getGrouplist(int idu) throws SQLException, ClassNotFoundException {
+		Connec con2 = new Connec();
+		String [] buff = new String[50];
+		String req2 = "SELECT * FROM `Groupe` JOIN GroupUserList ON GroupUserList.id_groupe = Groupe.id where id_user=  '" +idu+"'";
+   	 	System.out.println(req2);
+   	 	ResultSet rslt =con2.conE(req2) ;
+   	 	String nom;
+   	 	String descri;
+   	 	int idgr;
+   	 	
+   	 int i =0;
+   	 while (rslt.next()) {
+   		 
+   		 idgr = rslt.getInt("id");
+   		 nom = rslt.getString("name");
+		 descri = rslt.getString("description");
+		 buff[i] = nom;
+		 i++;
+	 }
+   	 
+   	 for (int j = 0; j < buff.length; j++) {
+		System.out.println(buff[j]);
+	}
+   	 		
+		return buff;
+
+	}
 	
 	public int getIdGroupByName(String name) throws ClassNotFoundException, SQLException {
 		

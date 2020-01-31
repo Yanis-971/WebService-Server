@@ -31,7 +31,7 @@
 
 	<div class="nav-scroller bg-white box-shadow">
 		<nav class="nav nav-underline">
-			<p>Your ID:
+			<p class="nav nav-link">Your ID:
 				${sessionScope.User.getId()}</p> <p>
 				Friends <span class="badge badge-pill bg-light align-text-bottom"><c:out
 						value="${ nbf }" /></span>
@@ -59,8 +59,7 @@
 
 
 					<!------------------------------------ Liste d'amis ------------------------->
-					<div class="my-3 p-3 bg-white rounded box-shadow overflow-auto"
-						style="height: 350px">
+					<div class="my-3 p-3 bg-white rounded box-shadow ">
 						<h6 class="border-bottom border-gray pb-2 mb-0">Amis</h6>
 
 						<c:forEach var="tab" items="${ tabs }">
@@ -70,7 +69,6 @@
 								<c:when test="${ tab != null }">
 
 									<div class="media text-muted pt-3">
-										<!-- <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded"> -->
 										<p
 											class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
 											<strong class="d-block text-gray-dark"> <a
@@ -94,28 +92,44 @@
 					</div>
 
 					<!--------------------- Fin Liste d'amis  ----------------------->
-
+					<!--------------------- Fin Liste Groupe  ----------------------->
 					<div class="my-3 p-3 bg-white rounded box-shadow">
 						<h6 class="border-bottom border-gray pb-2 mb-0">Groupes</h6>
-						<div class="media text-muted pt-3">
-							<!--           <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded">
- -->
-							<div
-								class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-								<div
-									class="d-flex justify-content-between align-items-center w-100">
-									<strong class="text-gray-dark">Group Name</strong>
-									<!--               <a href="#">Supprimer</a>
- -->
-								</div>
-								<span class="d-block">@username</span> <span class="d-block">@username</span>
-							</div>
-						</div>
+						
+						<c:forEach var="gp" items="${ gps }">
+							<c:choose>
+
+
+								<c:when test="${ gp != null }">
+
+									<p
+											class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+											<strong class="d-block text-gray-dark"> <a
+												href="/IntAppClient/Accueil?gpseudo=<c:out value="${ gp }" />">@<c:out
+														value="${ gp }" />
+											</a>
+											</strong>
+										</p>
+										
+										
+								<!-- <span class="d-block">@username</span> <span class="d-block">@username</span> -->
+
+
+								</c:when>
+								<c:otherwise></c:otherwise>
+							</c:choose>
+
+						</c:forEach>
+						
+						
+						
 
 						<small class="d-block text-right mt-3"> <a href="#">Group
 								Up</a>
 						</small>
 					</div>
+					
+				<!--------------------- Fin Liste Groupe  ----------------------->
 				</main>
 			</div>
 

@@ -32,5 +32,6 @@ public interface Utilisateur extends java.rmi.Remote {
     public java.lang.String[] getFriendList(int idu) throws java.rmi.RemoteException;
     public boolean addgroup(int idu, java.lang.String groupname, java.lang.String description) throws java.rmi.RemoteException;
     public java.lang.String pseudoById(int id) throws java.rmi.RemoteException;
+    public java.lang.String[] getGrouplist(int idu) throws java.rmi.RemoteException;
     public int getId() throws java.rmi.RemoteException;
 }

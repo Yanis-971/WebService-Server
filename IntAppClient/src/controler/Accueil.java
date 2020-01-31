@@ -65,6 +65,21 @@ public class Accueil extends HttpServlet {
 		request.setAttribute("nbf", nb);
 		//////////////////////////////////////////
 		
+		// Liste Groupe //////
+				String[] grouplist;
+				grouplist =user.getGrouplist(u.getId());
+				
+				int ng=0;
+				for (int  o = 0; o < grouplist.length; o++) {
+					if (grouplist[o]!=null)
+						ng++;
+					System.out.println(grouplist[o]);
+				}
+				
+				request.setAttribute("gps", grouplist);
+				request.setAttribute("nbg", ng);
+		//////////////////////////////////////////
+		
 		//Liste Messages ////
 		String[] msglist;
 		msglist =user.liremessage(u.id, idfriend);

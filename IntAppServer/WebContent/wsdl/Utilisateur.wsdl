@@ -311,6 +311,20 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      </sequence>
     </complexType>
    </element>
+   <element name="getGrouplist">
+    <complexType>
+     <sequence>
+      <element name="idu" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getGrouplistResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getGrouplistReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
    <element name="getId">
     <complexType/>
    </element>
@@ -335,6 +349,14 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
    <wsdl:message name="setMdpRequest">
 
       <wsdl:part element="impl:setMdp" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getGrouplistResponse">
+
+      <wsdl:part element="impl:getGrouplistResponse" name="parameters">
 
       </wsdl:part>
 
@@ -399,6 +421,14 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
    <wsdl:message name="setIdRequest">
 
       <wsdl:part element="impl:setId" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getGrouplistRequest">
+
+      <wsdl:part element="impl:getGrouplist" name="parameters">
 
       </wsdl:part>
 
@@ -1014,6 +1044,18 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
+      <wsdl:operation name="getGrouplist">
+
+         <wsdl:input message="impl:getGrouplistRequest" name="getGrouplistRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getGrouplistResponse" name="getGrouplistResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
       <wsdl:operation name="getId">
 
          <wsdl:input message="impl:getIdRequest" name="getIdRequest">
@@ -1457,6 +1499,24 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
          </wsdl:input>
 
          <wsdl:output name="pseudoByIdResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getGrouplist">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getGrouplistRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getGrouplistResponse">
 
             <wsdlsoap:body use="literal"/>
 
