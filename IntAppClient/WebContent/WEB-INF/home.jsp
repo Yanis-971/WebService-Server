@@ -87,7 +87,7 @@
 						</c:forEach>
 
 
-						<small class="d-block text-right mt-3"> <a href="/IntAppClient/Adding">Friend
+						<small class="d-block text-right mt-3"> <a href="/IntAppClient/Adding?type=frd">Friend
 								Request</a>
 						</small>
 					</div>
@@ -122,10 +122,7 @@
 
 						</c:forEach>
 						
-						
-						
-
-						<small class="d-block text-right mt-3"> <a href="#">Group
+						<small class="d-block text-right mt-3"> <a href="/IntAppClient/Adding?type=grp">Group
 								Up</a>
 						</small>
 					</div>
@@ -154,14 +151,16 @@
 				</div>
 				
 				<div class="card-footer">
-					<div class="input-group mb-3" >
+					
 					<form action="Accueil" method="post">
+					<div class="input-group mb-3" >
   						<input type="text" class="form-control" placeholder="Write a Message" aria-label="Write" aria-describedby="basic-addon2" id="input" name="input">
   						<div class="input-group-append" >
     						<button class="btn btn-outline-secondary" type="submit">Send Message</button>
   						</div>
+  					</div>
   				</form>
-					</div>
+					
 				</div>
 			</div>
 		

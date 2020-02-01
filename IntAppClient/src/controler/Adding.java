@@ -27,11 +27,13 @@ public class Adding extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	String type=null;
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
+		type=request.getParameter("type");
+		request.setAttribute("type", type);
 		this.getServletContext().getRequestDispatcher("/WEB-INF/ajout.jsp").forward(request, response);
 	}
 
@@ -41,13 +43,17 @@ public class Adding extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String pseudo = request.getParameter("pseudo");
+		String description = request.getParameter("description");
 		
 		HttpSession session = request.getSession();
 		User u = new User();
 		u=(User) session.getAttribute("User");
 		
 		Utilisateur user = new UtilisateurProxy();
-		user.addFriend(u.id, pseudo);
+		if (type=="frd")
+			user.addFriend(u.id, pseudo);
+		if (type=="grp")
+			user.addgroup(u.id, pseudo, description);
 		 
 		response.sendRedirect("/IntAppClient/Accueil");
 	}

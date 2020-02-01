@@ -170,7 +170,7 @@ public void voirUser() throws ClassNotFoundException, SQLException {
 		try { 
 			con4.conU(req);
 			System.out.println("ami jouté");
-			return true;
+			
 		}
 		catch(ClassNotFoundException e) {
 			System.out.println("echec ajout amis");
@@ -353,6 +353,7 @@ public void voirUser() throws ClassNotFoundException, SQLException {
 				con2.conU(req2) ;
 				addAdmin(idu,groupname);
 				System.out.println("ajout du groupe");
+				return true;
 			} catch (ClassNotFoundException e) {
 				// TODO Auto-generated catch block
 				System.out.println("pas d'ajout du groupe");
@@ -403,6 +404,7 @@ public void voirUser() throws ClassNotFoundException, SQLException {
 			}
 			 
 		}
+		return true;
 	} catch (ClassNotFoundException | SQLException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();

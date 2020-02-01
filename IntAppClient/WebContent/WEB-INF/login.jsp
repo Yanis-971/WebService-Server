@@ -43,8 +43,8 @@
       </div> -->
       
       <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-      <p class="mt-5 mb-3 text-muted text-center">2020</p>
-      <a href="">Page d'accueil</a>
+      <p class="mt-5 mb-3 text-muted text-center">&copy;2020</p>
+      <a href="/IntAppClient" class=" mt-5 mb-3text-center">Page d'accueil</a>
     </form>
   </body>
 </html>

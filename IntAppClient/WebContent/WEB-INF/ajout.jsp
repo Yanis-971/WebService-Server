@@ -19,16 +19,43 @@
   </head>
 
   <body>
-  <form class="form-signin" action="Adding" method="post">
-  <div class="text-center mb-4">
+  
+
+    
+      <form class="form-signin" action="Adding" method="post">
+      
+       <c:if test="${type == 'frd'}">
+       
+  		<div class="text-center mb-4">
         <h1 class="h3 mb-3 font-weight-normal">Friend Request</h1>
         <p>Add a friend!</p>
-      </div>
-
-    <div class="form-label-group">
-        <input type="Username" id="inputUsername" class="form-control" placeholder="Username" name="pseudo" required autofocus>
+      	</div>
+       
+       	<div class="form-label-group">
+        <input type="text" id="inputUsername" class="form-control" placeholder="Username" name="pseudo" required autofocus>
         <label for="inputUsername">Username</label>
       </div>
+       </c:if>
+       
+       
+      <c:if test="${type == 'grp' }">
+      
+      <div class="text-center mb-4">
+        <h1 class="h3 mb-3 font-weight-normal">Group up!</h1>
+        <p>Add a new Group</p>
+      	</div>
+      
+      <div class="form-label-group">
+        <input type="text" id="inputUsername" class="form-control" placeholder="Group Name" name="pseudo" required autofocus>
+        <label for="inputUsername">Group Name</label>
+        </div>
+      
+      <div class="form-label-group">
+        <input type=text id="inputDescription" class="form-control" placeholder="Description" name="description" required autofocus>
+        <label for="inputDescription">Description</label>
+      </div>
+      
+      </c:if>
 
            <button class="btn btn-lg btn-primary btn-block" type="submit">Adding up</button>
 
