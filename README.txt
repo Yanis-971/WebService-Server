@@ -3,7 +3,7 @@ Groupe 2 - NARANIN Ritchie, BENIN Yanis, BEAUCHENE Quentin, GROS-DESIR Frédéri
 Messagerie instantanée
 
 Backend
-Gestion BD/Requêtes connexion/etc.
+Gestion BD/Requêtes connexion/Fonctions, classes Utlisateurs/etc.
 Frédérick Gros-désir -  frederickgrosdesir@icloud.com
 Ritchie Naranin - ritchienaranin@gmail.com
 
