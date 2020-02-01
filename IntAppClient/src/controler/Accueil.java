@@ -80,8 +80,18 @@ public class Accueil extends HttpServlet {
 		//////////////////////////////////////////
 		
 		//Liste Messages ////
+		String[] sender = null;
+		String[] msg = null;
 		String[] msglist;
 		msglist =user.liremessage(u.id, idfriend);
+		
+		
+//		for (int j = 0; j < msglist.length; j++) {
+//			String [] listm = msglist[j].split(":");
+//			 sender[j]=listm[0];
+//			 msg[j]=listm[1];
+//		}
+		
 		request.setAttribute("msgs", msglist);
 		/////////////////////////////////////////
 

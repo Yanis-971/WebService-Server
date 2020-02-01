@@ -55,7 +55,7 @@ public class Connexion extends HttpServlet {
 			HttpSession session = request.getSession();
 			u.setId(user.idBypseudo(pseudo));
 			u.setPseudo(user.pseudoById(u.getId()));
-			System.out.println("user id" + u.getId() + "user pseudo "+ u.getPseudo());
+			System.out.println("user id" + u.getId() + " user pseudo "+ u.getPseudo());
 			session.setAttribute("User", u); 
 			response.sendRedirect("/IntAppClient/Accueil");
 		}

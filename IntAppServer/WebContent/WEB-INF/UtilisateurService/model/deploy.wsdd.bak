@@ -38,8 +38,6 @@
       </operation>
       <operation name="getNom" qname="operNS:getNom" xmlns:operNS="http://model" returnQName="retNS:getNomReturn" xmlns:retNS="http://model" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
       </operation>
-      <operation name="getMdp" qname="operNS:getMdp" xmlns:operNS="http://model" returnQName="retNS:getMdpReturn" xmlns:retNS="http://model" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
-      </operation>
       <operation name="connecUsers" qname="operNS:connecUsers" xmlns:operNS="http://model" returnQName="retNS:connecUsersReturn" xmlns:retNS="http://model" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
         <parameter qname="pns:pseudo" xmlns:pns="http://model" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
         <parameter qname="pns:mdp" xmlns:pns="http://model" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
@@ -81,12 +79,6 @@
         <parameter qname="pns:idu" xmlns:pns="http://model" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
         <parameter qname="pns:groupname" xmlns:pns="http://model" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
-      <operation name="pseudoById" qname="operNS:pseudoById" xmlns:operNS="http://model" returnQName="retNS:pseudoByIdReturn" xmlns:retNS="http://model" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
-        <parameter qname="pns:id" xmlns:pns="http://model" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-      </operation>
-      <operation name="getGrouplist" qname="operNS:getGrouplist" xmlns:operNS="http://model" returnQName="retNS:getGrouplistReturn" xmlns:retNS="http://model" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
-        <parameter qname="pns:idu" xmlns:pns="http://model" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-      </operation>
       <operation name="addgroup" qname="operNS:addgroup" xmlns:operNS="http://model" returnQName="retNS:addgroupReturn" xmlns:retNS="http://model" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
         <parameter qname="pns:idu" xmlns:pns="http://model" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
         <parameter qname="pns:groupname" xmlns:pns="http://model" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
@@ -100,14 +92,33 @@
         <parameter qname="pns:pseudo" xmlns:pns="http://model" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
         <parameter qname="pns:idgroup" xmlns:pns="http://model" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
-      <operation name="setMdp" qname="operNS:setMdp" xmlns:operNS="http://model" soapAction="" >
-        <parameter qname="pns:mdp" xmlns:pns="http://model" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      <operation name="liregroupe" qname="operNS:liregroupe" xmlns:operNS="http://model" returnQName="retNS:liregroupeReturn" xmlns:retNS="http://model" returnType="rtns:ArrayOf_xsd_string" xmlns:rtns="http://model" soapAction="" >
+        <parameter qname="pns:idu" xmlns:pns="http://model" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:idgroupe" xmlns:pns="http://model" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
       <operation name="voirUser" qname="operNS:voirUser" xmlns:operNS="http://model" soapAction="" >
       </operation>
+      <operation name="getMdp" qname="operNS:getMdp" xmlns:operNS="http://model" returnQName="retNS:getMdpReturn" xmlns:retNS="http://model" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="pseudoById" qname="operNS:pseudoById" xmlns:operNS="http://model" returnQName="retNS:pseudoByIdReturn" xmlns:retNS="http://model" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:id" xmlns:pns="http://model" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="setMdp" qname="operNS:setMdp" xmlns:operNS="http://model" soapAction="" >
+        <parameter qname="pns:mdp" xmlns:pns="http://model" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getGrouplist" qname="operNS:getGrouplist" xmlns:operNS="http://model" returnQName="retNS:getGrouplistReturn" xmlns:retNS="http://model" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:idu" xmlns:pns="http://model" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
       <operation name="getId" qname="operNS:getId" xmlns:operNS="http://model" returnQName="retNS:getIdReturn" xmlns:retNS="http://model" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
       </operation>
-      <parameter name="allowedMethods" value="sendmessage liaisonFriends liremessage connecUsers addAdmin setNom getId getMdp idBypseudo getPseudo getPrenom setId getFriendList verifriends getNom addUtilisateurs addFriend setPrenom setPseudo getIdGroupByName getGrouplist setMdp voirUser addgroup addUserToGroup pseudoById"/>
+      <parameter name="allowedMethods" value="sendmessage liaisonFriends liremessage connecUsers addAdmin setNom getId getMdp idBypseudo getPseudo liregroupe getPrenom setId getFriendList verifriends getNom addUtilisateurs addFriend setPrenom setPseudo getIdGroupByName getGrouplist setMdp voirUser addgroup addUserToGroup pseudoById"/>
 
+      <arrayMapping
+        xmlns:ns="http://model"
+        qname="ns:ArrayOf_xsd_string"
+        type="java:java.lang.String[]"
+        innerType="cmp-ns:string" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema"
+        encodingStyle=""
+      />
   </service>
 </deployment>

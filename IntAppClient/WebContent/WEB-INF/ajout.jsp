@@ -20,11 +20,10 @@
 
   <body>
   
-
-    
-      <form class="form-signin" action="Adding" method="post">
       
        <c:if test="${type == 'frd'}">
+       
+       <form class="form-signin" action="Adding" method="post">
        
   		<div class="text-center mb-4">
         <h1 class="h3 mb-3 font-weight-normal">Friend Request</h1>
@@ -35,10 +34,16 @@
         <input type="text" id="inputUsername" class="form-control" placeholder="Username" name="pseudo" required autofocus>
         <label for="inputUsername">Username</label>
       </div>
+       <button class="btn btn-lg btn-primary btn-block" type="submit">Adding up</button>
+
+
+    </form>
        </c:if>
        
        
       <c:if test="${type == 'grp' }">
+      
+      <form class="form-signin" action="Adding" method="post">
       
       <div class="text-center mb-4">
         <h1 class="h3 mb-3 font-weight-normal">Group up!</h1>
@@ -46,7 +51,7 @@
       	</div>
       
       <div class="form-label-group">
-        <input type="text" id="inputUsername" class="form-control" placeholder="Group Name" name="pseudo" required autofocus>
+        <input type="text" id="inputUsername" class="form-control" placeholder="Group Name" name="gpseudo" required autofocus>
         <label for="inputUsername">Group Name</label>
         </div>
       
@@ -55,11 +60,12 @@
         <label for="inputDescription">Description</label>
       </div>
       
-      </c:if>
-
-           <button class="btn btn-lg btn-primary btn-block" type="submit">Adding up</button>
+       <button class="btn btn-lg btn-primary btn-block" type="submit">Adding up</button>
 
 
     </form>
+      </c:if>
+
+          
   </body>
 </html>

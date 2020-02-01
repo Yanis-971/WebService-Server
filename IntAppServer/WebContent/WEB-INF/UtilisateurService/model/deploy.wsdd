@@ -28,8 +28,6 @@
       </operation>
       <operation xmlns:operNS="http://model" xmlns:retNS="http://model" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getNom" qname="operNS:getNom" returnQName="retNS:getNomReturn" returnType="rtns:string" soapAction="">
       </operation>
-      <operation xmlns:operNS="http://model" xmlns:retNS="http://model" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getMdp" qname="operNS:getMdp" returnQName="retNS:getMdpReturn" returnType="rtns:string" soapAction="">
-      </operation>
       <operation xmlns:operNS="http://model" xmlns:retNS="http://model" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="connecUsers" qname="operNS:connecUsers" returnQName="retNS:connecUsersReturn" returnType="rtns:boolean" soapAction="">
         <parameter xmlns:pns="http://model" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:pseudo" type="tns:string"/>
         <parameter xmlns:pns="http://model" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:mdp" type="tns:string"/>
@@ -71,12 +69,6 @@
         <parameter xmlns:pns="http://model" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:idu" type="tns:int"/>
         <parameter xmlns:pns="http://model" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:groupname" type="tns:string"/>
       </operation>
-      <operation xmlns:operNS="http://model" xmlns:retNS="http://model" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="pseudoById" qname="operNS:pseudoById" returnQName="retNS:pseudoByIdReturn" returnType="rtns:string" soapAction="">
-        <parameter xmlns:pns="http://model" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:int"/>
-      </operation>
-      <operation xmlns:operNS="http://model" xmlns:retNS="http://model" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getGrouplist" qname="operNS:getGrouplist" returnQName="retNS:getGrouplistReturn" returnType="rtns:string" soapAction="">
-        <parameter xmlns:pns="http://model" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:idu" type="tns:int"/>
-      </operation>
       <operation xmlns:operNS="http://model" xmlns:retNS="http://model" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="addgroup" qname="operNS:addgroup" returnQName="retNS:addgroupReturn" returnType="rtns:boolean" soapAction="">
         <parameter xmlns:pns="http://model" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:idu" type="tns:int"/>
         <parameter xmlns:pns="http://model" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:groupname" type="tns:string"/>
@@ -90,14 +82,27 @@
         <parameter xmlns:pns="http://model" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:pseudo" type="tns:string"/>
         <parameter xmlns:pns="http://model" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:idgroup" type="tns:int"/>
       </operation>
-      <operation xmlns:operNS="http://model" name="setMdp" qname="operNS:setMdp" soapAction="">
-        <parameter xmlns:pns="http://model" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:mdp" type="tns:string"/>
+      <operation xmlns:operNS="http://model" xmlns:retNS="http://model" xmlns:rtns="http://model" name="liregroupe" qname="operNS:liregroupe" returnQName="retNS:liregroupeReturn" returnType="rtns:ArrayOf_xsd_string" soapAction="">
+        <parameter xmlns:pns="http://model" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:idu" type="tns:int"/>
+        <parameter xmlns:pns="http://model" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:idgroupe" type="tns:int"/>
       </operation>
       <operation xmlns:operNS="http://model" name="voirUser" qname="operNS:voirUser" soapAction="">
       </operation>
+      <operation xmlns:operNS="http://model" xmlns:retNS="http://model" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getMdp" qname="operNS:getMdp" returnQName="retNS:getMdpReturn" returnType="rtns:string" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://model" xmlns:retNS="http://model" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="pseudoById" qname="operNS:pseudoById" returnQName="retNS:pseudoByIdReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://model" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://model" name="setMdp" qname="operNS:setMdp" soapAction="">
+        <parameter xmlns:pns="http://model" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:mdp" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://model" xmlns:retNS="http://model" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getGrouplist" qname="operNS:getGrouplist" returnQName="retNS:getGrouplistReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://model" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:idu" type="tns:int"/>
+      </operation>
       <operation xmlns:operNS="http://model" xmlns:retNS="http://model" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getId" qname="operNS:getId" returnQName="retNS:getIdReturn" returnType="rtns:int" soapAction="">
       </operation>
-      <parameter name="allowedMethods" value="sendmessage liaisonFriends liremessage connecUsers addAdmin setNom getId getMdp idBypseudo getPseudo getPrenom setId getFriendList verifriends getNom addUtilisateurs addFriend setPrenom setPseudo getIdGroupByName getGrouplist setMdp voirUser addgroup addUserToGroup pseudoById"/>
+      <parameter name="allowedMethods" value="sendmessage liaisonFriends liremessage connecUsers addAdmin setNom getId getMdp idBypseudo getPseudo liregroupe getPrenom setId getFriendList verifriends getNom addUtilisateurs addFriend setPrenom setPseudo getIdGroupByName getGrouplist setMdp voirUser addgroup addUserToGroup pseudoById"/>
 
+      <arrayMapping xmlns:ns="http://model" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema" qname="ns:ArrayOf_xsd_string" type="java:java.lang.String[]" innerType="cmp-ns:string" encodingStyle=""/>
   </service>
 </deployment>

@@ -492,6 +492,28 @@ case 168:
         <%= tempResultreturnp169 %>
         <%
 break;
+case 171:
+        gotMethod = true;
+        String idu_36id=  request.getParameter("idu174");
+        int idu_36idTemp  = Integer.parseInt(idu_36id);
+        String idgroupe_37id=  request.getParameter("idgroupe176");
+        int idgroupe_37idTemp  = Integer.parseInt(idgroupe_37id);
+        java.lang.String[][] liregroupe171mtemp = sampleUtilisateurProxyid.liregroupe(idu_36idTemp,idgroupe_37idTemp);
+if(liregroupe171mtemp == null){
+%>
+<%=liregroupe171mtemp %>
+<%
+}else{
+        String tempreturnp172 = null;
+        if(liregroupe171mtemp != null){
+        java.util.List listreturnp172= java.util.Arrays.asList(liregroupe171mtemp);
+        tempreturnp172 = listreturnp172.toString();
+        }
+        %>
+        <%=tempreturnp172%>
+        <%
+}
+break;
 }
 } catch (Exception e) { 
 %>

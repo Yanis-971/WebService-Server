@@ -259,13 +259,13 @@ public void voirUser() throws ClassNotFoundException, SQLException {
     	 
     	 int i = 0;
     	 
-    	 String req = "select * from Privatemessages where (authorid = '" +idu+ "'and receiverid='" +idFriends+"') or (authorid='"+idFriends+"' and receiverid= '"+idu+"')";
+    	 String req = "select * from Privatemessages where (authorid = '" +idu+ "'and receiverid='" +idFriends+"') or (authorid='"+idFriends+"' and receiverid='"+idu+"')";
     	 System.out.println(req);
     	 ResultSet rslt =con2.conE(req) ;
     	 while (rslt.next()) {
     		 idtmp = rslt.getInt("authorid");
     		 msgtmp = rslt.getString("message");
-    		 buff[i] = new String(msgtmp);
+    		 buff[i] = new String(idtmp+":"+msgtmp);
     		 i++;
     	 }
     	 
@@ -299,7 +299,7 @@ public void voirUser() throws ClassNotFoundException, SQLException {
 	
 	public String [] getGrouplist(int idu) throws SQLException, ClassNotFoundException {
 		Connec con2 = new Connec();
-		String [] buff = new String[50];
+		String [] buff = new String[10];
 		String req2 = "SELECT * FROM `Groupe` JOIN GroupUserList ON GroupUserList.id_groupe = Groupe.id where id_user=  '" +idu+"'";
    	 	System.out.println(req2);
    	 	ResultSet rslt =con2.conE(req2) ;
@@ -327,7 +327,7 @@ public void voirUser() throws ClassNotFoundException, SQLException {
 	
 	public int getIdGroupByName(String name) throws ClassNotFoundException, SQLException {
 		
-		String req2 = "Select * from `Group` where name = "+name;
+		String req2 = "Select * from `Groupe` where name = '"+name+"'";
 		ResultSet rslt = con2.conE(req2) ;
 		if(rslt.next()) {
 			return rslt.getInt("id");
@@ -346,7 +346,7 @@ public void voirUser() throws ClassNotFoundException, SQLException {
 	
 	public boolean addgroup(int idu,String groupname,String description) throws SQLException, InterruptedException {
 		
-		String req2 = "INSERT into `Group`( name , description ) values ('"+groupname+"','"+description+"')";
+		String req2 = "INSERT into `Groupe`( name , description ) values ('"+groupname+"','"+description+"')";
    	 	System.out.println(req2);
    	 	
 			try {
@@ -412,4 +412,31 @@ public void voirUser() throws ClassNotFoundException, SQLException {
 		return false;
 
 	}
+	
+	
+	public String[] [] liregroupe(int idu ,int idgroupe) throws ClassNotFoundException, SQLException {
+    	String [] [] buff = new String[10][2] ;
+   	 
+   	 Connec con2 = new Connec();
+   	
+   	 String msgtmp; String idtmp;
+   	 
+   	 int i = 0;
+   	
+   	 String req = "SELECT  FROM `GroupMessages` JOIN GroupUserList  on GroupMessages.id_groupe=GroupUserList.id_groupe WHERE GroupUserList.id_user ='"+idu+"'" ;
+   	 System.out.println(req);
+   	 ResultSet rslt =con2.conE(req) ;
+   	 while (rslt.next()) {
+   		 idtmp = Integer.toString(rslt.getInt(4));
+   		 msgtmp = rslt.getString("message");
+   		 buff[i][0] = new String (msgtmp);
+   		buff[i][1] = new String (idtmp);
+   		 i++;
+   	 }
+   	 
+   	 for (int j = 0; j < buff.length; j++) {
+			System.out.println(buff[j]);
+		}
+		return buff; 
+    }
 }

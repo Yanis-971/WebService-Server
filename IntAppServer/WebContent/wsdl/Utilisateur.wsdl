@@ -74,16 +74,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      </sequence>
     </complexType>
    </element>
-   <element name="getMdp">
-    <complexType/>
-   </element>
-   <element name="getMdpResponse">
-    <complexType>
-     <sequence>
-      <element name="getMdpReturn" type="xsd:string"/>
-     </sequence>
-    </complexType>
-   </element>
    <element name="connecUsers">
     <complexType>
      <sequence>
@@ -235,34 +225,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      </sequence>
     </complexType>
    </element>
-   <element name="pseudoById">
-    <complexType>
-     <sequence>
-      <element name="id" type="xsd:int"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="pseudoByIdResponse">
-    <complexType>
-     <sequence>
-      <element name="pseudoByIdReturn" type="xsd:string"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="getGrouplist">
-    <complexType>
-     <sequence>
-      <element name="idu" type="xsd:int"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="getGrouplistResponse">
-    <complexType>
-     <sequence>
-      <element maxOccurs="unbounded" name="getGrouplistReturn" type="xsd:string"/>
-     </sequence>
-    </complexType>
-   </element>
    <element name="addgroup">
     <complexType>
      <sequence>
@@ -309,6 +271,56 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      </sequence>
     </complexType>
    </element>
+   <element name="liregroupe">
+    <complexType>
+     <sequence>
+      <element name="idu" type="xsd:int"/>
+      <element name="idgroupe" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="liregroupeResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="liregroupeReturn" type="impl:ArrayOf_xsd_string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="ArrayOf_xsd_string">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <element name="voirUser">
+    <complexType/>
+   </element>
+   <element name="voirUserResponse">
+    <complexType/>
+   </element>
+   <element name="getMdp">
+    <complexType/>
+   </element>
+   <element name="getMdpResponse">
+    <complexType>
+     <sequence>
+      <element name="getMdpReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="pseudoById">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="pseudoByIdResponse">
+    <complexType>
+     <sequence>
+      <element name="pseudoByIdReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
    <element name="setMdp">
     <complexType>
      <sequence>
@@ -319,11 +331,19 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
    <element name="setMdpResponse">
     <complexType/>
    </element>
-   <element name="voirUser">
-    <complexType/>
+   <element name="getGrouplist">
+    <complexType>
+     <sequence>
+      <element name="idu" type="xsd:int"/>
+     </sequence>
+    </complexType>
    </element>
-   <element name="voirUserResponse">
-    <complexType/>
+   <element name="getGrouplistResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getGrouplistReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
    </element>
    <element name="getId">
     <complexType/>
@@ -373,6 +393,14 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
    <wsdl:message name="addUserToGroupResponse">
 
       <wsdl:part element="impl:addUserToGroupResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="liregroupeRequest">
+
+      <wsdl:part element="impl:liregroupe" name="parameters">
 
       </wsdl:part>
 
@@ -650,6 +678,14 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
+   <wsdl:message name="liregroupeResponse">
+
+      <wsdl:part element="impl:liregroupeResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
    <wsdl:message name="addAdminRequest">
 
       <wsdl:part element="impl:addAdmin" name="parameters">
@@ -840,18 +876,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="getMdp">
-
-         <wsdl:input message="impl:getMdpRequest" name="getMdpRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:getMdpResponse" name="getMdpResponse">
-
-       </wsdl:output>
-
-      </wsdl:operation>
-
       <wsdl:operation name="connecUsers">
 
          <wsdl:input message="impl:connecUsersRequest" name="connecUsersRequest">
@@ -972,30 +996,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="pseudoById">
-
-         <wsdl:input message="impl:pseudoByIdRequest" name="pseudoByIdRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:pseudoByIdResponse" name="pseudoByIdResponse">
-
-       </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="getGrouplist">
-
-         <wsdl:input message="impl:getGrouplistRequest" name="getGrouplistRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:getGrouplistResponse" name="getGrouplistResponse">
-
-       </wsdl:output>
-
-      </wsdl:operation>
-
       <wsdl:operation name="addgroup">
 
          <wsdl:input message="impl:addgroupRequest" name="addgroupRequest">
@@ -1032,13 +1032,13 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="setMdp">
+      <wsdl:operation name="liregroupe">
 
-         <wsdl:input message="impl:setMdpRequest" name="setMdpRequest">
+         <wsdl:input message="impl:liregroupeRequest" name="liregroupeRequest">
 
        </wsdl:input>
 
-         <wsdl:output message="impl:setMdpResponse" name="setMdpResponse">
+         <wsdl:output message="impl:liregroupeResponse" name="liregroupeResponse">
 
        </wsdl:output>
 
@@ -1051,6 +1051,54 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
        </wsdl:input>
 
          <wsdl:output message="impl:voirUserResponse" name="voirUserResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getMdp">
+
+         <wsdl:input message="impl:getMdpRequest" name="getMdpRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getMdpResponse" name="getMdpResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="pseudoById">
+
+         <wsdl:input message="impl:pseudoByIdRequest" name="pseudoByIdRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:pseudoByIdResponse" name="pseudoByIdResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setMdp">
+
+         <wsdl:input message="impl:setMdpRequest" name="setMdpRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setMdpResponse" name="setMdpResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getGrouplist">
+
+         <wsdl:input message="impl:getGrouplistRequest" name="getGrouplistRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getGrouplistResponse" name="getGrouplistResponse">
 
        </wsdl:output>
 
@@ -1193,24 +1241,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
          </wsdl:input>
 
          <wsdl:output name="getNomResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="getMdp">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="getMdpRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="getMdpResponse">
 
             <wsdlsoap:body use="literal"/>
 
@@ -1398,42 +1428,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="pseudoById">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="pseudoByIdRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="pseudoByIdResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="getGrouplist">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="getGrouplistRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="getGrouplistResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-      </wsdl:operation>
-
       <wsdl:operation name="addgroup">
 
          <wsdlsoap:operation soapAction=""/>
@@ -1488,17 +1482,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="setMdp">
+      <wsdl:operation name="liregroupe">
 
          <wsdlsoap:operation soapAction=""/>
 
-         <wsdl:input name="setMdpRequest">
+         <wsdl:input name="liregroupeRequest">
 
             <wsdlsoap:body use="literal"/>
 
          </wsdl:input>
 
-         <wsdl:output name="setMdpResponse">
+         <wsdl:output name="liregroupeResponse">
 
             <wsdlsoap:body use="literal"/>
 
@@ -1517,6 +1511,78 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
          </wsdl:input>
 
          <wsdl:output name="voirUserResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getMdp">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getMdpRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getMdpResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="pseudoById">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="pseudoByIdRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="pseudoByIdResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setMdp">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setMdpRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setMdpResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getGrouplist">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getGrouplistRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getGrouplistResponse">
 
             <wsdlsoap:body use="literal"/>
 

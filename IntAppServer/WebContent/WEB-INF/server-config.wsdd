@@ -109,73 +109,77 @@
    <ns1:parameter qname="ns21:nom" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
   </ns1:operation>
   <ns1:operation name="getNom" qname="ns22:getNom" returnQName="ns22:getNomReturn" returnType="xsd:string" soapAction="" xmlns:ns22="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
-  <ns1:operation name="getMdp" qname="ns23:getMdp" returnQName="ns23:getMdpReturn" returnType="xsd:string" soapAction="" xmlns:ns23="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
-  <ns1:operation name="connecUsers" qname="ns24:connecUsers" returnQName="ns24:connecUsersReturn" returnType="xsd:boolean" soapAction="" xmlns:ns24="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ns1:operation name="connecUsers" qname="ns23:connecUsers" returnQName="ns23:connecUsersReturn" returnType="xsd:boolean" soapAction="" xmlns:ns23="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns23:pseudo" type="xsd:string"/>
+   <ns1:parameter qname="ns23:mdp" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="addFriend" qname="ns24:addFriend" returnQName="ns24:addFriendReturn" returnType="xsd:boolean" soapAction="" xmlns:ns24="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns24:idu" type="xsd:int"/>
    <ns1:parameter qname="ns24:pseudo" type="xsd:string"/>
-   <ns1:parameter qname="ns24:mdp" type="xsd:string"/>
   </ns1:operation>
-  <ns1:operation name="addFriend" qname="ns25:addFriend" returnQName="ns25:addFriendReturn" returnType="xsd:boolean" soapAction="" xmlns:ns25="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ns1:operation name="verifriends" qname="ns25:verifriends" returnQName="ns25:verifriendsReturn" returnType="xsd:boolean" soapAction="" xmlns:ns25="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
    <ns1:parameter qname="ns25:idu" type="xsd:int"/>
-   <ns1:parameter qname="ns25:pseudo" type="xsd:string"/>
+   <ns1:parameter qname="ns25:idFriends" type="xsd:int"/>
   </ns1:operation>
-  <ns1:operation name="verifriends" qname="ns26:verifriends" returnQName="ns26:verifriendsReturn" returnType="xsd:boolean" soapAction="" xmlns:ns26="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ns1:operation name="liaisonFriends" qname="ns26:liaisonFriends" returnQName="ns26:liaisonFriendsReturn" returnType="xsd:boolean" soapAction="" xmlns:ns26="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
    <ns1:parameter qname="ns26:idu" type="xsd:int"/>
-   <ns1:parameter qname="ns26:idFriends" type="xsd:int"/>
+   <ns1:parameter qname="ns26:idfriend" type="xsd:int"/>
   </ns1:operation>
-  <ns1:operation name="liaisonFriends" qname="ns27:liaisonFriends" returnQName="ns27:liaisonFriendsReturn" returnType="xsd:boolean" soapAction="" xmlns:ns27="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-   <ns1:parameter qname="ns27:idu" type="xsd:int"/>
-   <ns1:parameter qname="ns27:idfriend" type="xsd:int"/>
+  <ns1:operation name="addUtilisateurs" qname="ns27:addUtilisateurs" returnQName="ns27:addUtilisateursReturn" returnType="xsd:boolean" soapAction="" xmlns:ns27="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns27:mdp" type="xsd:string"/>
+   <ns1:parameter qname="ns27:nom" type="xsd:string"/>
+   <ns1:parameter qname="ns27:prenom" type="xsd:string"/>
+   <ns1:parameter qname="ns27:pseudo" type="xsd:string"/>
   </ns1:operation>
-  <ns1:operation name="addUtilisateurs" qname="ns28:addUtilisateurs" returnQName="ns28:addUtilisateursReturn" returnType="xsd:boolean" soapAction="" xmlns:ns28="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-   <ns1:parameter qname="ns28:mdp" type="xsd:string"/>
-   <ns1:parameter qname="ns28:nom" type="xsd:string"/>
-   <ns1:parameter qname="ns28:prenom" type="xsd:string"/>
-   <ns1:parameter qname="ns28:pseudo" type="xsd:string"/>
+  <ns1:operation name="sendmessage" qname="ns28:sendmessage" returnQName="ns28:sendmessageReturn" returnType="xsd:boolean" soapAction="" xmlns:ns28="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns28:idu" type="xsd:int"/>
+   <ns1:parameter qname="ns28:message" type="xsd:string"/>
+   <ns1:parameter qname="ns28:idfriends" type="xsd:int"/>
   </ns1:operation>
-  <ns1:operation name="sendmessage" qname="ns29:sendmessage" returnQName="ns29:sendmessageReturn" returnType="xsd:boolean" soapAction="" xmlns:ns29="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ns1:operation name="getFriendList" qname="ns29:getFriendList" returnQName="ns29:getFriendListReturn" returnType="xsd:string" soapAction="" xmlns:ns29="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
    <ns1:parameter qname="ns29:idu" type="xsd:int"/>
-   <ns1:parameter qname="ns29:message" type="xsd:string"/>
-   <ns1:parameter qname="ns29:idfriends" type="xsd:int"/>
   </ns1:operation>
-  <ns1:operation name="getFriendList" qname="ns30:getFriendList" returnQName="ns30:getFriendListReturn" returnType="xsd:string" soapAction="" xmlns:ns30="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ns1:operation name="liremessage" qname="ns30:liremessage" returnQName="ns30:liremessageReturn" returnType="xsd:string" soapAction="" xmlns:ns30="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
    <ns1:parameter qname="ns30:idu" type="xsd:int"/>
+   <ns1:parameter qname="ns30:idFriends" type="xsd:int"/>
   </ns1:operation>
-  <ns1:operation name="liremessage" qname="ns31:liremessage" returnQName="ns31:liremessageReturn" returnType="xsd:string" soapAction="" xmlns:ns31="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-   <ns1:parameter qname="ns31:idu" type="xsd:int"/>
-   <ns1:parameter qname="ns31:idFriends" type="xsd:int"/>
+  <ns1:operation name="getIdGroupByName" qname="ns31:getIdGroupByName" returnQName="ns31:getIdGroupByNameReturn" returnType="xsd:int" soapAction="" xmlns:ns31="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns31:name" type="xsd:string"/>
   </ns1:operation>
-  <ns1:operation name="getIdGroupByName" qname="ns32:getIdGroupByName" returnQName="ns32:getIdGroupByNameReturn" returnType="xsd:int" soapAction="" xmlns:ns32="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-   <ns1:parameter qname="ns32:name" type="xsd:string"/>
+  <ns1:operation name="addAdmin" qname="ns32:addAdmin" returnQName="ns32:addAdminReturn" returnType="xsd:boolean" soapAction="" xmlns:ns32="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns32:idu" type="xsd:int"/>
+   <ns1:parameter qname="ns32:groupname" type="xsd:string"/>
   </ns1:operation>
-  <ns1:operation name="addAdmin" qname="ns33:addAdmin" returnQName="ns33:addAdminReturn" returnType="xsd:boolean" soapAction="" xmlns:ns33="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ns1:operation name="addgroup" qname="ns33:addgroup" returnQName="ns33:addgroupReturn" returnType="xsd:boolean" soapAction="" xmlns:ns33="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
    <ns1:parameter qname="ns33:idu" type="xsd:int"/>
    <ns1:parameter qname="ns33:groupname" type="xsd:string"/>
+   <ns1:parameter qname="ns33:description" type="xsd:string"/>
   </ns1:operation>
-  <ns1:operation name="pseudoById" qname="ns34:pseudoById" returnQName="ns34:pseudoByIdReturn" returnType="xsd:string" soapAction="" xmlns:ns34="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-   <ns1:parameter qname="ns34:id" type="xsd:int"/>
+  <ns1:operation name="idBypseudo" qname="ns34:idBypseudo" returnQName="ns34:idBypseudoReturn" returnType="xsd:int" soapAction="" xmlns:ns34="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns34:pseudo" type="xsd:string"/>
   </ns1:operation>
-  <ns1:operation name="getGrouplist" qname="ns35:getGrouplist" returnQName="ns35:getGrouplistReturn" returnType="xsd:string" soapAction="" xmlns:ns35="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ns1:operation name="addUserToGroup" qname="ns35:addUserToGroup" returnQName="ns35:addUserToGroupReturn" returnType="xsd:boolean" soapAction="" xmlns:ns35="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
    <ns1:parameter qname="ns35:idu" type="xsd:int"/>
+   <ns1:parameter qname="ns35:pseudo" type="xsd:string"/>
+   <ns1:parameter qname="ns35:idgroup" type="xsd:int"/>
   </ns1:operation>
-  <ns1:operation name="addgroup" qname="ns36:addgroup" returnQName="ns36:addgroupReturn" returnType="xsd:boolean" soapAction="" xmlns:ns36="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-   <ns1:parameter qname="ns36:idu" type="xsd:int"/>
-   <ns1:parameter qname="ns36:groupname" type="xsd:string"/>
-   <ns1:parameter qname="ns36:description" type="xsd:string"/>
+  <ns1:operation name="liregroupe" qname="ns36:liregroupe" returnQName="ns36:liregroupeReturn" returnType="ns36:ArrayOf_xsd_string" soapAction="" xmlns:ns36="http://model">
+   <ns1:parameter qname="ns36:idu" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns36:idgroupe" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
   </ns1:operation>
-  <ns1:operation name="idBypseudo" qname="ns37:idBypseudo" returnQName="ns37:idBypseudoReturn" returnType="xsd:int" soapAction="" xmlns:ns37="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-   <ns1:parameter qname="ns37:pseudo" type="xsd:string"/>
+  <ns1:operation name="voirUser" qname="ns37:voirUser" soapAction="" xmlns:ns37="http://model"/>
+  <ns1:operation name="getMdp" qname="ns38:getMdp" returnQName="ns38:getMdpReturn" returnType="xsd:string" soapAction="" xmlns:ns38="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="pseudoById" qname="ns39:pseudoById" returnQName="ns39:pseudoByIdReturn" returnType="xsd:string" soapAction="" xmlns:ns39="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns39:id" type="xsd:int"/>
   </ns1:operation>
-  <ns1:operation name="addUserToGroup" qname="ns38:addUserToGroup" returnQName="ns38:addUserToGroupReturn" returnType="xsd:boolean" soapAction="" xmlns:ns38="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-   <ns1:parameter qname="ns38:idu" type="xsd:int"/>
-   <ns1:parameter qname="ns38:pseudo" type="xsd:string"/>
-   <ns1:parameter qname="ns38:idgroup" type="xsd:int"/>
+  <ns1:operation name="setMdp" qname="ns40:setMdp" soapAction="" xmlns:ns40="http://model">
+   <ns1:parameter qname="ns40:mdp" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
   </ns1:operation>
-  <ns1:operation name="setMdp" qname="ns39:setMdp" soapAction="" xmlns:ns39="http://model">
-   <ns1:parameter qname="ns39:mdp" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="getGrouplist" qname="ns41:getGrouplist" returnQName="ns41:getGrouplistReturn" returnType="xsd:string" soapAction="" xmlns:ns41="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns41:idu" type="xsd:int"/>
   </ns1:operation>
-  <ns1:operation name="voirUser" qname="ns40:voirUser" soapAction="" xmlns:ns40="http://model"/>
-  <ns1:operation name="getId" qname="ns41:getId" returnQName="ns41:getIdReturn" returnType="xsd:int" soapAction="" xmlns:ns41="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
-  <ns1:parameter name="allowedMethods" value="sendmessage liaisonFriends liremessage connecUsers addAdmin setNom getId getMdp idBypseudo getPseudo getPrenom setId getFriendList verifriends getNom addUtilisateurs addFriend setPrenom setPseudo getIdGroupByName getGrouplist setMdp voirUser addgroup addUserToGroup pseudoById"/>
+  <ns1:operation name="getId" qname="ns42:getId" returnQName="ns42:getIdReturn" returnType="xsd:int" soapAction="" xmlns:ns42="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:parameter name="allowedMethods" value="sendmessage liaisonFriends liremessage connecUsers addAdmin setNom getId getMdp idBypseudo getPseudo liregroupe getPrenom setId getFriendList verifriends getNom addUtilisateurs addFriend setPrenom setPseudo getIdGroupByName getGrouplist setMdp voirUser addgroup addUserToGroup pseudoById"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="Utilisateur"/>
   <ns1:parameter name="className" value="model.Utilisateur"/>
@@ -183,6 +187,7 @@
   <ns1:parameter name="schemaQualified" value="http://model"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://model"/>
   <ns1:parameter name="wsdlServiceElement" value="UtilisateurService"/>
+  <ns1:arrayMapping innerType="xsd:string" languageSpecificType="java:java.lang.String[]" qname="ns43:ArrayOf_xsd_string" xmlns:ns43="http://model" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
  </ns1:service>
  <ns1:transport name="http">
   <ns1:requestFlow>

@@ -44,16 +44,17 @@ public class Adding extends HttpServlet {
 		// TODO Auto-generated method stub
 		String pseudo = request.getParameter("pseudo");
 		String description = request.getParameter("description");
+		String gpseudo = request.getParameter("gpseudo");
 		
 		HttpSession session = request.getSession();
 		User u = new User();
 		u=(User) session.getAttribute("User");
 		
 		Utilisateur user = new UtilisateurProxy();
-		if (type=="frd")
+		if (type.equals("frd"))
 			user.addFriend(u.id, pseudo);
-		if (type=="grp")
-			user.addgroup(u.id, pseudo, description);
+		if (type.equals("grp"))
+			user.addgroup(u.id, gpseudo, description);
 		 
 		response.sendRedirect("/IntAppClient/Accueil");
 	}

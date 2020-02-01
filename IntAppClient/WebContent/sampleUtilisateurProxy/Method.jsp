@@ -34,6 +34,7 @@
 <LI><A HREF="Input.jsp?method=160" TARGET="inputs"> setMdp(java.lang.String)</A></LI>
 <LI><A HREF="Input.jsp?method=165" TARGET="inputs"> voirUser()</A></LI>
 <LI><A HREF="Input.jsp?method=168" TARGET="inputs"> getId()</A></LI>
+<LI><A HREF="Input.jsp?method=171" TARGET="inputs"> liregroupe(int,int)</A></LI>
 </UL>
 </BODY>
 </HTML>

@@ -200,5 +200,11 @@ public class UtilisateurProxy implements model.Utilisateur {
     return utilisateur.getId();
   }
   
+  public java.lang.String[][] liregroupe(int idu, int idgroupe) throws java.rmi.RemoteException{
+    if (utilisateur == null)
+      _initUtilisateurProxy();
+    return utilisateur.liregroupe(idu, idgroupe);
+  }
+  
   
 }
