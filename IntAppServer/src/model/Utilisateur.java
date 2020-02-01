@@ -256,16 +256,17 @@ public void voirUser() throws ClassNotFoundException, SQLException {
     	 Connec con2 = new Connec();
     	
     	 String msgtmp; int idtmp;
-    	 
+    	 String nom;
     	 int i = 0;
     	 
-    	 String req = "select * from Privatemessages where (authorid = '" +idu+ "'and receiverid='" +idFriends+"') or (authorid='"+idFriends+"' and receiverid='"+idu+"')";
+    	 String req = "select * from Privatemessages join Users on Privatemessages.authorid = Users.id where (authorid = '" +idu+ "'and receiverid='" +idFriends+"') or (authorid='"+idFriends+"' and receiverid='"+idu+"')";
     	 System.out.println(req);
     	 ResultSet rslt =con2.conE(req) ;
     	 while (rslt.next()) {
+    		 nom=rslt.getString("nom");
     		 idtmp = rslt.getInt("authorid");
     		 msgtmp = rslt.getString("message");
-    		 buff[i] = new String(idtmp+":"+msgtmp);
+    		 buff[i] = new String(nom+":"+msgtmp);
     		 i++;
     	 }
     	 
